@@ -1,0 +1,27 @@
+<svg width="512" height="128" viewBox="0 0 512 128" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hyundai">
+  <!-- Simplified stylized H ellipse, not official logo -->
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2aa8ff"/>
+      <stop offset="100%" stop-color="#0066cc"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      @keyframes draw { from { stroke-dashoffset: 1200; } to { stroke-dashoffset: 0; } }
+      .stroke { stroke: url(#g); stroke-width: 10; fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1200; stroke-dashoffset: 1200; animation: draw 1.8s cubic-bezier(.2,.7,.2,1) forwards; filter: url(#glow); }
+      .word { font: 700 36px Inter, system-ui, sans-serif; fill: #ffffff; opacity: .95; }
+    </style>
+  </defs>
+  <g transform="translate(8,8)">
+    <path class="stroke" d="M64,12c35,0 64,22 64,44s-29,44-64,44S0,78 0,56 29,12 64,12Zm0,0c24,0 34,24 34,44M30,56c10,0 20,0 34,0c14,0 24,0 34,0"/>
+    <text class="word" x="150" y="66">HYUNDAI</text>
+  </g>
+</svg>
+
+

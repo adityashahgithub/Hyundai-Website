@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hyundai | Landing</title>
+    <meta name="description" content="Explore Hyundai cars – SUVs, Hatchbacks, Sedans, and EVs with modern design, innovation, and safety." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/landing.css" />
+  </head>
+  <body>
+    <!-- Top progress bar -->
+    <div class="progress-bar" aria-hidden="true"><span class="progress-bar__fill"></span></div>
+
+    <!-- Intro Logo Overlay -->
+    <div class="intro-overlay" aria-hidden="true">
+      <div class="intro-logo">
+        <img src="./assets/hyundai.png" alt="Hyundai" />
+      </div>
+    </div>
+
+    <!-- Announcement bar -->
+    <div class="announce" role="region" aria-label="Announcement">
+      <div class="container announce__inner">
+        <span class="announce__badge">New</span>
+        <span class="announce__text">Introducing Hyundai CRETA Electric with AI Trip Planner</span>
+        <a class="announce__link" href="#electric">Explore</a>
+      </div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Hyundai home">
+        <img class="brand-logo" src="./assets/hyundai.png" alt="Hyundai" />
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <ul id="nav-menu" class="nav-menu">
+          <li><a href="#suv">SUV</a></li>
+          <li><a href="#hatchback">Hatchback</a></li>
+          <li><a href="#sedan">Sedan</a></li>
+          <li><a href="#electric">Electric</a></li>
+          <li><a class="btn btn-primary" href="#test-drive">Request a Test Drive</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero / Slider -->
+    <section id="home" class="hero" aria-label="Featured models">
+      <div class="slider" data-slider>
+        <div class="slides" data-slides>
+          <article class="slide is-active" aria-roledescription="slide" aria-label="Creta Electric">
+            <div class="slide-media" data-parallax="0.15">
+              <img src="./assets/images/creta.jpg" alt="Hyundai CRETA Electric" />
+            </div>
+            <div class="slide-content">
+              <h1>Hyundai CRETA Electric</h1>
+              <p>Experience AI Trip Planner, bold design, and zero emissions driving.</p>
+              <div class="slide-actions">
+                <a class="btn btn-primary" href="#electric">Explore Electric</a>
+                <a class="btn" href="#test-drive">Test Drive</a>
+              </div>
+            </div>
+          </article>
+          <article class="slide" aria-roledescription="slide" aria-label="Venue N Line">
+            <div class="slide-media" data-parallax="0.12">
+              <img src="./assets/images/venue-n-line.jpg" alt="Hyundai VENUE N Line" />
+            </div>
+            <div class="slide-content">
+              <h2>Hyundai VENUE N Line</h2>
+              <p>Sporty dynamics with 1.0 Kappa Turbo GDi and 7-speed DCT.</p>
+              <div class="slide-actions">
+                <a class="btn btn-primary" href="#suv">Discover SUVs</a>
+                <a class="btn" href="#prices">See Prices</a>
+              </div>
+            </div>
+          </article>
+          <article class="slide" aria-roledescription="slide" aria-label="IONIQ 5">
+            <div class="slide-media" data-parallax="0.1">
+              <img src="./assets/images/ioniq5.jpg" alt="Hyundai IONIQ 5" />
+            </div>
+            <div class="slide-content">
+              <h2>Hyundai IONIQ 5</h2>
+              <p>Progressive EV design with cutting-edge technology and fast charging.</p>
+              <div class="slide-actions">
+                <a class="btn btn-primary" href="#electric">Go Electric</a>
+                <a class="btn" href="#brochure">Download E-Brochure</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <button class="slider-control prev" data-prev aria-label="Previous slide">‹</button>
+        <button class="slider-control next" data-next aria-label="Next slide">›</button>
+        <div class="slider-dots" data-dots aria-label="Slide navigation"></div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories container" aria-labelledby="categories-heading">
+      <h2 id="categories-heading" class="section-title">Hyundai Cars</h2>
+      <div class="cards-grid">
+        <article class="card" id="suv">
+          <div class="card-media"><span class="badge">Popular</span><img src="./assets/images/card-suv.jpg" alt="Hyundai SUV lineup" /></div>
+          <div class="card-body">
+            <h3>SUV</h3>
+            <p>CRETA, VENUE, ALCAZAR, TUCSON – capability meets comfort.</p>
+            <a class="card-link" href="#suv-list">Explore SUVs</a>
+          </div>
+        </article>
+        <article class="card" id="hatchback">
+          <div class="card-media"><span class="badge">City-smart</span><img src="./assets/images/card-hatch.jpg" alt="Hyundai hatchbacks" /></div>
+          <div class="card-body">
+            <h3>Hatchback</h3>
+            <p>i20 and Grand i10 NIOS – compact, connected, and efficient.</p>
+            <a class="card-link" href="#hatch-list">Explore Hatchbacks</a>
+          </div>
+        </article>
+        <article class="card" id="sedan">
+          <div class="card-media"><span class="badge">New features</span><img src="./assets/images/card-sedan.jpg" alt="Hyundai sedans" /></div>
+          <div class="card-body">
+            <h3>Sedan</h3>
+            <p>VERNA and AURA – refined performance and advanced tech.</p>
+            <a class="card-link" href="#sedan-list">Explore Sedans</a>
+          </div>
+        </article>
+        <article class="card" id="electric">
+          <div class="card-media"><span class="badge">EV</span><img src="./assets/images/card-ev.jpg" alt="Hyundai electric cars" /></div>
+          <div class="card-body">
+            <h3>Electric</h3>
+            <p>IONIQ 5 and CRETA Electric – our vision of sustainable mobility.</p>
+            <a class="card-link" href="#ev-list">Explore EVs</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Highlight Banner -->
+    <section class="highlight" aria-label="What's New">
+      <div class="highlight-inner container">
+        <div class="highlight-content">
+          <h2>10 Years of CRETA</h2>
+          <p>Celebrating a decade of redefining the SUV landscape in India.</p>
+          <a class="btn btn-primary" href="#creta-10">Know More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Strip -->
+    <section id="test-drive" class="cta-strip" aria-label="Actions">
+      <div class="container cta-grid">
+        <a class="cta" href="#test-drive-form">
+          <span class="cta-icon">🚗</span>
+          <span class="cta-text">
+            <strong>Request a Test Drive</strong>
+            <em>Venue, Creta, i20, and more</em>
+          </span>
+        </a>
+        <a class="cta" href="#brochure">
+          <span class="cta-icon">📄</span>
+          <span class="cta-text">
+            <strong>Download E-Brochure</strong>
+            <em>All models and variants</em>
+          </span>
+        </a>
+        <a class="cta" href="#prices">
+          <span class="cta-icon">💰</span>
+          <span class="cta-text">
+            <strong>Prices</strong>
+            <em>Ex-showroom across India</em>
+          </span>
+        </a>
+        <a class="cta" href="#find-dealer">
+          <span class="cta-icon">📍</span>
+          <span class="cta-text">
+            <strong>Find a Dealer</strong>
+            <em>Near your location</em>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <img src="./assets/hyundai.png" alt="Hyundai" />
+          <p>Progress for Humanity</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="#suv">SUV</a></li>
+            <li><a href="#hatchback">Hatchback</a></li>
+            <li><a href="#sedan">Sedan</a></li>
+            <li><a href="#electric">Electric</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav" aria-label="Help">
+          <h3>Help</h3>
+          <ul>
+            <li><a href="#prices">Prices</a></li>
+            <li><a href="#brochure">E-Brochure</a></li>
+            <li><a href="#find-dealer">Find a Dealer</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer-copy">
+          <small>© 2025 Hyundai Motor India. All rights reserved.</small>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./scripts/landing.js" defer></script>
+  </body>
+  </html>
+
+
