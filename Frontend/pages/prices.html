@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hyundai | Prices</title>
+    <link rel="stylesheet" href="../styles/basic.css" />
+    <script>
+      function filterPrices() {
+        var input = document.getElementById('q');
+        var rows = document.querySelectorAll('tbody tr');
+        var q = (input.value || '').toLowerCase();
+        rows.forEach(function(r){
+          var show = r.textContent.toLowerCase().indexOf(q) !== -1;
+          r.style.display = show ? '' : 'none';
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="../landing.html"><img src="../assets/hyundai.png" alt="Hyundai" /></a>
+        <a class="back-link" href="../landing.html">← Back to Home</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <h1>Prices</h1>
+        <p>Approximate ex-showroom prices (illustrative)</p>
+      </div>
+    </section>
+
+    <main class="content container">
+      <div style="margin: 10px 0;">
+        <label for="q">Search:</label>
+        <input id="q" type="text" placeholder="Type model name..." oninput="filterPrices()" />
+      </div>
+      <div class="card" style="overflow:auto;">
+        <table style="width:100%; border-collapse: collapse;">
+          <thead>
+            <tr>
+              <th style="text-align:left; padding:8px; border-bottom:1px solid #203049;">Model</th>
+              <th style="text-align:left; padding:8px; border-bottom:1px solid #203049;">Variant</th>
+              <th style="text-align:left; padding:8px; border-bottom:1px solid #203049;">Price (₹)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="padding:8px;">i20</td><td style="padding:8px;">Magna</td><td style="padding:8px;">7,00,000</td></tr>
+            <tr><td style="padding:8px;">Grand i10 NIOS</td><td style="padding:8px;">Sportz</td><td style="padding:8px;">6,20,000</td></tr>
+            <tr><td style="padding:8px;">VENUE</td><td style="padding:8px;">S (O)</td><td style="padding:8px;">10,00,000</td></tr>
+            <tr><td style="padding:8px;">CRETA</td><td style="padding:8px;">EX</td><td style="padding:8px;">11,00,000</td></tr>
+            <tr><td style="padding:8px;">ALCAZAR</td><td style="padding:8px;">Prestige</td><td style="padding:8px;">16,00,000</td></tr>
+            <tr><td style="padding:8px;">TUCSON</td><td style="padding:8px;">Platinum</td><td style="padding:8px;">29,00,000</td></tr>
+            <tr><td style="padding:8px;">VERNA</td><td style="padding:8px;">SX</td><td style="padding:8px;">11,00,000</td></tr>
+            <tr><td style="padding:8px;">AURA</td><td style="padding:8px;">SX+</td><td style="padding:8px;">8,00,000</td></tr>
+            <tr><td style="padding:8px;">IONIQ 5</td><td style="padding:8px;">RWD</td><td style="padding:8px;">45,00,000</td></tr>
+            <tr><td style="padding:8px;">CRETA Electric</td><td style="padding:8px;">Base</td><td style="padding:8px;">18,00,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>© 2025 Hyundai (Student Project)</small>
+      </div>
+    </footer>
+  </body>
+  </html>
+
+

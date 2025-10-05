@@ -1,0 +1,57 @@
+/* Basic styles for simple pages (first-year level) */
+:root {
+  --bg: #0a0f14;
+  --surface: #0f1620;
+  --txt: #e6edf3;
+  --muted: #a4b0be;
+  --accent: #2aa8ff;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--txt);
+  background: var(--bg);
+  line-height: 1.5;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--accent); text-decoration: none; }
+
+.site-header { background: #0d141d; border-bottom: 1px solid rgba(255,255,255,.08); }
+.site-header .container { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; }
+.brand { display: inline-flex; align-items: center; gap: 8px; color: var(--txt); }
+.brand img { width: 110px; }
+.back-link { color: var(--muted); }
+.back-link:hover { color: var(--txt); }
+
+.hero { background: #0f1824; border-bottom: 1px solid rgba(255,255,255,.08); }
+.hero .container { padding: 32px 0; }
+.hero h1 { margin: 0 0 6px; font-size: 28px; }
+.hero p { margin: 0; color: var(--muted); }
+
+.container { width: min(1000px, 92%); margin-inline: auto; }
+
+.content { padding: 20px 0 40px; }
+.card-list { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.card { background: var(--surface); border: 1px solid rgba(255,255,255,.08); padding: 14px; border-radius: 8px; }
+.card h3 { margin: 0 0 6px; font-size: 18px; }
+.card p { margin: 0; color: var(--muted); }
+
+.site-footer { border-top: 1px solid rgba(255,255,255,.08); color: var(--muted); }
+.site-footer .container { padding: 14px 0; }
+
+/* Simple form */
+form { display: grid; gap: 10px; max-width: 520px; }
+label { font-weight: bold; }
+input, select, textarea { width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #203049; background: #0e1520; color: var(--txt); }
+button { padding: 10px 14px; border-radius: 6px; border: 1px solid #2a4263; background: #1a2431; color: var(--txt); cursor: pointer; }
+button:hover { background: #223044; }
+.error-text { color: #ffb4b4; font-size: 12px; min-height: 16px; display: block; }
+input.invalid, select.invalid, textarea.invalid { border-color: #ff6b6b; }
+
+@media (max-width: 720px) {
+  .hero h1 { font-size: 24px; }
+}
+
+

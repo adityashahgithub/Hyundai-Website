@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hyundai | Test Drive</title>
+    <link rel="stylesheet" href="../styles/basic.css" />
+    <script>
+      function clearErrors() {
+        var msgs = document.querySelectorAll('.error-text');
+        msgs.forEach(function(m){ m.textContent = ''; });
+        var inputs = document.querySelectorAll('input, select');
+        inputs.forEach(function(i){ i.classList.remove('invalid'); });
+      }
+
+      function submitForm(e) {
+        e.preventDefault();
+        clearErrors();
+
+        var nameEl = document.getElementById('name');
+        var phoneEl = document.getElementById('phone');
+        var modelEl = document.getElementById('model');
+        var dateEl = document.getElementById('date');
+
+        var ok = true;
+
+        // Name: letters and spaces, at least 2 chars
+        var nameVal = (nameEl.value || '').trim();
+        var nameOk = /^[A-Za-z ]{2,}$/.test(nameVal);
+        if (!nameOk) {
+          document.getElementById('err-name').textContent = 'Enter your full name (letters and spaces).';
+          nameEl.classList.add('invalid');
+          ok = false;
+        }
+
+        // Phone: 10 digits
+        var phoneVal = (phoneEl.value || '').trim();
+        var phoneOk = /^\d{10}$/.test(phoneVal);
+        if (!phoneOk) {
+          document.getElementById('err-phone').textContent = 'Enter a 10-digit phone number.';
+          phoneEl.classList.add('invalid');
+          ok = false;
+        }
+
+        // Model: required (select already required, double-check)
+        if (!modelEl.value) {
+          document.getElementById('err-model').textContent = 'Please select a model.';
+          modelEl.classList.add('invalid');
+          ok = false;
+        }
+
+        // Date: today or later (if provided)
+        if (dateEl.value) {
+          var today = new Date();
+          today.setHours(0,0,0,0);
+          var picked = new Date(dateEl.value);
+          if (picked < today) {
+            document.getElementById('err-date').textContent = 'Choose today or a future date.';
+            dateEl.classList.add('invalid');
+            ok = false;
+          }
+        }
+
+        if (!ok) return;
+
+        alert('Thank you! We will contact you for the test drive.');
+        e.target.reset();
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="../landing.html"><img src="../assets/hyundai.png" alt="Hyundai" /></a>
+        <a class="back-link" href="../landing.html">← Back to Home</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <h1>Request a Test Drive</h1>
+        <p>Fill the form and we will contact you</p>
+      </div>
+    </section>
+
+    <main class="content container">
+      <form onsubmit="submitForm(event)">
+        <label for="name">Full Name</label>
+        <input id="name" name="name" required />
+        <small id="err-name" class="error-text"></small>
+
+        <label for="phone">Phone</label>
+        <input id="phone" name="phone" type="tel" required />
+        <small id="err-phone" class="error-text"></small>
+
+        <label for="model">Preferred Model</label>
+        <select id="model" name="model" required>
+          <option value="">Select</option>
+          <option>CRETA</option>
+          <option>VENUE</option>
+          <option>i20</option>
+          <option>VERNA</option>
+          <option>IONIQ 5</option>
+        </select>
+        <small id="err-model" class="error-text"></small>
+
+        <label for="date">Preferred Date</label>
+        <input id="date" name="date" type="date" />
+        <small id="err-date" class="error-text"></small>
+
+        <button type="submit">Submit</button>
+      </form>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>© 2025 Hyundai (Student Project)</small>
+      </div>
+    </footer>
+  </body>
+  </html>
+
+

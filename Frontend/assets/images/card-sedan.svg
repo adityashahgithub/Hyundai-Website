@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0e1520"/>
+      <stop offset="1" stop-color="#101a28"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <circle cx="220" cy="160" r="220" fill="rgba(110,86,207,0.18)"/>
+  <rect x="210" y="440" rx="14" ry="14" width="780" height="130" fill="#162131" stroke="rgba(255,255,255,0.08)"/>
+  <text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="64" fill="#e6edf3">Sedans</text>
+  <text x="50%" y="62%" dominant-baseline="middle" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" fill="#a4b0be">VERNA • AURA</text>
+</svg>
+

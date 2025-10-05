@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hyundai | Find a Dealer</title>
+    <link rel="stylesheet" href="../styles/basic.css" />
+    <script>
+      function searchCity() {
+        var city = (document.getElementById('city').value || '').toLowerCase();
+        var list = document.querySelectorAll('.dealer');
+        list.forEach(function(el){
+          var match = el.getAttribute('data-city').toLowerCase().indexOf(city) !== -1;
+          el.style.display = match ? '' : 'none';
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="../landing.html"><img src="../assets/hyundai.png" alt="Hyundai" /></a>
+        <a class="back-link" href="../landing.html">← Back to Home</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <h1>Find a Dealer</h1>
+        <p>Search by city</p>
+      </div>
+    </section>
+
+    <main class="content container">
+      <div style="margin: 10px 0;">
+        <label for="city">City:</label>
+        <input id="city" type="text" placeholder="e.g. Delhi" oninput="searchCity()" />
+      </div>
+      <div class="card-list">
+        <article class="card dealer" data-city="Delhi">
+          <h3>Hyundai Dealer - Delhi</h3>
+          <p>Address: Ring Road, Delhi. Phone: 011-12345678</p>
+        </article>
+        <article class="card dealer" data-city="Mumbai">
+          <h3>Hyundai Dealer - Mumbai</h3>
+          <p>Address: Bandra East, Mumbai. Phone: 022-9876543</p>
+        </article>
+        <article class="card dealer" data-city="Bengaluru">
+          <h3>Hyundai Dealer - Bengaluru</h3>
+          <p>Address: MG Road, Bengaluru. Phone: 080-44556677</p>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>© 2025 Hyundai (Student Project)</small>
+      </div>
+    </footer>
+  </body>
+  </html>
+
+

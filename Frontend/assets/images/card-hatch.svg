@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101728"/>
+      <stop offset="1" stop-color="#142033"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <circle cx="1000" cy="140" r="260" fill="rgba(116,240,181,0.16)"/>
+  <rect x="200" y="440" rx="14" ry="14" width="800" height="130" fill="#172235" stroke="rgba(255,255,255,0.08)"/>
+  <text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="64" fill="#e6edf3">Hatchbacks</text>
+  <text x="50%" y="62%" dominant-baseline="middle" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" fill="#a4b0be">i20 • Grand i10 NIOS</text>
+</svg>
+
