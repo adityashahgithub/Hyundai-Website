@@ -1,181 +1,638 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hyundai | Landing</title>
-    <meta name="description" content="Explore Hyundai cars – SUVs, Hatchbacks, Sedans, and EVs with modern design, innovation, and safety." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles/landing.css" />
-  </head>
-  <body>
-    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyundai | Home</title>
+    <style>
+        /* Global Reset and Variables */
+        :root {
+            --hyundai-blue: #002c5f;
+            --hyundai-red: #e4002b;
+            --text-color: #333;
+            --light-grey: #f5f5f5;
+            --dark-grey: #666;
+        }
 
-    <!-- Announcement bar -->
-    <div class="announce" role="region" aria-label="Announcement">
-      <div class="container announce__inner">
-        <span class="announce__badge">New</span>
-        <span class="announce__text">Introducing Hyundai CRETA Electric with AI Trip Planner</span>
-        <a class="announce__link" href="#electric">Explore</a>
-      </div>
-    </div>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: all 0.3s ease-in-out;
+        }
 
-    <!-- Header / Navigation -->
-    <header class="site-header">
-      <a class="brand" href="#home" aria-label="Hyundai home">
-        <img class="brand-logo" src="./assets/hyundai.png" alt="Hyundai" />
-      </a>
-      <nav class="main-nav" aria-label="Primary">
-        <input type="checkbox" id="nav-toggle" class="nav-checkbox" aria-hidden="true" />
-        <label for="nav-toggle" class="nav-toggle" aria-label="Toggle navigation" aria-controls="nav-menu" aria-expanded="false">
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-        </label>
-        <ul id="nav-menu" class="nav-menu">
-          <li><a href="./pages/suv.html">SUV</a></li>
-          <li><a href="./pages/hatchback.html">Hatchback</a></li>
-          <li><a href="./pages/sedan.html">Sedan</a></li>
-          <li><a href="./pages/electric.html">Electric</a></li>
-          <li><a class="btn btn-primary" href="./pages/test-drive.html">Request a Test Drive</a></li>
-        </ul>
-      </nav>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: white;
+            overflow-x: hidden;
+        }
+
+        /* --------------------
+           NAVBAR (Transition)
+           -------------------- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: white;
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+            transition: background-color 0.3s ease-in-out, padding 0.3s, box-shadow 0.3s;
+        }
+
+        .navbar.scrolled {
+            padding: 10px 5%;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--hyundai-blue);
+        }
+
+        .nav-links a {
+            color: var(--hyundai-blue);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--hyundai-red);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* --------------------
+           HERO SECTION (Animation)
+           -------------------- */
+        .hero-section {
+            position: relative;
+            height: 85vh;
+            background: url('https://via.placeholder.com/1600x900/003366/ffffff?text=Hyundai+Dealership+Background') no-repeat center center/cover;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 100px;
+        }
+
+        .hero-content {
+            padding: 40px 5%;
+            color: white;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+            max-width: 600px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out 0.5s, transform 1s ease-out 0.5s;
+        }
+
+        .hero-content.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--hyundai-red);
+            padding-bottom: 10px;
+        }
+
+        .offer-table {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+            margin-top: 20px;
+        }
+
+        .cta-button {
+            background-color: var(--hyundai-red);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out, background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #c00024;
+            transform: scale(1.05);
+        }
+
+        /* Keyframe Animation for the "Click to Buy" button */
+        .pulse {
+            animation: pulseEffect 2s infinite;
+        }
+
+        @keyframes pulseEffect {
+            0% { box-shadow: 0 0 0 0 rgba(228, 0, 43, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(228, 0, 43, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(228, 0, 43, 0); }
+        }
+
+        /* ------------------------
+           CAROUSEL SECTION
+           ------------------------ */
+        .car-carousel {
+            padding: 50px 0 30px; 
+            text-align: center;
+            background-color: white;
+            position: relative;
+        }
+
+        /* Category Navigation */
+        .car-type-nav {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .car-type-nav button {
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--text-color);
+            border-bottom: 3px solid transparent;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+
+        .car-type-nav button.active {
+            color: var(--hyundai-blue);
+            font-weight: 700;
+            border-bottom: 3px solid var(--hyundai-red);
+        }
+
+        .car-display-area {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+            padding-bottom: 100px; 
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            height: 400px; 
+            margin: 20px auto;
+            perspective: 1500px;
+            width: 100%;
+        }
+
+        .car-slide {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 80%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform-style: preserve-3d;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.8s, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .car-slide.active {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateX(-50%) translateZ(0) scale(1);
+            z-index: 10;
+        }
+
+        .car-slide.prev {
+            opacity: 0.2;
+            transform: translateX(-100%) translateZ(-300px) scale(0.8);
+            z-index: 5;
+        }
+
+        .car-slide.next {
+            opacity: 0.2;
+            transform: translateX(0%) translateZ(-300px) scale(0.8);
+            z-index: 5;
+        }
+
+        .car-slide img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.2));
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 50px; 
+            max-height: 250px; 
+        }
+
+        /* Car Info Box (Aligned to the center bottom of the visual area) */
+        .car-info {
+            position: absolute;
+            bottom: 20px; 
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            border: 1px solid #ddd;
+            padding: 10px 30px;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            min-width: 200px;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .car-slide:not(.active) .car-info {
+            opacity: 0;
+        }
+
+        .car-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--hyundai-blue);
+        }
+        .car-info p {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+
+        .carousel-controls {
+            position: absolute;
+            bottom: 30px; 
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 30;
+        }
+
+        .carousel-controls button {
+            background-color: var(--hyundai-blue);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .carousel-controls button:hover {
+            background-color: var(--hyundai-red);
+            transform: scale(1.1);
+        }
+        
+        /* Dynamic Details Container */
+        .dynamic-details-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 30px auto 30px; 
+            padding: 30px 20px;
+            background: var(--light-grey);
+            border-radius: 5px;
+            text-align: left;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            min-height: 150px;
+        }
+
+        .dynamic-details-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .detail-header {
+            font-weight: 700;
+            color: var(--hyundai-blue);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            display: block;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .detail-column {
+            flex: 1;
+            padding: 0 10px;
+            border-right: 1px solid #ddd;
+        }
+        .detail-column:last-child {
+            border-right: none;
+        }
+
+        .detail-column strong {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            color: var(--dark-grey);
+        }
+
+        .detail-column p {
+            font-size: 1rem;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        /* --------------------
+           FOOTER
+           -------------------- */
+        .footer {
+            background-color: var(--hyundai-blue);
+            color: white;
+            padding: 30px 5%;
+            text-align: center;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">HYUNDAI</div>
+        <nav class="nav-links">
+            <a href="./prices.html">Prices</a>
+            <a href="./test-drive.html">Test Drive</a>
+            <a href="./find-dealer.html">Find a Dealer</a>
+            <a href="./support.html">Service Booking</a>
+            <a href="./contact.html" class="cta-button">Contact Us</a>
+        </nav>
     </header>
 
-    <!-- Hero -->
-    <section id="home" class="hero" aria-label="Featured model">
-      <div class="hero-media" role="img" aria-label="Hyundai CRETA Electric">
-        <img src="./assets/images/creta.svg" alt="" />
-      </div>
-      <div class="hero-content container">
-        <h1>Hyundai CRETA Electric</h1>
-        <p>Experience AI Trip Planner, bold design, and zero emissions driving.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#electric">Explore Electric</a>
-          <a class="btn" href="#test-drive">Test Drive</a>
+    <section class="hero-section">
+        <div>
+          <img src="https://www.hyundai.com/content/dam/hyundai/in/en/data/find-a-car/Creta/Highlights/home/cretakingknighthome-pc.jpg" alt="Hyundai CRETA" style="margin-bottom: 20px;">   
         </div>
-      </div>
+        <div id="heroContent" class="hero-content">
+            <h1>Discover Hyundai</h1>
+            <p>Explore SUVs, Hatchbacks, Sedans, and EVs engineered for India.</p>
+            <a class="cta-button" href="./test-drive.html">Request a Test Drive</a>
+        </div>
     </section>
 
-    <!-- Categories -->
-    <section class="categories container" aria-labelledby="categories-heading">
-      <h2 id="categories-heading" class="section-title">Hyundai Cars</h2>
-      <div class="cards-grid">
-        <article class="card" id="suv">
-          <div class="card-media"><span class="badge">Popular</span><img src="./assets/images/card-suv.svg" alt="Hyundai SUV lineup" /></div>
-          <div class="card-body">
-            <h3>SUV</h3>
-            <p>CRETA, VENUE, ALCAZAR, TUCSON – capability meets comfort.</p>
-            <a class="card-link" href="./pages/suv-list.html">Explore SUVs</a>
-          </div>
-        </article>
-        <article class="card" id="hatchback">
-          <div class="card-media"><span class="badge">City-smart</span><img src="./assets/images/card-hatch.svg" alt="Hyundai hatchbacks" /></div>
-          <div class="card-body">
-            <h3>Hatchback</h3>
-            <p>i20 and Grand i10 NIOS – compact, connected, and efficient.</p>
-            <a class="card-link" href="./pages/hatch-list.html">Explore Hatchbacks</a>
-          </div>
-        </article>
-        <article class="card" id="sedan">
-          <div class="card-media"><span class="badge">New features</span><img src="./assets/images/card-sedan.svg" alt="Hyundai sedans" /></div>
-          <div class="card-body">
-            <h3>Sedan</h3>
-            <p>VERNA and AURA – refined performance and advanced tech.</p>
-            <a class="card-link" href="./pages/sedan-list.html">Explore Sedans</a>
-          </div>
-        </article>
-        <article class="card" id="electric">
-          <div class="card-media"><span class="badge">EV</span><img src="./assets/images/card-ev.svg" alt="Hyundai electric cars" /></div>
-          <div class="card-body">
-            <h3>Electric</h3>
-            <p>IONIQ 5 and CRETA Electric – our vision of sustainable mobility.</p>
-            <a class="card-link" href="./pages/ev-list.html">Explore EVs</a>
-          </div>
-        </article>
-      </div>
+    <section class="car-carousel">
+        <h2>Hyundai Cars</h2>
+        
+        <div class="car-type-nav" id="carTypeNav">
+            <button data-filter="All" class="active">All</button>
+            <button data-filter="SUV">SUV</button>
+            <button data-filter="Hatchback">Hatchback</button>
+            <button data-filter="Sedan">Sedan</button>
+            <button data-filter="Electric">Electric</button>
+        </div>
+
+        <div class="car-display-area">
+            <div class="carousel-wrapper" id="carouselWrapper">
+                </div>
+
+            <div class="carousel-controls">
+                <button class="prev-btn" id="prevBtn" style="background-color: var(--hyundai-blue);">◀</button>
+                <button class="next-btn" id="nextBtn" style="background-color: var(--hyundai-red);">▶</button>
+            </div>
+
+            <div class="dynamic-details-container" id="carDetailsContainer">
+                </div>
+        </div>
+    </section>
+    <section style="text-align: center; padding: 50px 0; background-color: white;">
+        <h3>Experience Innovation with Hyundai Cars</h3>
+        <p>Book a test drive today and feel the difference.</p>
+        <a class="cta-button" style="background-color: var(--hyundai-blue);" href="./test-drive.html">Request a Test Drive</a>
     </section>
 
-    <!-- Highlight Banner -->
-    <section class="highlight" aria-label="What's New">
-      <div class="highlight-inner container">
-        <div class="highlight-content">
-          <h2>10 Years of CRETA</h2>
-          <p>Celebrating a decade of redefining the SUV landscape in India.</p>
-          <a class="btn btn-primary" href="#creta-10">Know More</a>
+    <footer class="footer">
+        <p>&copy; 2025 Hyundai Motor India Limited. | All Rights Reserved.</p>
+        <div class="footer-links">
+             <a href="./find-dealer.html">Find a Dealer</a> | 
+             <a href="./support.html">Service Booking</a> |
+             <a href="./contact.html">Contact Us</a>
         </div>
-      </div>
-    </section>
-
-    <!-- CTA Strip -->
-    <section id="test-drive" class="cta-strip" aria-label="Actions">
-      <div class="container cta-grid">
-        <a class="cta" href="./pages/test-drive.html">
-          <span class="cta-icon">🚗</span>
-          <span class="cta-text">
-            <strong>Request a Test Drive</strong>
-            <em>Venue, Creta, i20, and more</em>
-          </span>
-        </a>
-        <a class="cta" href="./pages/brochure.html">
-          <span class="cta-icon">📄</span>
-          <span class="cta-text">
-            <strong>Download E-Brochure</strong>
-            <em>All models and variants</em>
-          </span>
-        </a>
-        <a class="cta" href="./pages/prices.html">
-          <span class="cta-icon">💰</span>
-          <span class="cta-text">
-            <strong>Prices</strong>
-            <em>Ex-showroom across India</em>
-          </span>
-        </a>
-        <a class="cta" href="./pages/find-dealer.html">
-          <span class="cta-icon">📍</span>
-          <span class="cta-text">
-            <strong>Find a Dealer</strong>
-            <em>Near your location</em>
-          </span>
-        </a>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div class="footer-brand">
-          <img src="./assets/hyundai.png" alt="Hyundai" />
-          <p>Progress for Humanity</p>
-        </div>
-        <nav class="footer-nav" aria-label="Footer">
-          <h3>Explore</h3>
-          <ul>
-            <li><a href="./pages/suv.html">SUV</a></li>
-            <li><a href="./pages/hatchback.html">Hatchback</a></li>
-            <li><a href="./pages/sedan.html">Sedan</a></li>
-            <li><a href="./pages/electric.html">Electric</a></li>
-          </ul>
-        </nav>
-        <nav class="footer-nav" aria-label="Help">
-          <h3>Help</h3>
-          <ul>
-            <li><a href="./pages/prices.html">Prices</a></li>
-            <li><a href="./pages/brochure.html">E-Brochure</a></li>
-            <li><a href="./pages/find-dealer.html">Find a Dealer</a></li>
-            <li><a href="./pages/contact.html">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="footer-copy">
-          <small>© 2025 Hyundai Motor India. All rights reserved.</small>
-        </div>
-      </div>
     </footer>
 
-    
-  </body>
-  </html>
+    <script>
+        // ----------------------------------
+        // CAR DATA (Updated with all requested models and categories)
+        // ----------------------------------
+        const allCarsData = [
+            // SUV SECTION
+            { name: "VENUE", category: "SUV", price: "₹ 7.26 L", engine: ["1.2 L Kappa petrol", "1.0 L Turbo GDi petrol", "1.5 L U2 CRDi diesel"], transmission: ["5 MT", "6 MT", "iMT"], image: "https://www.hyundai.com/content/dam/hyundai/in/en/data/find-a-car/i20/Highlights/pc/model-section-pc.png" },
+            { name: "VENUE N LINE", category: "SUV", price: "₹ 12.08 L", engine: ["1.0 L Turbo GDi petrol"], transmission: ["6 MT", "7 DCT"], image: "https://www.hyundai.com/content/dam/hyundai/in/en/data/find-a-car/venue-n-line/highlights/Model_section_1600x590.png" },
+            { name: "EXTER", category: "SUV", price: "₹ 6.13 L", engine: ["1.2 L Kappa petrol", "1.2 L Bi-fuel (CNG)"], transmission: ["5 MT", "AMT"], image: "https://www.hyundai.com/content/dam/hyundai/in/en/data/find-a-car/Exter/model-section_1600x590.png" },
+            { name: "CRETA", category: "SUV", price: "₹ 10.98 L", engine: ["1.5 L MPi petrol", "1.5 L U2 CRDi diesel"], transmission: ["6 MT", "IVT", "6 AT"], image: "https://www.hyundai.com/content/dam/hyundai/in/en/images/landing-pages/find-a-car/pc/creta-suv-model-thumbnail-pc.png" },
+            { name: "ALCAZAR", category: "SUV", price: "₹ 17.95 L", engine: ["1.5 L Turbo GDi petrol", "1.5 L CRDi diesel"], transmission: ["6 MT", "7 DCT", "6 AT"], image: "https://www.hyundai.com/content/dam/hyundai/in/en/data/find-a-car/Alcazar/Highlights/pc/alcazarmodel.png" },
+            { name: "CRETA N LINE", category: "SUV", price: "₹ 18.23 L", engine: ["1.5 L Turbo GDi petrol"], transmission: ["6 MT", "7 DCT"], image: "https://www.hyundai.com/content/dam/hyundai/in/en/data/find-a-car/creta-n-line/highlights/pc/creta-n-line-suv-thumbnail-pc.png" },
+            { name: "TUCSON", category: "SUV", price: "₹ 29.02 L", engine: ["2.0 L Nu petrol", "2.0 L CRDi diesel"], transmission: ["6 AT", "8 AT"], image: "https://www.hyundai.com/content/dam/hyundai/in/en/data/find-a-car/Tucson/Highlights/mob/Model-section-pc-image.png" },
 
+            // HATCHBACK SECTION
+            { name: "GRAND i10 NIOS", category: "Hatchback", price: "₹ 5.92 L", engine: ["1.2 L Kappa petrol", "1.2 L Bi-fuel (CNG)"], transmission: ["5 MT", "AMT"], image: "https://www.hyundai.com/content/dam/hyundai/in/en/data/find-a-car/Grand-i10-Nios/Highlights/Grandi10niosnew/niosmodelpc.png" },
+            { name: "i20", category: "Hatchback", price: "₹ 7.04 L", engine: ["1.2 L Kappa petrol"], transmission: ["5 MT", "IVT"], image: "https://www.hyundai.com/content/dam/hyundai/in/en/data/find-a-car/i20/Highlights/pc/i20_Modelpc.png" },
+            { name: "i20 N LINE", category: "Hatchback", price: "₹ 10.36 L", engine: ["1.0 L Turbo GDi petrol"], transmission: ["6 MT", "7 DCT"], image: "https://www.hyundai.com/content/dam/hyundai/in/en/data/find-a-car/i20-n-line/Highlights/pc/i20-n-line_pc.png" },
 
+            // SEDAN SECTION
+            { name: "AURA", category: "Sedan", price: "₹ 6.44 L", engine: ["1.2 L Kappa petrol", "1.2 L Bi-fuel (CNG)"], transmission: ["5 MT", "AMT"], image: "https://www.hyundai.com/content/dam/hyundai/in/en/data/find-a-car/Aura/Highlights/pc/AuraModelpc.png" },
+            { name: "VERNA", category: "Sedan", price: "₹ 11.00 L", engine: ["1.5 L MPi petrol", "1.5 L Turbo GDi petrol"], transmission: ["6 MT", "IVT", "7 DCT"], image: "https://www.hyundai.com/content/dam/hyundai/in/en/data/find-a-car/ioniq/model-section-ioniq.png" },
+
+            // ELECTRIC SECTION
+            { name: "IONIQ 5", category: "Electric", price: "₹ 46.05 L", engine: ["PMSM Electric Motor"], transmission: ["Single speed reduction gear"], image: "https://www.hyundai.com/content/dam/hyundai/in/en/data/find-a-car/ioniq/model-section-ioniq.png" },
+            { name: "CRETA ELECTRIC", category: "Electric", price: "TBA", engine: ["PMSM Electric Motor"], transmission: ["Single speed reduction gear"], image: "https://www.hyundai.com/content/dam/hyundai/in/en/data/find-a-car/creta-electric/highlights/modelcretaevhome.png" }
+        ];
+
+        let filteredCars = [];
+        let currentSlideIndex = 0;
+
+        const carouselWrapper = document.getElementById('carouselWrapper');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const carDetailsContainer = document.getElementById('carDetailsContainer');
+        const carTypeNav = document.getElementById('carTypeNav');
+
+        // ----------------------------------
+        // CORE CAROUSEL RENDERING
+        // ----------------------------------
+
+        function renderCarousel() {
+            carouselWrapper.innerHTML = '';
+            carDetailsContainer.classList.remove('visible');
+
+            if (filteredCars.length === 0) {
+                carouselWrapper.innerHTML = '<p style="padding-top: 100px;">No cars available in this category.</p>';
+                return;
+            }
+
+            filteredCars.forEach((car, index) => {
+                const slide = document.createElement('div');
+                slide.className = 'car-slide';
+                slide.dataset.index = index;
+                slide.innerHTML = `
+                    <img src="${car.image}" alt="Hyundai ${car.name}">
+                    <div class="car-info">
+                        <h3>${car.name}</h3>
+                        <p>Starting at **${car.price}**</p>
+                    </div>
+                `;
+                carouselWrapper.appendChild(slide);
+            });
+
+            currentSlideIndex = 0;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const slides = document.querySelectorAll('.car-slide');
+            const totalSlides = slides.length;
+
+            if (totalSlides === 0) {
+                 carDetailsContainer.classList.remove('visible');
+                 return;
+            }
+
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active', 'prev', 'next');
+
+                if (index === currentSlideIndex) {
+                    slide.classList.add('active');
+                } else if (index === (currentSlideIndex - 1 + totalSlides) % totalSlides) {
+                    slide.classList.add('prev');
+                } else if (index === (currentSlideIndex + 1) % totalSlides) {
+                    slide.classList.add('next');
+                }
+            });
+
+            // Update Details Panel
+            updateCarDetails(filteredCars[currentSlideIndex]);
+        }
+        
+        // ----------------------------------
+        // CAR DETAILS RENDERING 
+        // ----------------------------------
+
+        function updateCarDetails(car) {
+            const content = `
+                <span class="detail-header">${car.name} &gt;</span>
+                <div class="detail-row">
+                    <div class="detail-column">
+                        <strong>Starting at</strong>
+                        <p>₹ ${car.price}</p>
+                        <p>*Ex Showroom Price</p>
+                    </div>
+                    <div class="detail-column">
+                        <strong>Engine</strong>
+                        ${car.engine.map(e => `<p>${e}</p>`).join('')}
+                    </div>
+                    <div class="detail-column">
+                        <strong>Transmission available</strong>
+                        ${car.transmission.join(', ').split(',').map(t => `<p>${t.trim()}</p>`).join('')}
+                    </div>
+                </div>
+            `;
+            
+            carDetailsContainer.innerHTML = content;
+            setTimeout(() => {
+                carDetailsContainer.classList.add('visible');
+            }, 50);
+        }
+
+        // ----------------------------------
+        // CATEGORY FILTERING
+        // ----------------------------------
+
+        function filterCars(category) {
+            carTypeNav.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[data-filter="${category}"]`).classList.add('active');
+
+            if (category === 'All') {
+                filteredCars = allCarsData;
+            } else {
+                filteredCars = allCarsData.filter(car => car.category === category);
+            }
+
+            renderCarousel();
+        }
+
+        // ----------------------------------
+        // EVENT LISTENERS
+        // ----------------------------------
+
+        // Carousel Controls
+        nextBtn.addEventListener('click', () => {
+            if (filteredCars.length <= 1) return;
+            currentSlideIndex = (currentSlideIndex + 1) % filteredCars.length;
+            updateCarousel();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (filteredCars.length <= 1) return;
+            currentSlideIndex = (currentSlideIndex - 1 + filteredCars.length) % filteredCars.length;
+            updateCarousel();
+        });
+
+        // Category Navigation Click
+        carTypeNav.addEventListener('click', (event) => {
+            if (event.target.tagName === 'BUTTON') {
+                const category = event.target.dataset.filter;
+                filterCars(category);
+            }
+        });
+
+        // ----------------------------------
+        // INITIALIZATION
+        // ----------------------------------
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const heroContent = document.getElementById('heroContent');
+            setTimeout(() => {
+                if (heroContent) { heroContent.classList.add('active'); }
+            }, 100);
+
+            const navBar = document.querySelector('.navbar');
+            window.addEventListener('scroll', () => {
+                navBar.classList.toggle('scrolled', window.scrollY > 50);
+            });
+
+            // Initialize Car Carousel with 'All' cars
+            filterCars('All');
+        });
+    </script>
+</body>
+</html>
