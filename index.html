@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyundai - Home</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">HYUNDAI <span>MOTORS</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="models.html">Models</a></li>
+                <li><a href="ev.html">Electric Vehicles</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="offers.html">Offers</a></li>
+                <li><a href="dealers.html">Dealers</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="hero-slide active" style="background-image: url('images/alcazar.avif')">
+                <div class="hero-content">
+                    <h1>Welcome to Hyundai</h1>
+                    <p>Experience the Future of Mobility</p>
+                    <a href="models.html" class="btn btn-primary">Explore Models</a>
+                    <a href="ev.html" class="btn btn-secondary">Discover EVs</a>
+                </div>
+            </div>
+            <div class="hero-slide" style="background-image: url('images/ioniq5.jpg')">
+                <div class="hero-content">
+                    <h1>IONIQ 5</h1>
+                    <p>Revolutionary Electric Vehicle</p>
+                    <a href="model-detail.html?id=ioniq5" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-slide" style="background-image: url('images/creta.avif')">
+                <div class="hero-content">
+                    <h1>New Creta</h1>
+                    <p>Bold Design, Powerful Performance</p>
+                    <a href="model-detail.html?id=creta" class="btn btn-primary">Explore Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-controls">
+            <div class="hero-dot active"></div>
+            <div class="hero-dot"></div>
+            <div class="hero-dot"></div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Featured Models</h2>
+        <p class="section-subtitle">Discover our most popular vehicles</p>
+        <div class="models-grid" id="featuredModels">
+            <!-- Models will be loaded by JavaScript -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Hyundai</h3>
+                <a href="about.html">Our Story</a>
+                <a href="about.html">Vision & Values</a>
+            </div>
+            <div class="footer-section">
+                <h3>Vehicles</h3>
+                <a href="models.html">All Models</a>
+                <a href="ev.html">Electric Vehicles</a>
+                <a href="testimonials.html">Testimonials</a>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="services.html">Service Centers</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <a href="dealers.html">Find a Dealer</a>
+                <a href="offers.html">Current Offers</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Hyundai Motors. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
+
