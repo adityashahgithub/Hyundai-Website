@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyundai - Model Details</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/model-detail.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">HYUNDAI <span>MOTORS</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="models.html">Models</a></li>
+                <li><a href="ev.html">Electric Vehicles</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="offers.html">Offers</a></li>
+                <li><a href="dealers.html">Dealers</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+    <section class="model-hero" id="modelHero">
+        <div class="model-hero-content">
+            <h1 id="modelName">Loading...</h1>
+            <p id="modelPrice">Loading...</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="overview">Overview</button>
+            <button class="tab-btn" data-tab="specs">Specifications</button>
+        </div>
+
+        <div class="tab-content active" id="overview">
+            <h2>About This Vehicle</h2>
+            <p id="modelDescription">Loading...</p>
+            <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Key Features</h3>
+            <div id="modelFeatures"></div>
+        </div>
+
+        <div class="tab-content" id="specs">
+            <div class="specs-grid" id="specsGrid">
+                <!-- Specs will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <div style="text-align: center; padding: 2rem;">
+        <button class="btn btn-primary" id="bookTestDriveBtn">Book Test Drive</button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="testDriveModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Book Test Drive</h2>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <form id="testDriveForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="preferredDate">Preferred Date</label>
+                    <input type="date" id="preferredDate" name="preferredDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="preferredTime">Preferred Time</label>
+                    <select id="preferredTime" name="preferredTime" required>
+                        <option value="">Select Time</option>
+                        <option value="09:00">9:00 AM</option>
+                        <option value="10:00">10:00 AM</option>
+                        <option value="11:00">11:00 AM</option>
+                        <option value="12:00">12:00 PM</option>
+                        <option value="13:00">1:00 PM</option>
+                        <option value="14:00">2:00 PM</option>
+                        <option value="15:00">3:00 PM</option>
+                        <option value="16:00">4:00 PM</option>
+                        <option value="17:00">5:00 PM</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Notes</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Hyundai</h3>
+                <a href="about.html">Our Story</a>
+                <a href="about.html">Vision & Values</a>
+            </div>
+            <div class="footer-section">
+                <h3>Vehicles</h3>
+                <a href="models.html">All Models</a>
+                <a href="ev.html">Electric Vehicles</a>
+                <a href="testimonials.html">Testimonials</a>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="services.html">Service Centers</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <a href="dealers.html">Find a Dealer</a>
+                <a href="offers.html">Current Offers</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Hyundai Motors. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/model-detail.js"></script>
+</body>
+</html>
+

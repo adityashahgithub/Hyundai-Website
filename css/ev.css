@@ -1,0 +1,267 @@
+/* EV Hero Section */
+.ev-hero {
+    min-height: 85vh;
+}
+
+.ev-hero .hero-slide::before {
+    background: linear-gradient(135deg, rgba(0, 44, 95, 0.85) 0%, rgba(0, 165, 229, 0.7) 100%);
+}
+
+.ev-hero .hero-content {
+    max-width: 900px;
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    color: var(--white);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.ev-hero .hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.ev-hero .hero-content p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.95;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-item {
+    text-align: center;
+    min-width: 120px;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.ev-progress {
+    background: var(--white);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    margin: 3rem 0;
+    border: 1px solid #e8eef5;
+}
+
+.ev-progress-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.ev-progress-header h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.ev-progress-subtitle {
+    font-size: 1rem;
+    color: var(--text-light);
+    font-weight: 400;
+}
+
+.ev-progress-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.ev-progress-card {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    border: 1px solid #e8eef5;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.ev-progress-card:hover {
+    border-color: var(--secondary-color);
+    box-shadow: 0 4px 12px rgba(0, 165, 229, 0.12);
+    transform: translateY(-2px);
+}
+
+.progress-icon {
+    width: 56px;
+    height: 56px;
+    background: #f0f7fa;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary-color);
+    margin: 0 auto 1.5rem;
+    transition: all 0.2s ease;
+}
+
+.ev-progress-card:hover .progress-icon {
+    background: var(--secondary-color);
+    color: var(--white);
+}
+
+.progress-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.metric-value {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    line-height: 1;
+}
+
+.ev-progress-card h4 {
+    font-size: 1.15rem;
+    color: var(--text-dark);
+    margin: 0 0 0.75rem 0;
+    font-weight: 600;
+}
+
+.progress-description {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .ev-hero {
+        min-height: 75vh;
+    }
+    
+    .ev-hero .hero-content {
+        padding: 1.5rem;
+    }
+    
+    .hero-badge {
+        font-size: 0.8rem;
+        padding: 0.4rem 1rem;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero-actions .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .hero-stats {
+        gap: 2rem;
+        padding-top: 2rem;
+    }
+    
+    .stat-item {
+        min-width: 100px;
+    }
+    
+    .stat-value {
+        font-size: 2rem;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+    }
+    
+    .ev-progress {
+        padding: 2rem 1.5rem;
+    }
+    
+    .ev-progress-header h3 {
+        font-size: 1.75rem;
+    }
+    
+    .ev-progress-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    
+    .ev-progress-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .metric-value {
+        font-size: 2.5rem;
+    }
+    
+    .progress-icon {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .progress-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.comparison-panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.comparison-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
