@@ -1,22 +1,22 @@
 // Service Center Data
 const serviceCenters = {
-    mumbai: {
-        name: "Mumbai - Andheri East",
-        address: "Plot No. 1, Saki Vihar Road, Andheri East, Mumbai - 400072, Maharashtra",
-        phone: "+91 22 2857 1234",
-        hours: "Mon-Sat: 9:00 AM - 6:00 PM | Sun: 10:00 AM - 4:00 PM"
+    nadiad: {
+        name: "Nadiad - Downtown Hyundai",
+        address: "Downtown Hyundai Nadiad, Nadiad, Kheda District, Gujarat - 387001",
+        phone: "+91 2696 223456",
+        hours: "Mon-Sat: 9:00 AM - 7:00 PM | Sun: 10:00 AM - 6:00 PM"
     },
-    delhi: {
-        name: "Delhi - Mathura Road",
-        address: "12/2, Mathura Road, Near Apollo Hospital, New Delhi - 110076",
-        phone: "+91 11 2685 7890",
-        hours: "Mon-Sat: 9:00 AM - 6:00 PM | Sun: 10:00 AM - 4:00 PM"
+    anand: {
+        name: "Anand - Advaika Motors",
+        address: "Shop No. 8-9, Vallabh Vidyanagar Road, Near Anand Station, Anand, Gujarat - 388120",
+        phone: "+91 2692 245678",
+        hours: "Mon-Sat: 9:00 AM - 7:00 PM | Sun: 10:00 AM - 5:00 PM"
     },
-    bangalore: {
-        name: "Bangalore - Marathahalli",
-        address: "No. 45, Outer Ring Road, Marathahalli, Bangalore - 560037, Karnataka",
-        phone: "+91 80 2856 3456",
-        hours: "Mon-Sat: 9:00 AM - 6:00 PM | Sun: 10:00 AM - 4:00 PM"
+    ahmedabad: {
+        name: "Ahmedabad - SG Highway",
+        address: "Shop No. 1-2, Ground Floor, Advaika House, Near Iskcon Temple, SG Highway, Ahmedabad - 380054",
+        phone: "+91 79 4000 1234",
+        hours: "Mon-Sat: 9:00 AM - 7:00 PM | Sun: 10:00 AM - 6:00 PM"
     }
 };
 

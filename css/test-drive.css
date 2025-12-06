@@ -292,6 +292,8 @@
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     animation: slideUp 0.4s ease;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .modal-header {
@@ -352,11 +354,27 @@
     display: flex;
     gap: 1rem;
     justify-content: center;
+    align-items: center;
 }
 
 .modal-actions .btn {
     flex: 1;
     max-width: 200px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-actions .btn.btn-secondary {
+    background: var(--white);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.modal-actions .btn.btn-secondary:hover {
+    background: var(--primary-color);
+    color: var(--white);
 }
 
 /* Animations */
