@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyundai - Book a Test Drive</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/test-drive.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">HYUNDAI <span>MOTORS</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="models.html">Models</a></li>
+                <li><a href="ev.html">Electric Vehicles</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="test-drive.html">Test Drive</a></li>
+                <li><a href="offers.html">Offers</a></li>
+                <li><a href="dealers.html">Dealers</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+    <section class="hero" style="height: 50vh;">
+        <div class="hero-slide active" style="background-image: url('images/creta.avif')">
+            <div class="hero-content">
+                <h1>Book a Test Drive</h1>
+                <p>Experience Hyundai's excellence firsthand</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="test-drive-container">
+            <div class="test-drive-header">
+                <h2 class="section-title">Schedule Your Test Drive</h2>
+                <p class="section-subtitle">Choose your preferred model, date, time, and location</p>
+            </div>
+
+            <div class="test-drive-content">
+                <div class="form-wrapper">
+                    <form id="testDriveForm" class="test-drive-form">
+                        <!-- Model Selection -->
+                        <div class="form-section">
+                            <h3>1. Select Vehicle Model</h3>
+                            <div class="model-selection" id="modelSelection">
+                                <!-- Models will be loaded by JavaScript -->
+                            </div>
+                            <input type="hidden" id="selectedModel" name="model" required>
+                        </div>
+
+                        <!-- Personal Information -->
+                        <div class="form-section">
+                            <h3>2. Your Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="fullName">Full Name <span class="required">*</span></label>
+                                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address <span class="required">*</span></label>
+                                    <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone">Phone Number <span class="required">*</span></label>
+                                    <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="alternatePhone">Alternate Phone (Optional)</label>
+                                    <input type="tel" id="alternatePhone" name="alternatePhone" placeholder="+91 98765 43211">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Date & Time Selection -->
+                        <div class="form-section">
+                            <h3>3. Preferred Date & Time</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="testDriveDate">Select Date <span class="required">*</span></label>
+                                    <input type="date" id="testDriveDate" name="testDriveDate" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="testDriveTime">Select Time <span class="required">*</span></label>
+                                    <select id="testDriveTime" name="testDriveTime" required>
+                                        <option value="">Choose time</option>
+                                        <option value="09:00">9:00 AM</option>
+                                        <option value="10:00">10:00 AM</option>
+                                        <option value="11:00">11:00 AM</option>
+                                        <option value="12:00">12:00 PM</option>
+                                        <option value="13:00">1:00 PM</option>
+                                        <option value="14:00">2:00 PM</option>
+                                        <option value="15:00">3:00 PM</option>
+                                        <option value="16:00">4:00 PM</option>
+                                        <option value="17:00">5:00 PM</option>
+                                        <option value="18:00">6:00 PM</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Location Selection -->
+                        <div class="form-section">
+                            <h3>4. Select Service Center</h3>
+                            <div class="form-group">
+                                <label for="serviceCenter">Preferred Location <span class="required">*</span></label>
+                                <select id="serviceCenter" name="serviceCenter" required>
+                                    <option value="">Choose a service center</option>
+                                    <option value="mumbai">Mumbai - Andheri East</option>
+                                    <option value="delhi">Delhi - Mathura Road</option>
+                                    <option value="bangalore">Bangalore - Marathahalli</option>
+                                </select>
+                            </div>
+                            <div class="location-details" id="locationDetails" style="display: none;">
+                                <div class="location-card">
+                                    <p><strong>📍 Address:</strong> <span id="locationAddress"></span></p>
+                                    <p><strong>📞 Phone:</strong> <span id="locationPhone"></span></p>
+                                    <p><strong>🕐 Hours:</strong> <span id="locationHours"></span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Additional Information -->
+                        <div class="form-section">
+                            <h3>5. Additional Information</h3>
+                            <div class="form-group">
+                                <label for="message">Any Special Requests or Questions</label>
+                                <textarea id="message" name="message" rows="4" placeholder="Let us know if you have any specific requirements or questions..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-large">Book Test Drive</button>
+                            <button type="reset" class="btn btn-secondary">Reset Form</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Summary Card -->
+                <div class="summary-card">
+                    <h3>Booking Summary</h3>
+                    <div class="summary-content" id="bookingSummary">
+                        <div class="summary-item">
+                            <span class="summary-label">Model:</span>
+                            <span class="summary-value" id="summaryModel">Not selected</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Date:</span>
+                            <span class="summary-value" id="summaryDate">Not selected</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Time:</span>
+                            <span class="summary-value" id="summaryTime">Not selected</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Location:</span>
+                            <span class="summary-value" id="summaryLocation">Not selected</span>
+                        </div>
+                    </div>
+                    <div class="summary-note">
+                        <p>📋 Your booking details will be confirmed via email and SMS.</p>
+                        <p>⏰ Please arrive 10 minutes before your scheduled time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-icon">✓</span>
+                <h2>Test Drive Booked Successfully!</h2>
+            </div>
+            <div class="modal-body" id="confirmationDetails">
+                <!-- Confirmation details will be inserted here -->
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-primary" onclick="closeConfirmationModal()">Done</button>
+                <a href="models.html" class="btn btn-secondary">View All Models</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Hyundai</h3>
+                <a href="about.html">Our Story</a>
+                <a href="about.html">Vision & Values</a>
+            </div>
+            <div class="footer-section">
+                <h3>Vehicles</h3>
+                <a href="models.html">All Models</a>
+                <a href="ev.html">Electric Vehicles</a>
+                <a href="testimonials.html">Testimonials</a>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="services.html">Service Centers</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <a href="dealers.html">Find a Dealer</a>
+                <a href="offers.html">Current Offers</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Hyundai Motors. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/test-drive.js"></script>
+</body>
+</html>
+
