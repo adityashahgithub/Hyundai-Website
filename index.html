@@ -32,29 +32,47 @@
                 <div class="hero-content">
                     <h1>Welcome to Hyundai</h1>
                     <p>Experience the Future of Mobility</p>
-                    <a href="models.html" class="btn btn-primary">Explore Models</a>
-                    <a href="ev.html" class="btn btn-secondary">Discover EVs</a>
+                    <div class="hero-buttons">
+                        <a href="models.html" class="btn btn-primary">Explore Models</a>
+                        <a href="ev.html" class="btn btn-secondary">Discover EVs</a>
+                    </div>
                 </div>
             </div>
             <div class="hero-slide" style="background-image: url('images/ioniq5.jpg')">
                 <div class="hero-content">
                     <h1>IONIQ 5</h1>
                     <p>Revolutionary Electric Vehicle</p>
-                    <a href="model-detail.html?id=ioniq5" class="btn btn-primary">Learn More</a>
+                    <div class="hero-buttons">
+                        <a href="model-detail.html?id=ioniq5" class="btn btn-primary">Learn More</a>
+                        <a href="test-drive.html" class="btn btn-secondary">Book Test Drive</a>
+                    </div>
                 </div>
             </div>
             <div class="hero-slide" style="background-image: url('images/creta.avif')">
                 <div class="hero-content">
                     <h1>New Creta</h1>
                     <p>Bold Design, Powerful Performance</p>
-                    <a href="model-detail.html?id=creta" class="btn btn-primary">Explore Now</a>
+                    <div class="hero-buttons">
+                        <a href="model-detail.html?id=creta" class="btn btn-primary">Explore Now</a>
+                        <a href="test-drive.html" class="btn btn-secondary">Book Test Drive</a>
+                    </div>
                 </div>
             </div>
         </div>
+        <button class="hero-nav hero-nav-prev" aria-label="Previous slide">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <button class="hero-nav hero-nav-next" aria-label="Next slide">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
         <div class="hero-controls">
-            <div class="hero-dot active"></div>
-            <div class="hero-dot"></div>
-            <div class="hero-dot"></div>
+            <div class="hero-dot active" data-slide="0"></div>
+            <div class="hero-dot" data-slide="1"></div>
+            <div class="hero-dot" data-slide="2"></div>
         </div>
     </section>
 

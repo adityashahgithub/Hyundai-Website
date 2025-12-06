@@ -1,31 +1,72 @@
 let currentSlide = 0;
+let slideInterval;
 const slides = document.querySelectorAll('.hero-slide');
 const dots = document.querySelectorAll('.hero-dot');
+const prevBtn = document.querySelector('.hero-nav-prev');
+const nextBtn = document.querySelector('.hero-nav-next');
 
 // Hero Slider
 function showSlide(index) {
+    if (index < 0) {
+        currentSlide = slides.length - 1;
+    } else if (index >= slides.length) {
+        currentSlide = 0;
+    } else {
+        currentSlide = index;
+    }
+    
     slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
+        slide.classList.toggle('active', i === currentSlide);
     });
     dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === index);
+        dot.classList.toggle('active', i === currentSlide);
     });
 }
 
 function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
+    showSlide(currentSlide + 1);
+    resetInterval();
 }
 
-// Auto-advance slider
-setInterval(nextSlide, 5000);
+function prevSlide() {
+    showSlide(currentSlide - 1);
+    resetInterval();
+}
 
-// Dot navigation
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        currentSlide = index;
-        showSlide(currentSlide);
+function resetInterval() {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, 5000);
+}
+
+// Initialize slider
+document.addEventListener('DOMContentLoaded', function() {
+    // Auto-advance slider
+    slideInterval = setInterval(nextSlide, 5000);
+    
+    // Arrow navigation
+    if (nextBtn) {
+        nextBtn.addEventListener('click', nextSlide);
+    }
+    if (prevBtn) {
+        prevBtn.addEventListener('click', prevSlide);
+    }
+    
+    // Dot navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+            resetInterval();
+        });
     });
+    
+    // Pause on hover
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        hero.addEventListener('mouseenter', () => clearInterval(slideInterval));
+        hero.addEventListener('mouseleave', () => {
+            slideInterval = setInterval(nextSlide, 5000);
+        });
+    }
 });
 
 // Load Featured Models
