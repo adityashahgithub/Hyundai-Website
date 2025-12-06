@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyundai - Contact Us</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">HYUNDAI <span>MOTORS</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="models.html">Models</a></li>
+                <li><a href="ev.html">Electric Vehicles</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="test-drive.html">Test Drive</a></li>
+                <li><a href="offers.html">Offers</a></li>
+                <li><a href="dealers.html">Dealers</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+    <section class="hero" style="height: 50vh;">
+        <div class="hero-slide active" style="background-image: url('images/alcazar.avif')">
+            <div class="hero-content">
+                <h1>Contact Us</h1>
+                <p>We're Here to Help</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="icon">📞</div>
+                    <div>
+                        <h3>Phone</h3>
+                        <p>Customer Care: 1800-11-4645</p>
+                        <p>Service: 1800-11-4646</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">✉️</div>
+                    <div>
+                        <h3>Email</h3>
+                        <p>info@hyundai.in</p>
+                        <p>support@hyundai.in</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">📍</div>
+                    <div>
+                        <h3>Address</h3>
+                        <p>Downtown Hyundai Nadiad</p>
+                        <p>Hyundai Service - Downtown Hyundai</p>
+                        <p>Nadiad, Gujarat - 387001, India</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">🕒</div>
+                    <div>
+                        <h3>Business Hours</h3>
+                        <p>Monday - Saturday: 9:00 AM - 7:00 PM</p>
+                        <p>Sunday: 10:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2 style="margin-bottom: 2rem;">Send Us a Message</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="contactName">Full Name <span style="color: #e74c3c;">*</span></label>
+                        <input type="text" id="contactName" name="name" placeholder="Enter your full name" required>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Email Address <span style="color: #e74c3c;">*</span></label>
+                        <input type="email" id="contactEmail" name="email" placeholder="your.email@example.com" required>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactPhone">Phone Number <span style="color: #e74c3c;">*</span></label>
+                        <input type="tel" id="contactPhone" name="phone" placeholder="+91 98765 43210" required>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactSubject">Subject <span style="color: #e74c3c;">*</span></label>
+                        <select id="contactSubject" name="subject" required>
+                            <option value="">Select Subject</option>
+                            <option value="sales">Sales Inquiry</option>
+                            <option value="service">Service Request</option>
+                            <option value="support">Customer Support</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Message <span style="color: #e74c3c;">*</span></label>
+                        <textarea id="contactMessage" name="message" rows="5" placeholder="Enter your message here..." required></textarea>
+                        <span class="error-message"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.05rem; font-weight: 600;">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="map-section" style="margin-top: 4rem;">
+            <h2 class="section-title">Find Us in Nadiad, Gujarat</h2>
+            <p class="section-subtitle">Visit Downtown Hyundai Nadiad - Showroom & Service Center</p>
+            
+            <!-- Showroom Location -->
+            <div class="map-container" style="margin-bottom: 3rem;">
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem; font-size: 1.4rem;">📍 Downtown Hyundai Nadiad - Showroom</h3>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58902.12413824744!2d72.83249183284839!3d22.676790980667406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395ef5a732f146bf%3A0x369e0dd93dc86f9b!2sDowntown%20hyundai%20nadiad!5e0!3m2!1sen!2sin!4v1765015999247!5m2!1sen!2sin" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Downtown Hyundai Nadiad - Showroom">
+                </iframe>
+                <div class="map-info">
+                    <h3>Downtown Hyundai Nadiad - Showroom</h3>
+                    <p>Nadiad, Kheda District, Gujarat - 387001, India</p>
+                    <div class="map-details">
+                        <p><strong>📞 Phone:</strong> +91 2696 223456</p>
+                        <p><strong>📧 Email:</strong> nadiad@hyundai.in</p>
+                        <p><strong>🕒 Hours:</strong> Mon-Sat: 9:00 AM - 7:00 PM, Sun: 10:00 AM - 6:00 PM</p>
+                        <p><strong>🚗 Services:</strong> New Car Sales, Test Drives, Finance, Insurance</p>
+                    </div>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=Downtown+hyundai+nadiad,+Nadiad,+Gujarat+387001" 
+                       target="_blank" 
+                       class="btn btn-primary" 
+                       style="margin-top: 1rem; display: inline-block;">
+                        Get Directions to Showroom
+                    </a>
+                </div>
+            </div>
+
+            <!-- Service Center Location -->
+            <div class="map-container">
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem; font-size: 1.4rem;">🔧 Hyundai Service - Downtown Hyundai</h3>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58901.98453436829!2d72.8322310828509!3d22.677115980608367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e5beb331d7ec5%3A0x2e226ca37bee8a17!2sHyundai%20Service-Downtown%20Hyundai!5e0!3m2!1sen!2sin!4v1765016200331!5m2!1sen!2sin" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Hyundai Service - Downtown Hyundai">
+                </iframe>
+                <div class="map-info">
+                    <h3>Hyundai Service - Downtown Hyundai</h3>
+                    <p>Nadiad, Kheda District, Gujarat - 387001, India</p>
+                    <div class="map-details">
+                        <p><strong>📞 Phone:</strong> +91 2696 223456</p>
+                        <p><strong>📧 Email:</strong> service.nadiad@hyundai.in</p>
+                        <p><strong>🕒 Hours:</strong> Mon-Sat: 9:00 AM - 7:00 PM, Sun: 10:00 AM - 6:00 PM</p>
+                        <p><strong>🔧 Services:</strong> Vehicle Service, Repairs, Spare Parts, Warranty Claims</p>
+                    </div>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=Hyundai+Service-Downtown+Hyundai,+Nadiad,+Gujarat+387001" 
+                       target="_blank" 
+                       class="btn btn-primary" 
+                       style="margin-top: 1rem; display: inline-block;">
+                        Get Directions to Service Center
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Hyundai</h3>
+                <a href="about.html">Our Story</a>
+                <a href="about.html">Vision & Values</a>
+            </div>
+            <div class="footer-section">
+                <h3>Vehicles</h3>
+                <a href="models.html">All Models</a>
+                <a href="ev.html">Electric Vehicles</a>
+                <a href="testimonials.html">Testimonials</a>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="services.html">Service Centers</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <a href="dealers.html">Find a Dealer</a>
+                <a href="offers.html">Current Offers</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Hyundai Motors. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>
+

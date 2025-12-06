@@ -294,6 +294,16 @@
     color: var(--text-dark);
 }
 
+.service-center-search input {
+    transition: all 0.3s ease;
+}
+
+.service-center-search input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(0, 165, 229, 0.1);
+}
+
 /* Warranty Section */
 .warranty-info {
     display: grid;

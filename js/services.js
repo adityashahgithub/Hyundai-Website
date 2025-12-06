@@ -128,5 +128,63 @@ document.addEventListener('DOMContentLoaded', function() {
         card.style.transform = 'scale(0.95)';
         warrantyObserver.observe(card);
     });
+
+    // Service Center Search Functionality
+    const searchInput = document.getElementById('serviceCenterSearch');
+    const serviceCentersList = document.getElementById('serviceCentersList');
+    const allCenterCards = document.querySelectorAll('.center-card');
+
+    if (searchInput && serviceCentersList) {
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase().trim();
+            
+            allCenterCards.forEach(card => {
+                const cardText = card.textContent.toLowerCase();
+                const cardTitle = card.querySelector('h3').textContent.toLowerCase();
+                
+                if (!searchTerm || cardText.includes(searchTerm) || cardTitle.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    // Re-animate visible cards
+                    setTimeout(() => {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(25px)';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 50);
+                    }, 10);
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Show message if no results
+            const visibleCards = Array.from(allCenterCards).filter(card => card.style.display !== 'none');
+            if (visibleCards.length === 0 && searchTerm) {
+                if (!document.querySelector('.no-results-message')) {
+                    const noResults = document.createElement('p');
+                    noResults.className = 'no-results-message';
+                    noResults.style.textAlign = 'center';
+                    noResults.style.padding = '2rem';
+                    noResults.style.color = 'var(--text-light)';
+                    noResults.textContent = 'No service centers found matching your search. Try "Nadiad", "Anand", "V.V. Nagar", or "Ahmedabad"';
+                    serviceCentersList.appendChild(noResults);
+                }
+            } else {
+                const noResults = document.querySelector('.no-results-message');
+                if (noResults) {
+                    noResults.remove();
+                }
+            }
+        });
+
+        // Clear search on escape key
+        searchInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                this.value = '';
+                this.dispatchEvent(new Event('input'));
+            }
+        });
+    }
 });
 
