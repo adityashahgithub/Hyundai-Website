@@ -1,9 +1,18 @@
+/* ============================================
+   ELECTRIC VEHICLES PAGE SPECIFIC STYLES
+   ============================================ */
 
+/* ============================================
+   EV TECHNOLOGY PROGRESS SECTION
+   ============================================ */
+
+/* Progress Section Header */
 .ev-progress-header {
     text-align: center;
     margin-bottom: 3rem;
 }
 
+/* Progress Section Title */
 .ev-progress-header h3 {
     font-size: 2rem;
     color: var(--primary-color);
@@ -11,12 +20,14 @@
     font-weight: 600;
 }
 
+/* Progress Section Subtitle */
 .ev-progress-subtitle {
     font-size: 1rem;
     color: var(--text-light);
     font-weight: 400;
 }
 
+/* Progress Metrics Grid - Responsive grid layout */
 .ev-progress-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -24,6 +35,7 @@
     margin-top: 2rem;
 }
 
+/* Individual Progress Metric Card */
 .ev-progress-card {
     background: var(--white);
     padding: 2.5rem 2rem;
@@ -33,12 +45,14 @@
     transition: all 0.2s ease;
 }
 
+/* Hover Effect - Card lifts and border changes color */
 .ev-progress-card:hover {
     border-color: var(--secondary-color);
     box-shadow: 0 4px 12px rgba(0, 165, 229, 0.12);
     transform: translateY(-2px);
 }
 
+/* Progress Icon Container - Circular background for SVG icons */
 .progress-icon {
     width: 56px;
     height: 56px;
@@ -52,16 +66,19 @@
     transition: all 0.2s ease;
 }
 
+/* Icon Background Changes on Card Hover */
 .ev-progress-card:hover .progress-icon {
     background: var(--secondary-color);
     color: var(--white);
 }
 
+/* SVG Icon Sizing */
 .progress-icon svg {
     width: 28px;
     height: 28px;
 }
 
+/* Metric Value - Large percentage display */
 .metric-value {
     font-size: 3rem;
     font-weight: 700;
@@ -70,6 +87,7 @@
     line-height: 1;
 }
 
+/* Metric Title */
 .ev-progress-card h4 {
     font-size: 1.15rem;
     color: var(--text-dark);
@@ -77,6 +95,7 @@
     font-weight: 600;
 }
 
+/* Metric Description Text */
 .progress-description {
     margin: 0;
     color: var(--text-light);
@@ -85,7 +104,11 @@
     line-height: 1.6;
 }
 
-/* Responsive Design */
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Mobile Breakpoint (768px and below) */
 @media (max-width: 768px) {
     .ev-progress {
         padding: 2rem 1.5rem;
@@ -95,6 +118,7 @@
         font-size: 1.75rem;
     }
     
+    /* Single column layout on mobile */
     .ev-progress-grid {
         grid-template-columns: 1fr;
         gap: 1.25rem;
@@ -119,6 +143,11 @@
     }
 }
 
+/* ============================================
+   EV COMPARISON SECTION
+   ============================================ */
+
+/* Comparison Panel - Grid layout for EV comparison cards */
 .comparison-panel {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -126,6 +155,7 @@
     margin-top: 3rem;
 }
 
+/* Individual Comparison Card */
 .comparison-card {
     background: var(--white);
     padding: 2rem;

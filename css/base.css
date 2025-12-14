@@ -1,43 +1,56 @@
+/* ============================================
+   BASE STYLES - GLOBAL RESET & VARIABLES
+   ============================================ */
+
+/* Universal Reset - Remove default margins, padding, and set box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* CSS Custom Properties (Variables) - Global theme colors and values */
 :root {
-    --primary-color: #002C5F;
-    --secondary-color: #00A5E5;
-    --accent-color: #FF6B35;
-    --text-dark: #1a1a1a;
-    --text-light: #666;
-    --bg-light: #f8f9fa;
-    --white: #ffffff;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
+    --primary-color: #002C5F;        /* Hyundai primary blue */
+    --secondary-color: #00A5E5;      /* Hyundai secondary blue */
+    --accent-color: #FF6B35;         /* Accent orange */
+    --text-dark: #1a1a1a;            /* Dark text color */
+    --text-light: #666;              /* Light text color */
+    --bg-light: #f8f9fa;             /* Light background */
+    --white: #ffffff;                /* White color */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);           /* Standard shadow */
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);     /* Large shadow */
 }
 
+/* Base Body Styles - Typography and layout foundation */
 body {
     font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
     background: #f7f9fc;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-/* Header & Navigation */
+/* ============================================
+   HEADER & NAVIGATION
+   ============================================ */
+
+/* Sticky Header - Stays at top when scrolling */
 header {
     background: var(--white);
     box-shadow: var(--shadow);
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 1000; /* Ensure header stays above other content */
     transition: box-shadow 0.3s ease;
 }
 
+/* Enhanced shadow when page is scrolled */
 header.scrolled {
     box-shadow: var(--shadow-lg);
 }
 
+/* Navigation Container - Centered with max-width */
 nav {
     max-width: 1400px;
     margin: 0 auto;
@@ -48,6 +61,7 @@ nav {
     gap: 1rem;
 }
 
+/* Logo Styling */
 .logo {
     font-size: 1.8rem;
     font-weight: bold;
@@ -58,10 +72,12 @@ nav {
     gap: 0.5rem;
 }
 
+/* Logo Span - Secondary color for "MOTORS" text */
 .logo span {
     color: var(--secondary-color);
 }
 
+/* Navigation Links Container */
 .nav-links {
     display: flex;
     list-style: none;
@@ -70,6 +86,7 @@ nav {
     transition: transform 0.3s ease;
 }
 
+/* Navigation Link Styling */
 .nav-links a {
     text-decoration: none;
     color: var(--text-dark);
@@ -78,6 +95,7 @@ nav {
     position: relative;
 }
 
+/* Underline Animation - Hidden by default */
 .nav-links a::after {
     content: '';
     position: absolute;
@@ -89,14 +107,17 @@ nav {
     transition: width 0.3s ease;
 }
 
+/* Underline Animation - Expands on hover */
 .nav-links a:hover::after {
     width: 100%;
 }
 
+/* Link Color Change on Hover */
 .nav-links a:hover {
     color: var(--secondary-color);
 }
 
+/* Mobile Menu Toggle Button - Hidden on desktop */
 .mobile-menu-btn {
     display: none;
     background: none;
@@ -107,11 +128,16 @@ nav {
     transition: transform 0.3s ease;
 }
 
+/* Button Press Effect */
 .mobile-menu-btn:active {
     transform: scale(0.9);
 }
 
-/* Hero Section */
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+/* Hero Container - Full viewport height slider */
 .hero {
     position: relative;
     min-height: 75vh;
@@ -122,6 +148,7 @@ nav {
     padding: 4rem 2rem;
 }
 
+/* Individual Hero Slide - Positioned absolutely, hidden by default */
 .hero-slide {
     position: absolute;
     inset: 0;
@@ -136,10 +163,12 @@ nav {
     justify-content: center;
 }
 
+/* Active Slide - Fully visible */
 .hero-slide.active {
     opacity: 1;
 }
 
+/* Gradient Overlay - Blue tint for better text readability */
 .hero-slide::before {
     content: '';
     position: absolute;
@@ -150,9 +179,10 @@ nav {
     background: linear-gradient(135deg, rgba(0, 44, 95, 0.5) 0%, rgba(0, 165, 229, 0.4) 100%);
 }
 
+/* Hero Content Container - Centered text with animation */
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 2; /* Above overlay */
     text-align: center;
     color: var(--white);
     max-width: 800px;
@@ -160,19 +190,25 @@ nav {
     animation: fadeInUp 1s ease;
 }
 
+/* Hero Title - Large heading with text shadow */
 .hero-content h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+/* Hero Subtitle - Smaller text with text shadow */
 .hero-content p {
     font-size: 1.3rem;
     margin-bottom: 2rem;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* Buttons */
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+/* Base Button Styles */
 .btn {
     display: inline-block;
     padding: 0.95rem 2rem;
@@ -185,35 +221,44 @@ nav {
     font-size: 1rem;
 }
 
+/* Primary Button - Solid blue background */
 .btn-primary {
     background: var(--secondary-color);
     color: var(--white);
     box-shadow: var(--shadow);
 }
 
+/* Primary Button Hover - Darker blue with lift effect */
 .btn-primary:hover {
     background: #0088c7;
     transform: translateY(-2px);
 }
 
+/* Secondary Button - Transparent with white border */
 .btn-secondary {
     background: transparent;
     color: var(--white);
     border: 2px solid var(--white);
 }
 
+/* Secondary Button Hover - White background with primary text */
 .btn-secondary:hover {
     background: var(--white);
     color: var(--primary-color);
 }
 
-/* Sections */
+/* ============================================
+   SECTIONS
+   ============================================ */
+
+/* Standard Section Container - Responsive padding with clamp() */
 .section {
     padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 4vw, 3rem);
     max-width: 1400px;
     margin: 0 auto;
 }
 
+/* Section Title - Centered heading */
 .section-title {
     text-align: center;
     font-size: 2.5rem;
@@ -221,6 +266,7 @@ nav {
     color: var(--primary-color);
 }
 
+/* Section Subtitle - Centered descriptive text */
 .section-subtitle {
     text-align: center;
     color: var(--text-light);
@@ -228,7 +274,11 @@ nav {
     font-size: 1.1rem;
 }
 
-/* Featured Models */
+/* ============================================
+   MODEL CARDS GRID
+   ============================================ */
+
+/* Responsive Grid Layout for Model Cards */
 .models-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(305px, 1fr));
@@ -236,6 +286,7 @@ nav {
     margin-top: 3rem;
 }
 
+/* Individual Model Card - Hidden initially for scroll animation */
 .model-card {
     background: var(--white);
     border-radius: 14px;
@@ -246,16 +297,19 @@ nav {
     transform: translateY(30px);
 }
 
+/* Revealed State - Shown when scrolled into view */
 .model-card.reveal {
     opacity: 1;
     transform: translateY(0);
 }
 
+/* Card Hover Effect - Lifts up with larger shadow */
 .model-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
 }
 
+/* Model Card Image */
 .model-card img {
     width: 100%;
     height: 210px;
@@ -263,20 +317,24 @@ nav {
     transition: transform 0.3s ease;
 }
 
+/* Image Zoom Effect on Card Hover */
 .model-card:hover img {
     transform: scale(1.05);
 }
 
+/* Model Card Content Container */
 .model-card-content {
     padding: 1.6rem;
 }
 
+/* Model Card Title */
 .model-card h3 {
     color: var(--primary-color);
     margin-bottom: 0.5rem;
     font-size: 1.5rem;
 }
 
+/* Model Price Display */
 .model-card .price {
     color: var(--secondary-color);
     font-size: 1.2rem;
@@ -284,6 +342,7 @@ nav {
     margin-bottom: 1rem;
 }
 
+/* Category Badge - Pill-shaped label */
 .model-card .category {
     display: inline-block;
     padding: 0.3rem 0.8rem;
@@ -294,11 +353,16 @@ nav {
     margin-bottom: 1rem;
 }
 
-/* Form Elements */
+/* ============================================
+   FORM ELEMENTS
+   ============================================ */
+
+/* Form Group Container */
 .form-group {
     margin-bottom: 1.5rem;
 }
 
+/* Form Label */
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
@@ -306,6 +370,7 @@ nav {
     font-weight: 500;
 }
 
+/* Form Input Fields - Text, Textarea, Select */
 .form-group input,
 .form-group textarea,
 .form-group select {
@@ -317,6 +382,7 @@ nav {
     transition: border-color 0.3s ease;
 }
 
+/* Form Input Focus State - Secondary color border */
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
@@ -324,7 +390,11 @@ nav {
     border-color: var(--secondary-color);
 }
 
-/* Map Placeholder */
+/* ============================================
+   MAP PLACEHOLDER
+   ============================================ */
+
+/* Placeholder for map components */
 .map-placeholder {
     width: 100%;
     height: 400px;
@@ -337,7 +407,11 @@ nav {
     color: var(--text-light);
 }
 
-/* Footer */
+/* ============================================
+   FOOTER
+   ============================================ */
+
+/* Footer Container */
 footer {
     background: var(--primary-color);
     color: var(--white);
@@ -345,6 +419,7 @@ footer {
     margin-top: 5rem;
 }
 
+/* Footer Content Grid - Responsive columns */
 .footer-content {
     max-width: 1400px;
     margin: 0 auto;
@@ -353,11 +428,13 @@ footer {
     gap: 2rem;
 }
 
+/* Footer Section Title */
 .footer-section h3 {
     margin-bottom: 1rem;
     color: var(--secondary-color);
 }
 
+/* Footer Links */
 .footer-section a {
     color: var(--white);
     text-decoration: none;
@@ -366,10 +443,12 @@ footer {
     transition: color 0.3s ease;
 }
 
+/* Footer Link Hover */
 .footer-section a:hover {
     color: var(--secondary-color);
 }
 
+/* Footer Bottom - Copyright section */
 .footer-bottom {
     text-align: center;
     margin-top: 2rem;
@@ -377,7 +456,11 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Animations */
+/* ============================================
+   ANIMATIONS & KEYFRAMES
+   ============================================ */
+
+/* Fade In Animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -387,6 +470,7 @@ footer {
     }
 }
 
+/* Fade In Up Animation - Used for hero content */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -398,6 +482,7 @@ footer {
     }
 }
 
+/* Modal Slide In Animation */
 @keyframes modalSlideIn {
     from {
         opacity: 0;
@@ -409,6 +494,7 @@ footer {
     }
 }
 
+/* Bounce Animation */
 @keyframes bounce {
     0%, 100% {
         transform: translateY(0);
@@ -418,23 +504,27 @@ footer {
     }
 }
 
+/* Zoom Pan Animation - For background images */
 @keyframes zoom-pan {
     0% { transform: scale(1) translate(0, 0); }
     50% { transform: scale(1.1) translate(-1%, -1%); }
     100% { transform: scale(1) translate(0, 0); }
 }
 
+/* Float Animation - Subtle up and down movement */
 @keyframes float {
     0% { transform: translateY(0); }
     50% { transform: translateY(-6px); }
     100% { transform: translateY(0); }
 }
 
+/* Shimmer Animation - Loading effect */
 @keyframes shimmer {
     0% { background-position: -200% 0; }
     100% { background-position: 200% 0; }
 }
 
+/* Accessibility: Disable animations for users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
     * {
         animation: none !important;
@@ -442,7 +532,11 @@ footer {
     }
 }
 
-/* Responsive */
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet Breakpoint (992px and below) */
 @media (max-width: 992px) {
     nav {
         padding: 1rem;
@@ -452,6 +546,7 @@ footer {
         min-height: 70vh;
     }
 
+    /* Adjust grid columns for smaller screens */
     .models-grid,
     .service-cards,
     .offers-grid,
@@ -462,7 +557,9 @@ footer {
     }
 }
 
+/* Mobile Breakpoint (768px and below) */
 @media (max-width: 768px) {
+    /* Mobile Navigation - Hidden off-screen by default */
     .nav-links {
         position: fixed;
         top: 70px;
@@ -477,10 +574,12 @@ footer {
         gap: 1.5rem;
     }
 
+    /* Mobile Navigation - Visible when active */
     .nav-links.active {
         left: 0;
     }
 
+    /* Show mobile menu button on small screens */
     .mobile-menu-btn {
         display: block;
     }
@@ -519,6 +618,7 @@ footer {
         margin-bottom: 1rem;
     }
 
+    /* Timeline adjustments for mobile */
     .timeline::before {
         left: 20px;
     }
@@ -533,6 +633,7 @@ footer {
     }
 }
 
+/* Small Mobile Breakpoint (576px and below) */
 @media (max-width: 576px) {
     nav {
         flex-wrap: wrap;
@@ -547,11 +648,13 @@ footer {
         font-size: 0.95rem;
     }
 
+    /* Full-width buttons on mobile */
     .btn {
         width: 100%;
         text-align: center;
     }
 
+    /* Single column layout on small screens */
     .models-grid,
     .service-cards,
     .offers-grid,

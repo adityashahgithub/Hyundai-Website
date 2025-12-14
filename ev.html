@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hyundai - Electric Vehicles</title>
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/ev.css">
 </head>
 <body>
+    <!-- Header & Navigation -->
     <header>
         <nav>
+            <!-- Logo -->
             <a href="index.html" class="logo">HYUNDAI <span>MOTORS</span></a>
+            <!-- Main Navigation Links -->
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="models.html">Models</a></li>
@@ -23,10 +27,12 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <!-- Mobile Menu Toggle Button -->
             <button class="mobile-menu-btn">☰</button>
         </nav>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero" style="height: 60vh;">
         <div class="hero-slide active" style="background-image: url('images/alcazar.avif')">
             <div class="hero-content">
@@ -36,16 +42,20 @@
         </div>
     </section>
 
+    <!-- Main Content Section -->
     <section class="section">
         <h2 class="section-title">Our Electric Vehicles</h2>
         <p class="section-subtitle">Experience the future of driving</p>
 
+        <!-- EV Technology Progress Section -->
         <div class="ev-progress">
             <div class="ev-progress-header">
                 <h3>EV Technology Progress</h3>
                 <p class="ev-progress-subtitle">Leading innovation in electric mobility</p>
             </div>
+            <!-- Progress Metrics Grid -->
             <div class="ev-progress-grid">
+                <!-- Progress Card 1: Charging Speed -->
                 <div class="ev-progress-card">
                     <div class="progress-icon">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -58,6 +68,7 @@
                     <h4>Charging Speed</h4>
                     <p class="progress-description">Ultra-fast charging capability</p>
                 </div>
+                <!-- Progress Card 2: Range Efficiency -->
                 <div class="ev-progress-card">
                     <div class="progress-icon">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -69,6 +80,7 @@
                     <h4>Range Efficiency</h4>
                     <p class="progress-description">Optimized energy consumption</p>
                 </div>
+                <!-- Progress Card 3: Battery Technology -->
                 <div class="ev-progress-card">
                     <div class="progress-icon">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -81,6 +93,7 @@
                     <h4>Battery Technology</h4>
                     <p class="progress-description">Advanced lithium-ion cells</p>
                 </div>
+                <!-- Progress Card 4: Sustainability -->
                 <div class="ev-progress-card">
                     <div class="progress-icon">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -94,18 +107,22 @@
             </div>
         </div>
 
+        <!-- EV Models Grid - Populated dynamically by JavaScript -->
         <div class="models-grid" id="evModels">
             <!-- EV models will be loaded by JavaScript -->
         </div>
     </section>
 
+    <!-- EV Comparison Section -->
     <section class="section" style="background: var(--bg-light);">
         <h2 class="section-title">EV Comparison</h2>
+        <!-- Comparison Panel - Populated dynamically by JavaScript -->
         <div class="comparison-panel" id="comparisonPanel">
             <!-- Comparison cards will be loaded by JavaScript -->
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -141,6 +158,7 @@
         </div>
     </footer>
 
+    <!-- JavaScript Files -->
     <script src="js/common.js"></script>
     <script src="js/ev.js"></script>
 </body>
