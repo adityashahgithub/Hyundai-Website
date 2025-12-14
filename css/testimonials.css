@@ -1,9 +1,19 @@
+/* ============================================
+   TESTIMONIALS PAGE SPECIFIC STYLES
+   ============================================ */
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+/* Testimonials Hero - Full cover background */
 .hero-testimonials {
     background-size: cover;
     background-position: center;
     position: relative;
 }
 
+/* Hero Overlay - Gradient overlay for better text readability */
 .hero-testimonials::before {
     content: '';
     position: absolute;
@@ -15,6 +25,11 @@
     z-index: 1;
 }
 
+/* ============================================
+   TESTIMONIALS GRID
+   ============================================ */
+
+/* Testimonials Grid - Responsive grid layout */
 .testimonial-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -22,6 +37,7 @@
     margin-top: 3rem;
 }
 
+/* Individual Testimonial Card */
 .testimonial-card {
     background: var(--white);
     border-radius: 16px;
@@ -33,6 +49,7 @@
     overflow: hidden;
 }
 
+/* Decorative Quote Mark - Large quotation mark in background */
 .testimonial-card::before {
     content: '"';
     position: absolute;
@@ -44,21 +61,24 @@
     line-height: 1;
 }
 
+/* Testimonial Card Hover Effect - Lifts up with enhanced shadow */
 .testimonial-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
     border-color: var(--secondary-color);
 }
 
+/* Star Rating Display */
 .testimonial-card .rating {
     color: #f7a928;
     font-size: 1.2rem;
-    letter-spacing: 3px;
+    letter-spacing: 3px; /* Spacing between stars */
     margin-bottom: 1.25rem;
     display: flex;
     gap: 0.2rem;
 }
 
+/* Customer Quote Text */
 .testimonial-card .quote {
     font-style: italic;
     color: var(--text-dark);
@@ -66,9 +86,10 @@
     line-height: 1.7;
     font-size: 1.05rem;
     position: relative;
-    z-index: 1;
+    z-index: 1; /* Above decorative quote mark */
 }
 
+/* Customer Information Container */
 .testimonial-card .customer {
     padding-top: 1.25rem;
     border-top: 1px solid #e8eef5;
@@ -77,6 +98,7 @@
     gap: 1rem;
 }
 
+/* Customer Name */
 .testimonial-card .customer h4 {
     margin-bottom: 0.25rem;
     color: var(--primary-color);
@@ -84,12 +106,18 @@
     font-weight: 600;
 }
 
+/* Customer Vehicle Model */
 .testimonial-card .customer small {
     color: var(--text-light);
     font-size: 0.9rem;
     display: block;
 }
 
+/* ============================================
+   HIGHLIGHT STATISTICS SECTION
+   ============================================ */
+
+/* Highlight Section Container - Gradient background */
 .highlight-section {
     background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
     border-radius: 16px;
@@ -97,6 +125,7 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
+/* Highlight Cards Grid - Responsive grid layout */
 .highlight-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -104,6 +133,7 @@
     margin-top: 2rem;
 }
 
+/* Individual Highlight Card */
 .highlight-card {
     background: var(--white);
     border: 2px solid rgba(0, 44, 95, 0.1);
@@ -115,6 +145,7 @@
     overflow: hidden;
 }
 
+/* Top Border Animation - Gradient line that expands on hover */
 .highlight-card::before {
     content: '';
     position: absolute;
@@ -127,16 +158,19 @@
     transition: transform 0.3s ease;
 }
 
+/* Highlight Card Hover Effect */
 .highlight-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     border-color: var(--secondary-color);
 }
 
+/* Expand top border on hover */
 .highlight-card:hover::before {
     transform: scaleX(1);
 }
 
+/* Highlight Metric Value - Gradient text effect */
 .highlight-card h3 {
     font-size: 2.5rem;
     color: var(--primary-color);
@@ -148,6 +182,7 @@
     background-clip: text;
 }
 
+/* Highlight Description */
 .highlight-card p {
     color: var(--text-light);
     font-size: 0.95rem;
@@ -155,6 +190,11 @@
     margin: 0;
 }
 
+/* ============================================
+   VIDEO PANEL SECTION
+   ============================================ */
+
+/* Video Panel Container - Two-column grid layout */
 .video-panel {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -162,6 +202,7 @@
     align-items: center;
 }
 
+/* Video Placeholder - Dark gradient background with animated pulse */
 .video-placeholder {
     background: linear-gradient(135deg, #0b203f 0%, #1a3a5a 100%);
     color: var(--white);
@@ -178,6 +219,7 @@
     overflow: hidden;
 }
 
+/* Animated Background Pulse Effect */
 .video-placeholder::before {
     content: '';
     position: absolute;
@@ -189,21 +231,24 @@
     animation: pulse 3s ease-in-out infinite;
 }
 
+/* Video Placeholder Title */
 .video-placeholder p {
     font-size: 1.5rem;
     font-weight: 600;
     margin: 0;
     position: relative;
-    z-index: 1;
+    z-index: 1; /* Above animated background */
 }
 
+/* Video Placeholder Subtitle */
 .video-placeholder small {
     color: rgba(255, 255, 255, 0.8);
     font-size: 0.95rem;
     position: relative;
-    z-index: 1;
+    z-index: 1; /* Above animated background */
 }
 
+/* Pulse Animation Keyframes - Breathing effect */
 @keyframes pulse {
     0%, 100% {
         transform: scale(1);
@@ -215,6 +260,7 @@
     }
 }
 
+/* Service Features Section Title */
 .video-panel > div:last-child h3 {
     color: var(--primary-color);
     font-size: 1.8rem;
@@ -222,13 +268,15 @@
     font-weight: 600;
 }
 
+/* Service Features List */
 .video-panel ul {
     margin: 1.5rem 0 2rem;
     padding-left: 1.5rem;
     color: var(--text-dark);
-    list-style: none;
+    list-style: none; /* Remove default bullets */
 }
 
+/* Service Feature List Item */
 .video-panel li {
     margin-bottom: 0.75rem;
     padding-left: 1.5rem;
@@ -236,6 +284,7 @@
     line-height: 1.7;
 }
 
+/* Custom Checkmark Bullet */
 .video-panel li::before {
     content: '✓';
     position: absolute;
@@ -245,7 +294,9 @@
     font-size: 1.2rem;
 }
 
-/* Responsive Design */
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
 @media (max-width: 968px) {
     .testimonial-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -274,7 +325,9 @@
     }
 }
 
+/* Mobile Breakpoint (768px and below) */
 @media (max-width: 768px) {
+    /* Single column layout for testimonials */
     .testimonial-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -284,16 +337,19 @@
         padding: 2rem 1.5rem;
     }
 
+    /* Smaller decorative quote mark */
     .testimonial-card::before {
         font-size: 3rem;
         top: 0.5rem;
         left: 1rem;
     }
 
+    /* Reduced highlight section padding */
     .highlight-section {
         padding: 2rem 1.5rem;
     }
 
+    /* Single column for highlight cards */
     .highlight-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -303,35 +359,43 @@
         padding: 2rem;
     }
 
+    /* Stack video panel vertically */
     .video-panel {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
 
+    /* Smaller video placeholder */
     .video-placeholder {
         min-height: 240px;
         padding: 2rem 1.5rem;
     }
 
+    /* Smaller section title */
     .video-panel > div:last-child h3 {
         font-size: 1.5rem;
     }
 }
 
+/* Small Mobile Breakpoint (480px and below) */
 @media (max-width: 480px) {
+    /* Minimal padding for testimonial cards */
     .testimonial-card {
         padding: 1.5rem;
     }
 
+    /* Smaller quote text */
     .testimonial-card .quote {
         font-size: 1rem;
     }
 
+    /* Smaller rating stars */
     .testimonial-card .rating {
         font-size: 1rem;
         letter-spacing: 2px;
     }
 
+    /* Smaller highlight metrics */
     .highlight-card h3 {
         font-size: 1.75rem;
     }
@@ -340,6 +404,7 @@
         font-size: 0.9rem;
     }
 
+    /* Compact video placeholder */
     .video-placeholder {
         min-height: 200px;
         padding: 1.5rem;
@@ -349,6 +414,7 @@
         font-size: 1.2rem;
     }
 
+    /* Reduced list padding */
     .video-panel ul {
         padding-left: 1rem;
     }
