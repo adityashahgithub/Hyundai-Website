@@ -22,6 +22,42 @@
     color: var(--secondary-color);
 }
 
+/* Contact Links - Clickable phone and email */
+.contact-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.contact-link:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* Quick Action Buttons */
+.quick-actions {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid #e8eef5;
+}
+
+/* Action Button - Distinct color for call/email actions */
+.btn-action {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    color: var(--white);
+    border: none;
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-action:hover {
+    background: linear-gradient(135deg, #229954, #27ae60);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(39, 174, 96, 0.4);
+    color: var(--white);
+}
+
 /* Form Styling */
 .contact-grid > div:last-child {
     background: var(--white);
@@ -54,6 +90,24 @@
     color: var(--text-dark);
     font-weight: 600;
     font-size: 0.95rem;
+}
+
+/* Required Field Indicator - Asterisk using ::after */
+.form-group:has(input[required]) label::after,
+.form-group:has(select[required]) label::after,
+.form-group:has(textarea[required]) label::after {
+    content: ' *';
+    color: #e74c3c;
+    font-weight: 700;
+    margin-left: 0.25rem;
+}
+
+/* Fallback for browsers that don't support :has() - using JavaScript will add class */
+.form-group.required-field label::after {
+    content: ' *';
+    color: #e74c3c;
+    font-weight: 700;
+    margin-left: 0.25rem;
 }
 
 .form-group input,
@@ -260,6 +314,16 @@
 
     .contact-item .icon {
         font-size: 1.75rem;
+    }
+
+    .quick-actions {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+    }
+
+    .quick-actions .btn {
+        font-size: 0.95rem;
+        padding: 0.875rem 1rem;
     }
 
     .contact-grid > div:last-child {

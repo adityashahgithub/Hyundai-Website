@@ -86,7 +86,8 @@ function renderDealers(list) {
             </div>
             <!-- Dealer Action Buttons -->
             <div class="dealer-actions">
-                <a href="contact.html" class="btn btn-primary">Contact</a>
+                <!-- Contact Button - Opens phone dialer on mobile -->
+                <a href="tel:${dealer.phone.replace(/\s/g, '')}" class="btn btn-primary">Contact</a>
                 <!-- Direct Call Link -->
                 <a href="tel:${dealer.phone.replace(/\s/g, '')}" class="btn btn-secondary">Call Now</a>
             </div>

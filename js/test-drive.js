@@ -340,6 +340,15 @@ function closeConfirmationModal() {
 
 // Initialize when DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Automatically add 'required-field' class to form groups with required inputs
+    // This ensures the asterisk appears even in browsers that don't support :has()
+    const formGroups = document.querySelectorAll('.form-group');
+    formGroups.forEach(group => {
+        const hasRequired = group.querySelector('input[required], select[required], textarea[required]');
+        if (hasRequired) {
+            group.classList.add('required-field');
+        }
+    });
     // Load car models for selection
     loadModels();
     

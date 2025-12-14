@@ -8,6 +8,16 @@ document.addEventListener('DOMContentLoaded', function() {
         message: document.getElementById('contactMessage')
     };
 
+    // Automatically add 'required-field' class to form groups with required inputs
+    // This ensures the asterisk appears even in browsers that don't support :has()
+    const formGroups = document.querySelectorAll('.form-group');
+    formGroups.forEach(group => {
+        const hasRequired = group.querySelector('input[required], select[required], textarea[required]');
+        if (hasRequired) {
+            group.classList.add('required-field');
+        }
+    });
+
     // Create success message element
     const successMessage = document.createElement('div');
     successMessage.className = 'success-message';

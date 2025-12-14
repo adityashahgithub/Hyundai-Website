@@ -85,9 +85,22 @@
     font-size: 0.95rem;
 }
 
-/* Required Field Indicator - Red asterisk */
-.required {
+/* Required Field Indicator - Asterisk using ::after */
+.form-group:has(input[required]) label::after,
+.form-group:has(select[required]) label::after,
+.form-group:has(textarea[required]) label::after {
+    content: ' *';
     color: #e74c3c;
+    font-weight: 700;
+    margin-left: 0.25rem;
+}
+
+/* Fallback for browsers that don't support :has() - using JavaScript will add class */
+.form-group.required-field label::after {
+    content: ' *';
+    color: #e74c3c;
+    font-weight: 700;
+    margin-left: 0.25rem;
 }
 
 /* Form Input Fields - Text, Select, Textarea */

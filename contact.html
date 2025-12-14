@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hyundai - Contact Us</title>
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
+    <!-- Header & Navigation -->
     <header>
         <nav>
+            <!-- Logo -->
             <a href="index.html" class="logo">HYUNDAI <span>MOTORS</span></a>
+            <!-- Main Navigation Links -->
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="models.html">Models</a></li>
@@ -23,10 +27,12 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <!-- Mobile Menu Toggle Button -->
             <button class="mobile-menu-btn">☰</button>
         </nav>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero" style="height: 50vh;">
         <div class="hero-slide active" style="background-image: url('images/alcazar.avif')">
             <div class="hero-content">
@@ -36,25 +42,32 @@
         </div>
     </section>
 
+    <!-- Main Content Section -->
     <section class="section">
         <div class="contact-grid">
+            <!-- Contact Information Section -->
             <div class="contact-info">
+                <!-- Phone Contact Item -->
                 <div class="contact-item">
                     <div class="icon">📞</div>
                     <div>
                         <h3>Phone</h3>
-                        <p>Customer Care: 1800-11-4645</p>
-                        <p>Service: 1800-11-4646</p>
+                        <!-- Clickable Phone Links - Opens dialer on mobile -->
+                        <p>Customer Care: <a href="tel:1800114645" class="contact-link">1800-11-4645</a></p>
+                        <p>Service: <a href="tel:1800114646" class="contact-link">1800-11-4646</a></p>
                     </div>
                 </div>
+                <!-- Email Contact Item -->
                 <div class="contact-item">
                     <div class="icon">✉️</div>
                     <div>
                         <h3>Email</h3>
-                        <p>info@hyundai.in</p>
-                        <p>support@hyundai.in</p>
+                        <!-- Clickable Email Links - Opens email client -->
+                        <p><a href="mailto:info@hyundai.in" class="contact-link">info@hyundai.in</a></p>
+                        <p><a href="mailto:support@hyundai.in" class="contact-link">support@hyundai.in</a></p>
                     </div>
                 </div>
+                <!-- Address Contact Item -->
                 <div class="contact-item">
                     <div class="icon">📍</div>
                     <div>
@@ -64,6 +77,7 @@
                         <p>Nadiad, Gujarat - 387001, India</p>
                     </div>
                 </div>
+                <!-- Business Hours Contact Item -->
                 <div class="contact-item">
                     <div class="icon">🕒</div>
                     <div>
@@ -72,28 +86,39 @@
                         <p>Sunday: 10:00 AM - 6:00 PM</p>
                     </div>
                 </div>
+                
+                <!-- Quick Action Buttons -->
+                <div class="quick-actions">
+                    <a href="tel:1800114645" class="btn btn-action" style="width: 100%; margin-bottom: 0.75rem;">
+                        📞 Call Customer Care
+                    </a>
+                    <a href="mailto:info@hyundai.in" class="btn btn-primary" style="width: 100%;">
+                        ✉️ Send Email
+                    </a>
+                </div>
             </div>
 
+            <!-- Contact Form Section -->
             <div>
                 <h2 style="margin-bottom: 2rem;">Send Us a Message</h2>
                 <form id="contactForm">
                     <div class="form-group">
-                        <label for="contactName">Full Name <span style="color: #e74c3c;">*</span></label>
+                        <label for="contactName">Full Name</label>
                         <input type="text" id="contactName" name="name" placeholder="Enter your full name" required>
                         <span class="error-message"></span>
                     </div>
                     <div class="form-group">
-                        <label for="contactEmail">Email Address <span style="color: #e74c3c;">*</span></label>
-                        <input type="email" id="contactEmail" name="email" placeholder="your.email@example.com" required>
+                        <label for="contactEmail">Email Address</label>
+                        <input type="email" id="contactEmail" name="email" placeholder="Enter your email" required>
                         <span class="error-message"></span>
                     </div>
                     <div class="form-group">
-                        <label for="contactPhone">Phone Number <span style="color: #e74c3c;">*</span></label>
-                        <input type="tel" id="contactPhone" name="phone" placeholder="+91 98765 43210" required>
+                        <label for="contactPhone">Phone Number</label>
+                        <input type="tel" id="contactPhone" name="phone" placeholder="Enter your phone number" required>
                         <span class="error-message"></span>
                     </div>
                     <div class="form-group">
-                        <label for="contactSubject">Subject <span style="color: #e74c3c;">*</span></label>
+                        <label for="contactSubject">Subject</label>
                         <select id="contactSubject" name="subject" required>
                             <option value="">Select Subject</option>
                             <option value="sales">Sales Inquiry</option>
@@ -105,7 +130,7 @@
                         <span class="error-message"></span>
                     </div>
                     <div class="form-group">
-                        <label for="contactMessage">Message <span style="color: #e74c3c;">*</span></label>
+                        <label for="contactMessage">Message</label>
                         <textarea id="contactMessage" name="message" rows="5" placeholder="Enter your message here..." required></textarea>
                         <span class="error-message"></span>
                     </div>
@@ -114,6 +139,7 @@
             </div>
         </div>
 
+        <!-- Map Section - Showroom and Service Center Locations -->
         <div class="map-section" style="margin-top: 4rem;">
             <h2 class="section-title">Find Us in Nadiad, Gujarat</h2>
             <p class="section-subtitle">Visit Downtown Hyundai Nadiad - Showroom & Service Center</p>
@@ -135,17 +161,26 @@
                     <h3>Downtown Hyundai Nadiad - Showroom</h3>
                     <p>Nadiad, Kheda District, Gujarat - 387001, India</p>
                     <div class="map-details">
-                        <p><strong>📞 Phone:</strong> +91 2696 223456</p>
-                        <p><strong>📧 Email:</strong> nadiad@hyundai.in</p>
+                        <!-- Clickable Phone Link -->
+                        <p><strong>📞 Phone:</strong> <a href="tel:+912696223456" class="contact-link">+91 2696 223456</a></p>
+                        <!-- Clickable Email Link -->
+                        <p><strong>📧 Email:</strong> <a href="mailto:nadiad@hyundai.in" class="contact-link">nadiad@hyundai.in</a></p>
                         <p><strong>🕒 Hours:</strong> Mon-Sat: 9:00 AM - 7:00 PM, Sun: 10:00 AM - 6:00 PM</p>
                         <p><strong>🚗 Services:</strong> New Car Sales, Test Drives, Finance, Insurance</p>
                     </div>
-                    <a href="https://www.google.com/maps/dir/?api=1&destination=Downtown+hyundai+nadiad,+Nadiad,+Gujarat+387001" 
-                       target="_blank" 
-                       class="btn btn-primary" 
-                       style="margin-top: 1rem; display: inline-block;">
-                        Get Directions to Showroom
-                    </a>
+                    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem;">
+                        <a href="tel:+912696223456" 
+                           class="btn btn-action" 
+                           style="flex: 1; min-width: 140px;">
+                            📞 Call Showroom
+                        </a>
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=Downtown+hyundai+nadiad,+Nadiad,+Gujarat+387001" 
+                           target="_blank" 
+                           class="btn btn-primary" 
+                           style="flex: 1; min-width: 140px;">
+                            🗺️ Get Directions
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -166,22 +201,32 @@
                     <h3>Hyundai Service - Downtown Hyundai</h3>
                     <p>Nadiad, Kheda District, Gujarat - 387001, India</p>
                     <div class="map-details">
-                        <p><strong>📞 Phone:</strong> +91 2696 223456</p>
-                        <p><strong>📧 Email:</strong> service.nadiad@hyundai.in</p>
+                        <!-- Clickable Phone Link -->
+                        <p><strong>📞 Phone:</strong> <a href="tel:+912696223456" class="contact-link">+91 2696 223456</a></p>
+                        <!-- Clickable Email Link -->
+                        <p><strong>📧 Email:</strong> <a href="mailto:service.nadiad@hyundai.in" class="contact-link">service.nadiad@hyundai.in</a></p>
                         <p><strong>🕒 Hours:</strong> Mon-Sat: 9:00 AM - 7:00 PM, Sun: 10:00 AM - 6:00 PM</p>
                         <p><strong>🔧 Services:</strong> Vehicle Service, Repairs, Spare Parts, Warranty Claims</p>
                     </div>
-                    <a href="https://www.google.com/maps/dir/?api=1&destination=Hyundai+Service-Downtown+Hyundai,+Nadiad,+Gujarat+387001" 
-                       target="_blank" 
-                       class="btn btn-primary" 
-                       style="margin-top: 1rem; display: inline-block;">
-                        Get Directions to Service Center
-                    </a>
+                    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem;">
+                        <a href="tel:+912696223456" 
+                           class="btn btn-action" 
+                           style="flex: 1; min-width: 140px;">
+                            📞 Call Service Center
+                        </a>
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=Hyundai+Service-Downtown+Hyundai,+Nadiad,+Gujarat+387001" 
+                           target="_blank" 
+                           class="btn btn-primary" 
+                           style="flex: 1; min-width: 140px;">
+                            🗺️ Get Directions
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -217,6 +262,7 @@
         </div>
     </footer>
 
+    <!-- JavaScript Files -->
     <script src="js/common.js"></script>
     <script src="js/contact.js"></script>
 </body>
