@@ -1,0 +1,25 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f0f0f0"/>
+  
+  <!-- Border -->
+  <rect x="10" y="10" width="780" height="580" fill="none" stroke="#ddd" stroke-width="2" stroke-dasharray="10,5"/>
+  
+  <!-- Icon/Illustration -->
+  <g transform="translate(400, 250)">
+    <!-- Broken Image Icon -->
+    <rect x="-80" y="-60" width="160" height="120" fill="#e0e0e0" stroke="#999" stroke-width="2" rx="4"/>
+    <line x1="-60" y1="-40" x2="60" y2="40" stroke="#999" stroke-width="3"/>
+    <line x1="60" y1="-40" x2="-60" y2="40" stroke="#999" stroke-width="3"/>
+    
+    <!-- Mountain peaks (broken image symbol) -->
+    <polygon points="-40,-20 -20,-40 0,-20" fill="#bbb" opacity="0.5"/>
+    <polygon points="0,-20 20,-40 40,-20" fill="#bbb" opacity="0.5"/>
+  </g>
+  
+  <!-- Error Text -->
+  <text x="400" y="380" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#666" text-anchor="middle">404</text>
+  <text x="400" y="420" font-family="Arial, sans-serif" font-size="20" fill="#999" text-anchor="middle">Image Not Found</text>
+  <text x="400" y="450" font-family="Arial, sans-serif" font-size="16" fill="#aaa" text-anchor="middle">Unable to load image</text>
+</svg>
+

@@ -25,7 +25,7 @@ async function loadEVModels() {
         if (container) {
             container.innerHTML = evCars.map(car => `
                 <div class="model-card">
-                    <img src="${car.image}" alt="${car.name}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800';">
+                    <img src="${car.image}" alt="${car.name}" onerror="this.onerror=null; this.src='images/404error.svg';">
                     <div class="model-card-content">
                         <h3>${car.name}</h3>
                         <span class="category">${car.category}</span>

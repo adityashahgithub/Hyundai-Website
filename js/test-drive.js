@@ -30,7 +30,7 @@ async function loadModels() {
         if (container) {
             container.innerHTML = data.cars.map(car => `
                 <div class="model-card-select" data-model-id="${car.id}" data-model-name="${car.name}">
-                    <img src="${car.image}" alt="${car.name}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800';">
+                    <img src="${car.image}" alt="${car.name}" onerror="this.onerror=null; this.src='images/404error.svg';">
                     <h4>${car.name}</h4>
                     <span class="model-category">${car.category}</span>
                 </div>

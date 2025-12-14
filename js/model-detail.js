@@ -39,7 +39,7 @@ function displayCarDetails(car) {
         // Fallback if image fails to load
         const img = new Image();
         img.onerror = function() {
-            hero.style.backgroundImage = "url('https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=1200')";
+            hero.style.backgroundImage = "url('images/404error.svg')";
         };
         img.src = car.heroImage;
     }

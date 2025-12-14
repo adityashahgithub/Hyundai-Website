@@ -127,6 +127,31 @@
         ]
       },
       {
+        "id": "grandi10",
+        "name": "Grand i10 Nios",
+        "category": "Hatchback",
+        "price": "₹5.92 – 8.56 Lakh",
+        "image": "images/i10.avif",
+        "heroImage": "images/i10.avif",
+        "description": "Grand i10 Nios is the urban hatch with projector headlamps, connected car tech, and factory CNG option.",
+        "specs": {
+          "engine": "1.2L Petrol / 1.2L Bi-Fuel CNG",
+          "power": "83 PS / 69 PS (CNG)",
+          "torque": "114 Nm / 95 Nm",
+          "transmission": "5MT / 5AMT",
+          "mileage": "20.7 kmpl (Petrol) / 27.0 km/kg (CNG)",
+          "seating": "5",
+          "fuel": "Petrol / CNG"
+        },
+        "features": [
+          "8-inch Touchscreen",
+          "Rear AC Vents",
+          "Wireless Charger",
+          "Projector Fog Lamps",
+          "Connected Car Tech"
+        ]
+      },
+      {
         "id": "i20",
         "name": "i20",
         "category": "Hatchback",
@@ -281,8 +306,8 @@
         "name": "IONIQ 5",
         "category": "EV",
         "price": "₹45.95 Lakh",
-        "image": "images/ioniq5.jpg",
-        "heroImage": "images/ioniq5.jpg",
+        "image": "images/ioniq5_ev.avif",
+        "heroImage": "images/ioniq5_ev.avif",
         "description": "Built on E-GMP, IONIQ 5 brings 631 km ARAI range, 800V charging, and Vehicle-to-Load functionality.",
         "specs": {
           "engine": "Electric Motor (72.6 kWh Battery)",
@@ -300,82 +325,6 @@
           "12.3-inch Dual Displays",
           "AR Head-Up Display",
           "Solar Roof Panel"
-        ]
-      },
-      {
-        "id": "kona",
-        "name": "Kona Electric",
-        "category": "EV",
-        "price": "₹23.84 Lakh",
-        "image": "images/kona.avif",
-        "heroImage": "images/kona.avif",
-        "description": "Kona Electric delivers 452 km ARAI range, paddle-controlled regenerative braking, and Level-2 charging support.",
-        "specs": {
-          "engine": "136 PS Permanent Magnet Motor",
-          "power": "136 PS",
-          "torque": "395 Nm",
-          "transmission": "Single Speed",
-          "range": "452 km (ARAI)",
-          "charging": "57 min (0-80% / 50 kW DC)",
-          "seating": "5",
-          "fuel": "Electric"
-        },
-        "features": [
-          "Paddle Regen Control",
-          "Wireless Charger",
-          "Connected Car Tech",
-          "Heated & Ventilated Seats",
-          "Smart Eco Pedal Guide"
-        ]
-      },
-      {
-        "id": "tucson",
-        "name": "Tucson",
-        "category": "SUV",
-        "price": "₹27.70 – 34.39 Lakh",
-        "image": "images/tucson.avif",
-        "heroImage": "images/tucson.avif",
-        "description": "Tucson packs ADAS, 10.25-inch infotainment, HTRAC AWD, and diesel 8-speed AT for a flagship experience.",
-        "specs": {
-          "engine": "2.0L Petrol / 2.0L Diesel",
-          "power": "155 PS / 186 PS",
-          "torque": "192 Nm / 416 Nm",
-          "transmission": "6AT (Petrol) / 8AT (Diesel)",
-          "mileage": "13.0 kmpl (Petrol) / 16.5 kmpl (Diesel)",
-          "seating": "5",
-          "fuel": "Petrol / Diesel"
-        },
-        "features": [
-          "ADAS Level 2",
-          "HTRAC AWD (Diesel)",
-          "Dual-Zone Climate",
-          "360° Camera",
-          "Remote Smart Parking Assist"
-        ]
-      },
-      {
-        "id": "grandi10",
-        "name": "Grand i10 Nios",
-        "category": "Hatchback",
-        "price": "₹5.92 – 8.56 Lakh",
-        "image": "images/grand_i10.avif",
-        "heroImage": "images/grand_i10.avif",
-        "description": "Grand i10 Nios is the urban hatch with projector headlamps, connected car tech, and factory CNG option.",
-        "specs": {
-          "engine": "1.2L Petrol / 1.2L Bi-Fuel CNG",
-          "power": "83 PS / 69 PS (CNG)",
-          "torque": "114 Nm / 95 Nm",
-          "transmission": "5MT / 5AMT",
-          "mileage": "20.7 kmpl (Petrol) / 27.0 km/kg (CNG)",
-          "seating": "5",
-          "fuel": "Petrol / CNG"
-        },
-        "features": [
-          "8-inch Touchscreen",
-          "Rear AC Vents",
-          "Wireless Charger",
-          "Projector Fog Lamps",
-          "Connected Car Tech"
         ]
       }
     ]
