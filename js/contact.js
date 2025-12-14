@@ -71,11 +71,15 @@ document.addEventListener('DOMContentLoaded', function() {
     /**
      * Validate phone field
      * @param {string} phone - Phone number to validate
-     * @returns {boolean} True if valid (10-15 digits with formatting)
+     * @returns {boolean} True if valid (10-15 digits, optional country code)
      */
     function validatePhone(phone) {
-        const phoneRegex = /^[\d\s\-\+\(\)]{10,15}$/;
-        return phoneRegex.test(phone.replace(/\s/g, ''));
+        const trimmed = phone.trim();
+        // Remove common separators but keep leading + if present
+        const cleaned = trimmed.replace(/[\s\-().]/g, '');
+        const digits = cleaned.startsWith('+') ? cleaned.slice(1) : cleaned;
+        const onlyDigits = /^\+?\d+$/.test(cleaned);
+        return onlyDigits && digits.length >= 10 && digits.length <= 15;
     }
 
     /**
@@ -198,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (!value) {
                     showError(fieldName, 'Phone number is required');
                 } else if (!validatePhone(value)) {
-                    showError(fieldName, 'Please enter a valid phone number (10-15 digits)');
+                    showError(fieldName, 'Enter 10-15 digits (country code optional, e.g., +91 98765 43210)');
                 } else {
                     showSuccess(fieldName);
                 }

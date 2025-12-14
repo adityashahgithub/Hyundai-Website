@@ -144,6 +144,24 @@ function formatTime(timeString) {
 }
 
 /* ============================================
+   PHONE VALIDATION
+   ============================================ */
+
+/**
+ * Validate phone numbers allowing optional country code
+ * Accepts 10-15 digits after removing separators
+ * @param {string} phone - Phone number to validate
+ * @returns {boolean} True if valid
+ */
+function validatePhoneNumber(phone) {
+    const trimmed = phone.trim();
+    const cleaned = trimmed.replace(/[\s\-().]/g, '');
+    const digits = cleaned.startsWith('+') ? cleaned.slice(1) : cleaned;
+    const onlyDigits = /^\+?\d+$/.test(cleaned);
+    return onlyDigits && digits.length >= 10 && digits.length <= 15;
+}
+
+/* ============================================
    FORM EVENT LISTENERS
    ============================================ */
 
@@ -222,6 +240,25 @@ function initializeFormListeners() {
 function handleFormSubmission() {
     const form = document.getElementById('testDriveForm');
     const formData = new FormData(form);
+
+    const phoneValue = (formData.get('phone') || '').trim();
+    const altPhoneValue = (formData.get('alternatePhone') || '').trim();
+
+    // Validate primary phone
+    if (!validatePhoneNumber(phoneValue)) {
+        alert('Please enter a valid phone number (10-15 digits, country code optional e.g., +91 98765 43210).');
+        const phoneField = form.querySelector('#phone');
+        if (phoneField) phoneField.focus();
+        return;
+    }
+
+    // Validate alternate phone if provided
+    if (altPhoneValue && !validatePhoneNumber(altPhoneValue)) {
+        alert('Alternate phone must be 10-15 digits (country code optional).');
+        const altField = form.querySelector('#alternatePhone');
+        if (altField) altField.focus();
+        return;
+    }
     
     // Get selected model name from the selected card
     const selectedModelCard = document.querySelector('.model-card-select.selected');
@@ -236,8 +273,8 @@ function handleFormSubmission() {
         model: modelName,
         fullName: formData.get('fullName'),
         email: formData.get('email'),
-        phone: formData.get('phone'),
-        alternatePhone: formData.get('alternatePhone') || 'N/A',
+        phone: phoneValue,
+        alternatePhone: altPhoneValue || 'N/A',
         date: formatDate(formData.get('testDriveDate')), // Format date
         time: formatTime(formData.get('testDriveTime')), // Format time
         location: serviceCenterName,

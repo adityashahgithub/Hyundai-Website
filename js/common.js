@@ -16,6 +16,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelector('.nav-links');
     const header = document.querySelector('header');
 
+    // Create back-to-top button
+    const backToTop = document.createElement('button');
+    backToTop.className = 'back-to-top';
+    backToTop.setAttribute('aria-label', 'Back to top');
+    backToTop.textContent = '↑';
+    document.body.appendChild(backToTop);
+
+    const toggleBackToTop = () => {
+        if (window.scrollY > 400) {
+            backToTop.classList.add('show');
+        } else {
+            backToTop.classList.remove('show');
+        }
+    };
+
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
     // Set active navigation link based on current page
     const setActiveNavLink = () => {
         const pathname = window.location.pathname;
@@ -70,10 +89,14 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // Listen for scroll events and update header state
-    window.addEventListener('scroll', toggleHeaderState);
+    window.addEventListener('scroll', () => {
+        toggleHeaderState();
+        toggleBackToTop();
+    });
     
     // Check initial scroll position on page load
     toggleHeaderState();
+    toggleBackToTop();
 });
 
 /* ============================================
