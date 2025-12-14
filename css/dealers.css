@@ -1,28 +1,40 @@
+/* ============================================
+   DEALERS PAGE SPECIFIC STYLES
+   ============================================ */
+
+/* ============================================
+   SEARCH BAR
+   ============================================ */
+
+/* Search Bar Container - Centered with max-width */
 .search-bar {
     max-width: 600px;
     margin: 2rem auto;
     position: relative;
 }
 
+/* Search Input Field */
 .search-bar input {
     width: 100%;
-    padding: 1rem 3rem 1rem 1rem;
+    padding: 1rem 3rem 1rem 1rem; /* Extra right padding for button */
     border: 2px solid #e0e0e0;
-    border-radius: 30px;
+    border-radius: 30px; /* Rounded pill shape */
     font-size: 1rem;
 }
 
+/* Search Input Focus State - Secondary color border with shadow */
 .search-bar input:focus {
     outline: none;
     border-color: var(--secondary-color);
     box-shadow: 0 0 0 3px rgba(0, 165, 229, 0.15);
 }
 
+/* Search Button - Positioned inside input on the right */
 .search-bar button {
     position: absolute;
     right: 10px;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%); /* Vertically centered */
     background: var(--secondary-color);
     border: none;
     padding: 0.5rem 1rem;
@@ -31,6 +43,11 @@
     cursor: pointer;
 }
 
+/* ============================================
+   DEALERS LIST
+   ============================================ */
+
+/* Dealers Grid - Responsive grid layout */
 .dealers-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -38,6 +55,7 @@
     margin-top: 3rem;
 }
 
+/* Individual Dealer Card */
 .dealer-card {
     background: var(--white);
     padding: 2rem;
@@ -49,11 +67,13 @@
     gap: 1rem;
 }
 
+/* Dealer Card Hover Effect - Lifts up with enhanced shadow */
 .dealer-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
+/* Dealer Card Header - Name and state badge */
 .dealer-header {
     display: flex;
     justify-content: space-between;
@@ -63,6 +83,7 @@
     border-bottom: 2px solid #e8eef5;
 }
 
+/* Dealer Name */
 .dealer-header h3 {
     color: var(--primary-color);
     font-size: 1.3rem;
@@ -70,6 +91,7 @@
     flex: 1;
 }
 
+/* State Badge - Gradient background badge */
 .dealer-badge {
     background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
     color: var(--white);
@@ -81,6 +103,7 @@
     letter-spacing: 0.5px;
 }
 
+/* Dealer Information Container */
 .dealer-info {
     display: flex;
     flex-direction: column;
@@ -88,12 +111,14 @@
     flex: 1;
 }
 
+/* Dealer Address */
 .dealer-address {
     color: var(--text-dark);
     line-height: 1.6;
     margin: 0;
 }
 
+/* Dealer Details Grid - Two-column layout for details */
 .dealer-details {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -101,29 +126,34 @@
     font-size: 0.95rem;
 }
 
+/* Dealer Contact Information */
 .dealer-contact {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
+/* Contact Links - Clickable phone/email */
 .dealer-contact a {
     color: var(--secondary-color);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
+/* Contact Link Hover Effect */
 .dealer-contact a:hover {
     color: var(--primary-color);
     text-decoration: underline;
 }
 
+/* Dealer Hours */
 .dealer-hours {
     color: var(--text-light);
     font-size: 0.9rem;
     margin: 0;
 }
 
+/* Dealer Action Buttons Container */
 .dealer-actions {
     display: flex;
     gap: 0.75rem;
@@ -132,6 +162,7 @@
     border-top: 1px solid #e8eef5;
 }
 
+/* Dealer Action Buttons */
 .dealer-actions .btn {
     flex: 1;
     text-align: center;
@@ -139,15 +170,23 @@
     font-size: 0.9rem;
 }
 
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Mobile Breakpoint (768px and below) */
 @media (max-width: 768px) {
+    /* Reduced padding on mobile */
     .dealer-card {
         padding: 1.5rem;
     }
 
+    /* Single column layout for dealer details */
     .dealer-details {
         grid-template-columns: 1fr;
     }
 
+    /* Stack action buttons vertically */
     .dealer-actions {
         flex-direction: column;
     }
