@@ -1,3 +1,12 @@
+/* ============================================
+   SERVICES PAGE SPECIFIC STYLES
+   ============================================ */
+
+/* ============================================
+   SERVICE CARDS
+   ============================================ */
+
+/* Service Cards Grid - Responsive layout */
 .service-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -5,6 +14,7 @@
     margin-top: 3rem;
 }
 
+/* Individual Service Card */
 .service-card {
     background: var(--white);
     padding: 3rem 2.5rem;
@@ -17,6 +27,7 @@
     overflow: hidden;
 }
 
+/* Top Accent Bar - Animated gradient line on hover */
 .service-card::before {
     content: '';
     position: absolute;
@@ -30,16 +41,19 @@
     transition: transform 0.4s ease;
 }
 
+/* Card Hover Effect - Lifts up with enhanced shadow */
 .service-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 32px rgba(0, 44, 95, 0.15);
     border-color: var(--secondary-color);
 }
 
+/* Top Bar Expands on Hover */
 .service-card:hover::before {
     transform: scaleX(1);
 }
 
+/* Service Icon Container - Gradient background */
 .service-icon-wrapper {
     width: 72px;
     height: 72px;
@@ -53,12 +67,14 @@
     border: 1px solid #e0eef5;
 }
 
+/* Icon Container Hover - Gradient background with rotation */
 .service-card:hover .service-icon-wrapper {
     background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
     transform: scale(1.05) rotate(5deg);
     border-color: transparent;
 }
 
+/* SVG Icon Styling */
 .service-icon {
     width: 36px;
     height: 36px;
@@ -66,11 +82,13 @@
     transition: all 0.4s ease;
 }
 
+/* Icon Color Change on Card Hover */
 .service-card:hover .service-icon {
     color: var(--white);
     transform: scale(1.1);
 }
 
+/* Service Card Title */
 .service-card h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
@@ -80,6 +98,7 @@
     letter-spacing: -0.01em;
 }
 
+/* Service Card Description */
 .service-card p {
     color: var(--text-light);
     line-height: 1.7;
@@ -87,6 +106,7 @@
     margin-bottom: 1.5rem;
 }
 
+/* Learn More Link - Hidden by default, appears on hover */
 .service-link {
     color: var(--secondary-color);
     font-weight: 600;
@@ -101,22 +121,30 @@
     text-decoration: none;
 }
 
+/* Link Appears on Card Hover */
 .service-card:hover .service-link {
     opacity: 1;
     transform: translateX(0);
 }
 
+/* Link Hover Effect - Gap increases */
 .service-link:hover {
     color: var(--primary-color);
     gap: 0.75rem;
 }
 
+/* Link Focus State - Accessibility */
 .service-link:focus {
     outline: 2px solid var(--secondary-color);
     outline-offset: 2px;
     border-radius: 4px;
 }
 
+/* ============================================
+   TIMELINE (SERVICE PROCESS)
+   ============================================ */
+
+/* Timeline Container - Centered with max-width */
 .timeline {
     position: relative;
     padding: 2rem 0;
@@ -126,6 +154,7 @@
     margin-right: auto;
 }
 
+/* Vertical Timeline Line - Gradient line down the center */
 .timeline::before {
     content: '';
     position: absolute;
@@ -137,6 +166,7 @@
     transform: translateX(-50%);
 }
 
+/* Timeline Item - Alternating left/right layout */
 .timeline-item {
     position: relative;
     margin: 3rem 0;
@@ -148,21 +178,25 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Timeline Item Hover Effect */
 .timeline-item:hover {
     transform: translateX(5px);
     box-shadow: var(--shadow-lg);
 }
 
+/* Odd Items - Positioned on the left */
 .timeline-item:nth-child(odd) {
     margin-left: 0;
     margin-right: auto;
 }
 
+/* Even Items - Positioned on the right */
 .timeline-item:nth-child(even) {
     margin-left: auto;
     margin-right: 0;
 }
 
+/* Timeline Number Badge - Circular step indicator */
 .timeline-number {
     position: absolute;
     width: 50px;
@@ -180,14 +214,17 @@
     box-shadow: 0 4px 12px rgba(0, 165, 229, 0.3);
 }
 
+/* Number Position for Left Items */
 .timeline-item:nth-child(odd) .timeline-number {
     right: -75px;
 }
 
+/* Number Position for Right Items */
 .timeline-item:nth-child(even) .timeline-number {
     left: -75px;
 }
 
+/* Timeline Item Title */
 .timeline-item h3 {
     color: var(--primary-color);
     margin-bottom: 0.75rem;
@@ -195,12 +232,17 @@
     font-weight: 600;
 }
 
+/* Timeline Item Description */
 .timeline-item p {
     color: var(--text-light);
     line-height: 1.6;
 }
 
-/* Benefits Section */
+/* ============================================
+   BENEFITS SECTION
+   ============================================ */
+
+/* Benefits Grid - Responsive layout */
 .benefits-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -208,6 +250,7 @@
     margin-top: 3rem;
 }
 
+/* Individual Benefit Card */
 .benefit-card {
     background: var(--white);
     padding: 2rem;
@@ -216,12 +259,14 @@
     transition: all 0.3s ease;
 }
 
+/* Benefit Card Hover Effect */
 .benefit-card:hover {
     border-color: var(--secondary-color);
     box-shadow: var(--shadow);
     transform: translateY(-4px);
 }
 
+/* Benefit Icon - Circular checkmark icon */
 .benefit-icon {
     width: 50px;
     height: 50px;
@@ -236,6 +281,7 @@
     margin-bottom: 1.5rem;
 }
 
+/* Benefit Card Title */
 .benefit-card h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
@@ -243,13 +289,18 @@
     font-weight: 600;
 }
 
+/* Benefit Card Description */
 .benefit-card p {
     color: var(--text-light);
     line-height: 1.6;
     font-size: 0.95rem;
 }
 
-/* Service Centers */
+/* ============================================
+   SERVICE CENTERS
+   ============================================ */
+
+/* Service Centers Grid - Responsive layout */
 .service-centers {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -257,6 +308,7 @@
     margin-top: 3rem;
 }
 
+/* Individual Service Center Card */
 .center-card {
     background: var(--white);
     padding: 2.5rem 2rem;
@@ -266,12 +318,14 @@
     transition: all 0.3s ease;
 }
 
+/* Center Card Hover Effect */
 .center-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
     border-color: var(--secondary-color);
 }
 
+/* Center Card Title */
 .center-card h3 {
     color: var(--primary-color);
     margin-bottom: 1.5rem;
@@ -279,10 +333,12 @@
     font-weight: 600;
 }
 
+/* Center Information Container */
 .center-info {
     margin-bottom: 1.5rem;
 }
 
+/* Center Information Text */
 .center-info p {
     color: var(--text-light);
     margin-bottom: 0.75rem;
@@ -290,21 +346,28 @@
     font-size: 0.95rem;
 }
 
+/* Center Information Labels */
 .center-info strong {
     color: var(--text-dark);
 }
 
+/* Search Input Styling */
 .service-center-search input {
     transition: all 0.3s ease;
 }
 
+/* Search Input Focus State */
 .service-center-search input:focus {
     outline: none;
     border-color: var(--secondary-color);
     box-shadow: 0 0 0 3px rgba(0, 165, 229, 0.1);
 }
 
-/* Warranty Section */
+/* ============================================
+   WARRANTY SECTION
+   ============================================ */
+
+/* Warranty Information Grid */
 .warranty-info {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -312,6 +375,7 @@
     margin-top: 3rem;
 }
 
+/* Individual Warranty Card */
 .warranty-card {
     background: var(--white);
     padding: 2.5rem 2rem;
@@ -321,12 +385,14 @@
     transition: all 0.3s ease;
 }
 
+/* Warranty Card Hover Effect */
 .warranty-card:hover {
     border-color: var(--secondary-color);
     box-shadow: var(--shadow);
     transform: translateY(-4px);
 }
 
+/* Warranty Card Title */
 .warranty-card h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
@@ -334,13 +400,18 @@
     font-weight: 600;
 }
 
+/* Warranty Card Description */
 .warranty-card p {
     color: var(--text-light);
     line-height: 1.6;
     font-size: 0.95rem;
 }
 
-/* CTA Section */
+/* ============================================
+   CALL-TO-ACTION (CTA) SECTION
+   ============================================ */
+
+/* CTA Section - Gradient background */
 .cta-section {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: var(--white);
@@ -351,6 +422,7 @@
     max-width: 1200px;
 }
 
+/* CTA Title */
 .cta-content h2 {
     color: var(--white);
     font-size: 2.5rem;
@@ -358,12 +430,14 @@
     font-weight: 700;
 }
 
+/* CTA Description */
 .cta-content p {
     color: rgba(255, 255, 255, 0.9);
     font-size: 1.2rem;
     margin-bottom: 2rem;
 }
 
+/* CTA Buttons Container */
 .cta-buttons {
     display: flex;
     gap: 1rem;
@@ -371,27 +445,35 @@
     flex-wrap: wrap;
 }
 
+/* Primary Button in CTA - White background */
 .cta-section .btn-primary {
     background: var(--white);
     color: var(--primary-color);
 }
 
+/* Primary Button Hover */
 .cta-section .btn-primary:hover {
     background: #f0f0f0;
     transform: translateY(-2px);
 }
 
+/* Secondary Button in CTA - Transparent with white border */
 .cta-section .btn-secondary {
     background: transparent;
     color: var(--white);
     border: 2px solid var(--white);
 }
 
+/* Secondary Button Hover */
 .cta-section .btn-secondary:hover {
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive Design */
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Mobile Breakpoint (768px and below) */
 @media (max-width: 768px) {
     .service-cards,
     .benefits-grid,
@@ -471,6 +553,7 @@
     }
 }
 
+/* Small Mobile Breakpoint (480px and below) */
 @media (max-width: 480px) {
     .timeline::before {
         left: 20px;

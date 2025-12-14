@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const submitButton = form.querySelector('button[type="submit"]');
             submitButton.disabled = true;
             submitButton.textContent = 'Sending...';
-
+            
             // Get form data
             const formData = {
                 name: formFields.name.value.trim(),
@@ -179,18 +179,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 subject: formFields.subject.value,
                 message: formFields.message.value.trim()
             };
-
+            
             // Simulate form submission (replace with actual API call)
             setTimeout(() => {
-                // Show success message
+            // Show success message
                 successMessage.classList.add('show');
                 
                 // Scroll to success message
                 successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
+            
                 // Reset form after 2 seconds
                 setTimeout(() => {
-                    form.reset();
+            form.reset();
                     Object.keys(formFields).forEach(fieldName => {
                         clearValidation(fieldName);
                     });

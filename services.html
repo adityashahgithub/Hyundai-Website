@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hyundai - Services</title>
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/services.css">
 </head>
 <body>
+    <!-- Header & Navigation -->
     <header>
         <nav>
+            <!-- Logo -->
             <a href="index.html" class="logo">HYUNDAI <span>MOTORS</span></a>
+            <!-- Main Navigation Links -->
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="models.html">Models</a></li>
@@ -23,10 +27,12 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <!-- Mobile Menu Toggle Button -->
             <button class="mobile-menu-btn">☰</button>
         </nav>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero" style="height: 50vh;">
         <div class="hero-slide active" style="background-image: url('images/alcazar.avif')">
             <div class="hero-content">
@@ -36,10 +42,12 @@
         </div>
     </section>
 
+    <!-- Main Services Section -->
     <section class="section">
         <h2 class="section-title">Our Services</h2>
         <p class="section-subtitle">Comprehensive automotive care solutions</p>
 
+        <!-- Service Cards Grid -->
         <div class="service-cards">
             <div class="service-card">
                 <div class="service-icon-wrapper">
@@ -108,9 +116,11 @@
         </div>
     </section>
 
+    <!-- Service Process Timeline Section -->
     <section class="section" style="background: var(--bg-light);">
         <h2 class="section-title">Service Process</h2>
         <p class="section-subtitle">Simple steps to keep your vehicle in perfect condition</p>
+        <!-- Timeline Container - Shows 6-step service process -->
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-number">1</div>
@@ -145,9 +155,11 @@
         </div>
     </section>
 
+    <!-- Benefits Section - Why Choose Hyundai Service -->
     <section class="section">
         <h2 class="section-title">Why Choose Hyundai Service?</h2>
         <p class="section-subtitle">Experience the difference of expert care</p>
+        <!-- Benefits Grid - 6 key benefits -->
         <div class="benefits-grid">
             <div class="benefit-card">
                 <div class="benefit-icon">✓</div>
@@ -182,12 +194,15 @@
         </div>
     </section>
 
+    <!-- Service Centers Section - Real-time locations in Gujarat -->
     <section class="section" style="background: var(--bg-light);">
         <h2 class="section-title">Service Centers Near You</h2>
         <p class="section-subtitle">Find a Hyundai service center in Gujarat - Nadiad, Anand, V.V. Nagar & Ahmedabad</p>
+        <!-- Search Bar - Filter service centers by city -->
         <div class="service-center-search" style="max-width: 600px; margin: 2rem auto 3rem;">
             <input type="text" id="serviceCenterSearch" placeholder="Search by city (Nadiad, Anand, V.V. Nagar, Ahmedabad)..." style="width: 100%; padding: 1rem; border: 2px solid #e8eef5; border-radius: 30px; font-size: 1rem;">
         </div>
+        <!-- Service Centers List - Populated with real Gujarat locations -->
         <div class="service-centers" id="serviceCentersList">
             <div class="center-card">
                 <h3>Hyundai Service - Downtown Hyundai, Nadiad</h3>
@@ -264,9 +279,11 @@
         </div>
     </section>
 
+    <!-- Service Warranty Section -->
     <section class="section">
         <h2 class="section-title">Service Warranty</h2>
         <p class="section-subtitle">Your peace of mind is our priority</p>
+        <!-- Warranty Information Cards -->
         <div class="warranty-info">
             <div class="warranty-card">
                 <h3>12-Month Warranty</h3>
@@ -283,10 +300,12 @@
         </div>
     </section>
 
+    <!-- Call-to-Action Section -->
     <section class="section cta-section">
         <div class="cta-content">
             <h2>Ready to Schedule Your Service?</h2>
             <p>Book an appointment today and experience the Hyundai difference</p>
+            <!-- CTA Buttons -->
             <div class="cta-buttons">
                 <a href="contact.html" class="btn btn-primary">Schedule Service</a>
                 <a href="dealers.html" class="btn btn-secondary">Find a Dealer</a>
@@ -294,6 +313,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -329,6 +349,7 @@
         </div>
     </footer>
 
+    <!-- JavaScript Files -->
     <script src="js/common.js"></script>
     <script src="js/services.js"></script>
 </body>

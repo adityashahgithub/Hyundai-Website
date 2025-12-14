@@ -37,12 +37,12 @@ function renderDealers(list) {
     container.innerHTML = list.map(dealer => `
         <div class="dealer-card">
             <div class="dealer-header">
-                <h3>${dealer.name}</h3>
+            <h3>${dealer.name}</h3>
                 <span class="dealer-badge">${dealer.state || 'Gujarat'}</span>
             </div>
             <div class="dealer-info">
                 <p class="dealer-address">📍 ${dealer.address}</p>
-                <p><strong>City:</strong> ${dealer.city}</p>
+            <p><strong>City:</strong> ${dealer.city}</p>
                 <p><strong>📞 Phone:</strong> <a href="tel:${dealer.phone.replace(/\s/g, '')}">${dealer.phone}</a></p>
             </div>
             <div class="dealer-actions">
