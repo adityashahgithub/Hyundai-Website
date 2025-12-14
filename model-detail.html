@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hyundai - Model Details</title>
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/model-detail.css">
 </head>
 <body>
+    <!-- Header & Navigation -->
     <header>
         <nav>
+            <!-- Logo -->
             <a href="index.html" class="logo">HYUNDAI <span>MOTORS</span></a>
+            <!-- Main Navigation Links -->
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="models.html">Models</a></li>
@@ -23,48 +27,63 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <!-- Mobile Menu Toggle Button -->
             <button class="mobile-menu-btn">☰</button>
         </nav>
     </header>
 
+    <!-- Hero Section - Displays model name, price, and background image -->
     <section class="model-hero" id="modelHero">
         <div class="model-hero-content">
+            <!-- Model Name - Populated dynamically by JavaScript -->
             <h1 id="modelName">Loading...</h1>
+            <!-- Model Price - Populated dynamically by JavaScript -->
             <p id="modelPrice">Loading...</p>
         </div>
     </section>
 
+    <!-- Main Content Section -->
     <section class="section">
+        <!-- Tab Navigation Buttons -->
         <div class="tabs">
             <button class="tab-btn active" data-tab="overview">Overview</button>
             <button class="tab-btn" data-tab="specs">Specifications</button>
         </div>
 
+        <!-- Overview Tab Content -->
         <div class="tab-content active" id="overview">
             <h2>About This Vehicle</h2>
+            <!-- Model Description - Populated dynamically by JavaScript -->
             <p id="modelDescription">Loading...</p>
             <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Key Features</h3>
+            <!-- Key Features List - Populated dynamically by JavaScript -->
             <div id="modelFeatures"></div>
         </div>
 
+        <!-- Specifications Tab Content -->
         <div class="tab-content" id="specs">
+            <!-- Specifications Grid - Populated dynamically by JavaScript -->
             <div class="specs-grid" id="specsGrid">
                 <!-- Specs will be loaded by JavaScript -->
             </div>
         </div>
     </section>
 
+    <!-- Call-to-Action Section -->
     <div style="text-align: center; padding: 2rem;">
         <button class="btn btn-primary" id="bookTestDriveBtn">Book Test Drive</button>
     </div>
 
-    <!-- Modal -->
+    <!-- Test Drive Booking Modal -->
     <div class="modal" id="testDriveModal">
         <div class="modal-content">
+            <!-- Modal Header -->
             <div class="modal-header">
                 <h2>Book Test Drive</h2>
+                <!-- Close Modal Button -->
                 <button class="close-modal" id="closeModal">&times;</button>
             </div>
+            <!-- Test Drive Booking Form -->
             <form id="testDriveForm">
                 <div class="form-group">
                     <label for="name">Full Name</label>
@@ -106,6 +125,7 @@
         </div>
     </div>
 
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -141,6 +161,7 @@
         </div>
     </footer>
 
+    <!-- JavaScript Files -->
     <script src="js/common.js"></script>
     <script src="js/model-detail.js"></script>
 </body>
