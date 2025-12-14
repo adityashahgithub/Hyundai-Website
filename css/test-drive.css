@@ -1,18 +1,25 @@
-/* Test Drive Hero Override */
+/* ============================================
+   TEST DRIVE PAGE SPECIFIC STYLES
+   ============================================ */
+
+/* Hero Section Override - Specific gradient for test drive page */
 .test-drive-hero .hero-slide::before {
     background: linear-gradient(135deg, rgba(0, 44, 95, 0.5) 0%, rgba(0, 165, 229, 0.4) 100%);
 }
 
+/* Test Drive Container - Centered with max-width */
 .test-drive-container {
     max-width: 1200px;
     margin: 0 auto;
 }
 
+/* Page Header */
 .test-drive-header {
     text-align: center;
     margin-bottom: 3rem;
 }
 
+/* Main Content Layout - Form and Summary side-by-side */
 .test-drive-content {
     display: grid;
     grid-template-columns: 1fr 400px;
@@ -20,6 +27,7 @@
     margin-top: 2rem;
 }
 
+/* Form Wrapper - White card container */
 .form-wrapper {
     background: var(--white);
     padding: 3rem;
@@ -27,21 +35,25 @@
     box-shadow: var(--shadow);
 }
 
+/* Test Drive Form - Vertical flex layout */
 .test-drive-form {
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
 }
 
+/* Form Section - Individual step with bottom border */
 .form-section {
     padding-bottom: 2rem;
     border-bottom: 1px solid #e8eef5;
 }
 
+/* Remove border from last section */
 .form-section:last-of-type {
     border-bottom: none;
 }
 
+/* Form Section Title */
 .form-section h3 {
     color: var(--primary-color);
     font-size: 1.3rem;
@@ -52,28 +64,33 @@
     gap: 0.5rem;
 }
 
+/* Form Row - Two-column grid for form fields */
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
 }
 
+/* Form Group - Individual input container */
 .form-group {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
+/* Form Label */
 .form-group label {
     color: var(--text-dark);
     font-weight: 600;
     font-size: 0.95rem;
 }
 
+/* Required Field Indicator - Red asterisk */
 .required {
     color: #e74c3c;
 }
 
+/* Form Input Fields - Text, Select, Textarea */
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -86,6 +103,7 @@
     background: var(--white);
 }
 
+/* Form Input Focus State - Secondary color border with shadow */
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
@@ -94,17 +112,23 @@
     box-shadow: 0 0 0 3px rgba(0, 165, 229, 0.1);
 }
 
+/* Placeholder Text Styling */
 .form-group input::placeholder,
 .form-group textarea::placeholder {
     color: #999;
 }
 
+/* Textarea - Resizable vertically */
 .form-group textarea {
     resize: vertical;
     min-height: 100px;
 }
 
-/* Model Selection */
+/* ============================================
+   MODEL SELECTION
+   ============================================ */
+
+/* Model Selection Grid - Responsive grid for model cards */
 .model-selection {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
@@ -112,6 +136,7 @@
     margin-top: 1rem;
 }
 
+/* Individual Model Selection Card */
 .model-card-select {
     border: 2px solid #e8eef5;
     border-radius: 12px;
@@ -122,18 +147,21 @@
     background: var(--white);
 }
 
+/* Model Card Hover Effect */
 .model-card-select:hover {
     border-color: var(--secondary-color);
     transform: translateY(-4px);
     box-shadow: var(--shadow);
 }
 
+/* Selected Model Card - Highlighted state */
 .model-card-select.selected {
     border-color: var(--secondary-color);
     background: linear-gradient(135deg, #f0f7fa 0%, #e8f4f8 100%);
     box-shadow: 0 4px 12px rgba(0, 165, 229, 0.2);
 }
 
+/* Model Card Image */
 .model-card-select img {
     width: 100%;
     height: 100px;
@@ -142,6 +170,7 @@
     margin-bottom: 0.75rem;
 }
 
+/* Model Card Title */
 .model-card-select h4 {
     font-size: 0.95rem;
     color: var(--primary-color);
@@ -149,17 +178,23 @@
     margin-bottom: 0.25rem;
 }
 
+/* Model Category Badge */
 .model-card-select .model-category {
     font-size: 0.8rem;
     color: var(--text-light);
 }
 
-/* Location Details */
+/* ============================================
+   LOCATION DETAILS
+   ============================================ */
+
+/* Location Details Container - Shown when service center is selected */
 .location-details {
     margin-top: 1rem;
     animation: fadeIn 0.3s ease;
 }
 
+/* Location Information Card */
 .location-card {
     background: #f0f7fa;
     padding: 1.5rem;
@@ -167,6 +202,7 @@
     border-left: 4px solid var(--secondary-color);
 }
 
+/* Location Card Text */
 .location-card p {
     margin-bottom: 0.75rem;
     color: var(--text-dark);
@@ -178,33 +214,44 @@
     margin-bottom: 0;
 }
 
+/* Location Card Labels */
 .location-card strong {
     color: var(--primary-color);
 }
 
-/* Form Actions */
+/* ============================================
+   FORM ACTIONS
+   ============================================ */
+
+/* Form Action Buttons Container */
 .form-actions {
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
 }
 
+/* Large Button - Primary submit button */
 .btn-large {
     padding: 1rem 2.5rem;
     font-size: 1.1rem;
 }
 
-/* Summary Card */
+/* ============================================
+   SUMMARY CARD
+   ============================================ */
+
+/* Summary Card - Sticky sidebar showing booking details */
 .summary-card {
     background: var(--white);
     padding: 2.5rem;
     border-radius: 16px;
     box-shadow: var(--shadow);
     height: fit-content;
-    position: sticky;
+    position: sticky; /* Stays in view while scrolling */
     top: 100px;
 }
 
+/* Summary Card Title */
 .summary-card h3 {
     color: var(--primary-color);
     font-size: 1.4rem;
@@ -214,6 +261,7 @@
     border-bottom: 2px solid #e8eef5;
 }
 
+/* Summary Content Container */
 .summary-content {
     display: flex;
     flex-direction: column;
@@ -221,6 +269,7 @@
     margin-bottom: 2rem;
 }
 
+/* Individual Summary Item */
 .summary-item {
     display: flex;
     justify-content: space-between;
@@ -230,12 +279,14 @@
     border-radius: 8px;
 }
 
+/* Summary Label */
 .summary-label {
     font-weight: 600;
     color: var(--text-dark);
     font-size: 0.95rem;
 }
 
+/* Summary Value */
 .summary-value {
     color: var(--primary-color);
     font-weight: 600;
@@ -245,6 +296,7 @@
     word-wrap: break-word;
 }
 
+/* Summary Note - Important information box */
 .summary-note {
     background: #f0f7fa;
     padding: 1.5rem;
@@ -252,6 +304,7 @@
     border-left: 4px solid var(--secondary-color);
 }
 
+/* Summary Note Text */
 .summary-note p {
     color: var(--text-light);
     font-size: 0.9rem;
@@ -263,7 +316,11 @@
     margin-bottom: 0;
 }
 
-/* Confirmation Modal */
+/* ============================================
+   CONFIRMATION MODAL
+   ============================================ */
+
+/* Modal Overlay - Full screen backdrop */
 .modal {
     display: none;
     position: fixed;
@@ -277,6 +334,7 @@
     animation: fadeIn 0.3s ease;
 }
 
+/* Modal Active State - Display as flex container */
 .modal.show {
     display: flex;
     align-items: center;
@@ -284,6 +342,7 @@
     padding: 2rem;
 }
 
+/* Modal Content Container */
 .modal-content {
     background: var(--white);
     border-radius: 16px;
@@ -296,6 +355,7 @@
     flex-direction: column;
 }
 
+/* Modal Header - Gradient background with success icon */
 .modal-header {
     background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
     color: var(--white);
@@ -303,6 +363,7 @@
     text-align: center;
 }
 
+/* Success Icon - Circular checkmark */
 .modal-icon {
     width: 80px;
     height: 80px;
@@ -316,16 +377,19 @@
     font-weight: 700;
 }
 
+/* Modal Title */
 .modal-header h2 {
     font-size: 1.8rem;
     font-weight: 700;
     margin: 0;
 }
 
+/* Modal Body - Booking details */
 .modal-body {
     padding: 2.5rem 2rem;
 }
 
+/* Confirmation Detail Row */
 .confirmation-detail {
     display: flex;
     justify-content: space-between;
@@ -337,17 +401,20 @@
     border-bottom: none;
 }
 
+/* Confirmation Detail Label */
 .confirmation-detail-label {
     font-weight: 600;
     color: var(--text-dark);
 }
 
+/* Confirmation Detail Value */
 .confirmation-detail-value {
     color: var(--primary-color);
     font-weight: 600;
     text-align: right;
 }
 
+/* Modal Action Buttons Container */
 .modal-actions {
     padding: 1.5rem 2rem;
     background: #f8f9fa;
@@ -357,6 +424,7 @@
     align-items: center;
 }
 
+/* Modal Action Buttons */
 .modal-actions .btn {
     flex: 1;
     max-width: 200px;
@@ -366,18 +434,24 @@
     cursor: pointer;
 }
 
+/* Secondary Button in Modal */
 .modal-actions .btn.btn-secondary {
     background: var(--white);
     color: var(--primary-color);
     border: 2px solid var(--primary-color);
 }
 
+/* Secondary Button Hover */
 .modal-actions .btn.btn-secondary:hover {
     background: var(--primary-color);
     color: var(--white);
 }
 
-/* Animations */
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+/* Fade In Animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -387,6 +461,7 @@
     }
 }
 
+/* Slide Up Animation - Used for modal */
 @keyframes slideUp {
     from {
         transform: translateY(30px);
@@ -398,13 +473,19 @@
     }
 }
 
-/* Responsive Design */
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet Breakpoint (968px and below) */
 @media (max-width: 968px) {
+    /* Single column layout on tablets */
     .test-drive-content {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
 
+    /* Summary card becomes static (not sticky) */
     .summary-card {
         position: static;
     }
@@ -414,17 +495,21 @@
     }
 }
 
+/* Mobile Breakpoint (768px and below) */
 @media (max-width: 768px) {
+    /* Single column form rows on mobile */
     .form-row {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
 
+    /* Smaller model selection cards */
     .model-selection {
         grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
         gap: 0.75rem;
     }
 
+    /* Stack form action buttons vertically */
     .form-actions {
         flex-direction: column;
     }
@@ -433,6 +518,7 @@
         width: 100%;
     }
 
+    /* Modal adjustments for mobile */
     .modal-content {
         margin: 1rem;
     }
@@ -455,6 +541,7 @@
     }
 }
 
+/* Small Mobile Breakpoint (480px and below) */
 @media (max-width: 480px) {
     .form-wrapper {
         padding: 1.5rem 1rem;

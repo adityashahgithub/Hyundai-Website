@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hyundai - Book a Test Drive</title>
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/test-drive.css">
 </head>
 <body>
+    <!-- Header & Navigation -->
     <header>
         <nav>
+            <!-- Logo -->
             <a href="index.html" class="logo">HYUNDAI <span>MOTORS</span></a>
+            <!-- Main Navigation Links -->
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="models.html">Models</a></li>
@@ -23,10 +27,12 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <!-- Mobile Menu Toggle Button -->
             <button class="mobile-menu-btn">☰</button>
         </nav>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero test-drive-hero" style="height: 50vh;">
         <div class="hero-slide active" style="background-image: url('images/alcazar.avif')">
             <div class="hero-content">
@@ -36,26 +42,32 @@
         </div>
     </section>
 
+    <!-- Main Content Section -->
     <section class="section">
         <div class="test-drive-container">
+            <!-- Page Header -->
             <div class="test-drive-header">
                 <h2 class="section-title">Schedule Your Test Drive</h2>
                 <p class="section-subtitle">Choose your preferred model, date, time, and location</p>
             </div>
 
+            <!-- Form and Summary Layout -->
             <div class="test-drive-content">
+                <!-- Test Drive Booking Form -->
                 <div class="form-wrapper">
                     <form id="testDriveForm" class="test-drive-form">
-                        <!-- Model Selection -->
+                        <!-- Step 1: Model Selection -->
                         <div class="form-section">
                             <h3>1. Select Vehicle Model</h3>
+                            <!-- Model Selection Grid - Populated dynamically by JavaScript -->
                             <div class="model-selection" id="modelSelection">
                                 <!-- Models will be loaded by JavaScript -->
                             </div>
+                            <!-- Hidden input to store selected model ID -->
                             <input type="hidden" id="selectedModel" name="model" required>
                         </div>
 
-                        <!-- Personal Information -->
+                        <!-- Step 2: Personal Information -->
                         <div class="form-section">
                             <h3>2. Your Information</h3>
                             <div class="form-row">
@@ -80,7 +92,7 @@
                             </div>
                         </div>
 
-                        <!-- Date & Time Selection -->
+                        <!-- Step 3: Date & Time Selection -->
                         <div class="form-section">
                             <h3>3. Preferred Date & Time</h3>
                             <div class="form-row">
@@ -107,7 +119,7 @@
                             </div>
                         </div>
 
-                        <!-- Location Selection -->
+                        <!-- Step 4: Location Selection -->
                         <div class="form-section">
                             <h3>4. Select Service Center</h3>
                             <div class="form-group">
@@ -119,6 +131,7 @@
                                     <option value="ahmedabad">Ahmedabad - SG Highway</option>
                                 </select>
                             </div>
+                            <!-- Location Details Card - Shown when service center is selected -->
                             <div class="location-details" id="locationDetails" style="display: none;">
                                 <div class="location-card">
                                     <p><strong>📍 Address:</strong> <span id="locationAddress"></span></p>
@@ -128,7 +141,7 @@
                             </div>
                         </div>
 
-                        <!-- Additional Information -->
+                        <!-- Step 5: Additional Information -->
                         <div class="form-section">
                             <h3>5. Additional Information</h3>
                             <div class="form-group">
@@ -137,7 +150,7 @@
                             </div>
                         </div>
 
-                        <!-- Submit Button -->
+                        <!-- Form Action Buttons -->
                         <div class="form-actions">
                             <button type="submit" class="btn btn-primary btn-large">Book Test Drive</button>
                             <button type="reset" class="btn btn-secondary">Reset Form</button>
@@ -145,9 +158,10 @@
                     </form>
                 </div>
 
-                <!-- Summary Card -->
+                <!-- Booking Summary Card - Sticky sidebar showing selected details -->
                 <div class="summary-card">
                     <h3>Booking Summary</h3>
+                    <!-- Summary Content - Updated dynamically by JavaScript -->
                     <div class="summary-content" id="bookingSummary">
                         <div class="summary-item">
                             <span class="summary-label">Model:</span>
@@ -166,6 +180,7 @@
                             <span class="summary-value" id="summaryLocation">Not selected</span>
                         </div>
                     </div>
+                    <!-- Summary Notes -->
                     <div class="summary-note">
                         <p>📋 Your booking details will be confirmed via email and SMS.</p>
                         <p>⏰ Please arrive 10 minutes before your scheduled time.</p>
@@ -175,16 +190,19 @@
         </div>
     </section>
 
-    <!-- Confirmation Modal -->
+    <!-- Confirmation Modal - Shown after successful form submission -->
     <div id="confirmationModal" class="modal">
         <div class="modal-content">
+            <!-- Modal Header with Success Icon -->
             <div class="modal-header">
                 <span class="modal-icon">✓</span>
                 <h2>Test Drive Booked Successfully!</h2>
             </div>
+            <!-- Modal Body - Booking details populated by JavaScript -->
             <div class="modal-body" id="confirmationDetails">
                 <!-- Confirmation details will be inserted here -->
             </div>
+            <!-- Modal Action Buttons -->
             <div class="modal-actions">
                 <button class="btn btn-primary" onclick="closeConfirmationModal()">Done</button>
                 <a href="models.html" class="btn btn-secondary">View All Models</a>
@@ -192,6 +210,7 @@
         </div>
     </div>
 
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -227,6 +246,7 @@
         </div>
     </footer>
 
+    <!-- JavaScript Files -->
     <script src="js/common.js"></script>
     <script src="js/test-drive.js"></script>
 </body>
