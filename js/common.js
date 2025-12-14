@@ -49,40 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Check initial scroll position on page load
     toggleHeaderState();
-
-    /* ============================================
-       ACTIVE NAVIGATION HIGHLIGHTING
-       ============================================ */
-    
-    /**
-     * Set active navigation link based on current page
-     * Compares current page URL with navigation link hrefs
-     * Adds 'active' class to the matching link
-     */
-    function setActiveNavLink() {
-        const navLinks = document.querySelectorAll('.nav-links a');
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        
-        navLinks.forEach(link => {
-            // Remove active class from all links
-            link.classList.remove('active');
-            
-            // Get the href and extract just the filename
-            const linkHref = link.getAttribute('href');
-            const linkPage = linkHref.split('/').pop();
-            
-            // Check if current page matches the link
-            // Handle both 'index.html' and empty string for home page
-            if (linkPage === currentPage || 
-                (currentPage === '' && linkPage === 'index.html') ||
-                (currentPage === 'index.html' && linkPage === 'index.html')) {
-                link.classList.add('active');
-            }
-        });
-    }
-
-    // Set active navigation link on page load
-    setActiveNavLink();
 });
 
 /* ============================================
