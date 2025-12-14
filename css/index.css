@@ -103,6 +103,18 @@ nav {
     color: var(--secondary-color);
 }
 
+/* Active Navigation Link - Current page indicator */
+.nav-links a.active {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+/* Active Navigation Link Underline - Always visible for active link */
+.nav-links a.active::after {
+    width: 100%;
+    background: var(--secondary-color);
+}
+
 .mobile-menu-btn {
     display: none;
     background: none;
