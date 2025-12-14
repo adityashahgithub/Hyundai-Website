@@ -1,3 +1,12 @@
+/* ============================================
+   CONTACT PAGE SPECIFIC STYLES
+   ============================================ */
+
+/* ============================================
+   CONTACT GRID LAYOUT
+   ============================================ */
+
+/* Contact Grid - Two-column responsive layout */
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -5,18 +14,21 @@
     margin-top: 3rem;
 }
 
+/* Contact Information Container */
 .contact-info {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
+/* Individual Contact Item - Icon and text layout */
 .contact-item {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
+/* Contact Item Icon - Emoji icons with secondary color */
 .contact-item .icon {
     font-size: 2rem;
     color: var(--secondary-color);
@@ -58,7 +70,11 @@
     color: var(--white);
 }
 
-/* Form Styling */
+/* ============================================
+   CONTACT FORM STYLING
+   ============================================ */
+
+/* Form Container - White card with shadow */
 .contact-grid > div:last-child {
     background: var(--white);
     padding: 2.5rem;
@@ -67,6 +83,7 @@
     border: 1px solid rgba(0, 44, 95, 0.08);
 }
 
+/* Form Section Title */
 .contact-grid > div:last-child h2 {
     color: var(--primary-color);
     font-size: 1.8rem;
@@ -74,12 +91,14 @@
     font-weight: 600;
 }
 
+/* Contact Form - Vertical flex layout */
 #contactForm {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
+/* Form Group - Individual input container */
 .form-group {
     display: flex;
     flex-direction: column;
@@ -110,6 +129,7 @@
     margin-left: 0.25rem;
 }
 
+/* Form Input Fields - Text, Select, Textarea */
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -124,6 +144,7 @@
     box-sizing: border-box;
 }
 
+/* Form Input Focus State - Secondary color border with shadow */
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
@@ -132,27 +153,34 @@
     box-shadow: 0 0 0 3px rgba(0, 165, 229, 0.1);
 }
 
+/* Placeholder Text Styling */
 .form-group input::placeholder,
 .form-group textarea::placeholder {
     color: #999;
 }
 
+/* Textarea Specific Styling */
 .form-group textarea {
     resize: vertical;
     min-height: 120px;
     font-family: inherit;
 }
 
+/* Select Dropdown - Custom arrow icon */
 .form-group select {
     cursor: pointer;
-    appearance: none;
+    appearance: none; /* Remove default browser arrow */
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23002c5f' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 1rem center;
-    padding-right: 2.5rem;
+    padding-right: 2.5rem; /* Space for custom arrow */
 }
 
-/* Form Validation Styles */
+/* ============================================
+   FORM VALIDATION STYLES
+   ============================================ */
+
+/* Error State - Red border and shadow */
 .form-group.error input,
 .form-group.error select,
 .form-group.error textarea {
@@ -160,6 +188,7 @@
     box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
 }
 
+/* Success State - Green border and shadow */
 .form-group.success input,
 .form-group.success select,
 .form-group.success textarea {
@@ -167,6 +196,7 @@
     box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
 }
 
+/* Error Message - Hidden by default */
 .error-message {
     color: #e74c3c;
     font-size: 0.85rem;
@@ -174,10 +204,12 @@
     display: none;
 }
 
+/* Show error message when field has error */
 .form-group.error .error-message {
     display: block;
 }
 
+/* Success Message - Hidden by default */
 .success-message {
     background: #d4edda;
     color: #155724;
@@ -188,11 +220,13 @@
     display: none;
 }
 
+/* Show success message with animation */
 .success-message.show {
     display: block;
     animation: slideDown 0.3s ease;
 }
 
+/* Slide Down Animation - For success message */
 @keyframes slideDown {
     from {
         opacity: 0;
@@ -212,11 +246,16 @@
     cursor: not-allowed;
 }
 
-/* Map Section */
+/* ============================================
+   MAP SECTION STYLING
+   ============================================ */
+
+/* Map Section Container */
 .map-section {
     margin-top: 4rem;
 }
 
+/* Map Section Title */
 .map-section h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
@@ -226,6 +265,7 @@
     border-bottom: 2px solid #e8eef5;
 }
 
+/* Map Container - Card with shadow */
 .map-container {
     position: relative;
     margin-top: 2rem;
@@ -235,6 +275,7 @@
     border: 1px solid rgba(0, 44, 95, 0.1);
 }
 
+/* Google Maps Iframe */
 .map-container iframe {
     width: 100%;
     height: 450px;
@@ -242,12 +283,14 @@
     border: none;
 }
 
+/* Map Information Card */
 .map-info {
     background: var(--white);
     padding: 2rem;
     border-top: 3px solid var(--secondary-color);
 }
 
+/* Map Location Title */
 .map-info h3 {
     color: var(--primary-color);
     font-size: 1.5rem;
@@ -255,6 +298,7 @@
     font-weight: 600;
 }
 
+/* Map Address */
 .map-info > p {
     color: var(--text-dark);
     line-height: 1.6;
@@ -262,6 +306,7 @@
     font-size: 1.05rem;
 }
 
+/* Map Details Box - Contact information */
 .map-details {
     background: #f8f9fa;
     padding: 1.25rem;
@@ -270,6 +315,7 @@
     border-left: 4px solid var(--secondary-color);
 }
 
+/* Map Details Paragraphs */
 .map-details p {
     color: var(--text-dark);
     margin-bottom: 0.5rem;
@@ -277,15 +323,21 @@
     line-height: 1.6;
 }
 
+/* Remove margin from last detail item */
 .map-details p:last-child {
     margin-bottom: 0;
 }
 
+/* Map Details Labels */
 .map-details strong {
     color: var(--primary-color);
 }
 
-/* Responsive Design */
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet Breakpoint (968px and below) */
 @media (max-width: 968px) {
     .contact-grid {
         grid-template-columns: 1fr;
@@ -297,6 +349,7 @@
     }
 }
 
+/* Mobile Breakpoint (768px and below) */
 @media (max-width: 768px) {
     .contact-grid {
         gap: 2rem;
@@ -359,6 +412,7 @@
     }
 }
 
+/* Small Mobile Breakpoint (480px and below) */
 @media (max-width: 480px) {
     .contact-grid > div:last-child {
         padding: 1.5rem;

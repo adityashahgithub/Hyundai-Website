@@ -1,4 +1,13 @@
+/* ============================================
+   CONTACT PAGE JAVASCRIPT
+   ============================================ */
+
+// Initialize when DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function() {
+    /* ============================================
+       FORM ELEMENTS
+       ============================================ */
+    
     const form = document.getElementById('contactForm');
     const formFields = {
         name: document.getElementById('contactName'),
@@ -8,8 +17,14 @@ document.addEventListener('DOMContentLoaded', function() {
         message: document.getElementById('contactMessage')
     };
 
-    // Automatically add 'required-field' class to form groups with required inputs
-    // This ensures the asterisk appears even in browsers that don't support :has()
+    /* ============================================
+       REQUIRED FIELD INDICATOR
+       ============================================ */
+    
+    /**
+     * Automatically add 'required-field' class to form groups with required inputs
+     * This ensures the asterisk appears even in browsers that don't support :has()
+     */
     const formGroups = document.querySelectorAll('.form-group');
     formGroups.forEach(group => {
         const hasRequired = group.querySelector('input[required], select[required], textarea[required]');
@@ -18,6 +33,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    /* ============================================
+       SUCCESS MESSAGE
+       ============================================ */
+    
     // Create success message element
     const successMessage = document.createElement('div');
     successMessage.className = 'success-message';
@@ -26,31 +45,63 @@ document.addEventListener('DOMContentLoaded', function() {
         form.insertBefore(successMessage, form.firstChild);
     }
 
-    // Validation functions
+    /* ============================================
+       VALIDATION FUNCTIONS
+       ============================================ */
+    
+    /**
+     * Validate name field
+     * @param {string} name - Name to validate
+     * @returns {boolean} True if valid (at least 2 characters, letters and spaces only)
+     */
     function validateName(name) {
         return name.trim().length >= 2 && /^[a-zA-Z\s]+$/.test(name);
     }
 
+    /**
+     * Validate email field
+     * @param {string} email - Email to validate
+     * @returns {boolean} True if valid email format
+     */
     function validateEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
     }
 
+    /**
+     * Validate phone field
+     * @param {string} phone - Phone number to validate
+     * @returns {boolean} True if valid (10-15 digits with formatting)
+     */
     function validatePhone(phone) {
         const phoneRegex = /^[\d\s\-\+\(\)]{10,15}$/;
         return phoneRegex.test(phone.replace(/\s/g, ''));
     }
 
+    /**
+     * Validate message field
+     * @param {string} message - Message to validate
+     * @returns {boolean} True if valid (at least 10 characters)
+     */
     function validateMessage(message) {
         return message.trim().length >= 10;
     }
 
-    // Show error for field
+    /* ============================================
+       VALIDATION UI HELPERS
+       ============================================ */
+    
+    /**
+     * Show error state for a form field
+     * @param {string} fieldName - Name of the field
+     * @param {string} message - Error message to display
+     */
     function showError(fieldName, message) {
         const field = formFields[fieldName];
         const formGroup = field.closest('.form-group');
         const errorMsg = formGroup.querySelector('.error-message') || document.createElement('span');
         
+        // Create error message element if it doesn't exist
         if (!formGroup.querySelector('.error-message')) {
             errorMsg.className = 'error-message';
             formGroup.appendChild(errorMsg);
@@ -61,7 +112,10 @@ document.addEventListener('DOMContentLoaded', function() {
         formGroup.classList.remove('success');
     }
 
-    // Show success for field
+    /**
+     * Show success state for a form field
+     * @param {string} fieldName - Name of the field
+     */
     function showSuccess(fieldName) {
         const field = formFields[fieldName];
         const formGroup = field.closest('.form-group');
@@ -73,7 +127,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Clear field validation
+    /**
+     * Clear validation state for a form field
+     * @param {string} fieldName - Name of the field
+     */
     function clearValidation(fieldName) {
         const field = formFields[fieldName];
         const formGroup = field.closest('.form-group');
@@ -84,14 +141,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Real-time validation
+    /* ============================================
+       REAL-TIME VALIDATION
+       ============================================ */
+    
+    /**
+     * Set up real-time validation for all form fields
+     * Validates on blur and re-validates on input if field has error
+     */
     Object.keys(formFields).forEach(fieldName => {
         const field = formFields[fieldName];
         if (field) {
+            // Validate when user leaves the field
             field.addEventListener('blur', function() {
                 validateField(fieldName);
             });
 
+            // Re-validate as user types if field has error
             field.addEventListener('input', function() {
                 if (field.closest('.form-group').classList.contains('error')) {
                     validateField(fieldName);
@@ -100,6 +166,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    /**
+     * Validate a specific form field
+     * Shows error or success state based on validation result
+     * @param {string} fieldName - Name of the field to validate
+     */
     function validateField(fieldName) {
         const field = formFields[fieldName];
         const value = field.value.trim();
@@ -151,12 +222,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Form submission
+    /* ============================================
+       FORM SUBMISSION
+       ============================================ */
+    
+    /**
+     * Handle form submission
+     * Validates all fields, shows errors if invalid, or submits if valid
+     */
     if (form) {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Validate all fields
+            // Validate all fields before submission
             let isValid = true;
             Object.keys(formFields).forEach(fieldName => {
                 validateField(fieldName);
@@ -166,8 +244,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
+            // If validation fails, scroll to first error
             if (!isValid) {
-                // Scroll to first error
                 const firstError = form.querySelector('.form-group.error');
                 if (firstError) {
                     firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -192,15 +270,15 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Simulate form submission (replace with actual API call)
             setTimeout(() => {
-            // Show success message
+                // Show success message
                 successMessage.classList.add('show');
                 
                 // Scroll to success message
                 successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
             
-                // Reset form after 2 seconds
+                // Reset form after 3 seconds
                 setTimeout(() => {
-            form.reset();
+                    form.reset();
                     Object.keys(formFields).forEach(fieldName => {
                         clearValidation(fieldName);
                     });
@@ -212,16 +290,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Animate map section on scroll
+    /* ============================================
+       SCROLL ANIMATIONS
+       ============================================ */
+    
+    /**
+     * Animate map section on scroll
+     * Map section fades in and slides up when it comes into view
+     */
     const mapSection = document.querySelector('.map-section');
     if (mapSection) {
         const mapObserver = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
+                    // Set initial state (hidden and translated down)
                     entry.target.style.opacity = '0';
                     entry.target.style.transform = 'translateY(30px)';
                     entry.target.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
                     
+                    // Trigger fade-in and slide-up animation
                     setTimeout(() => {
                         entry.target.style.opacity = '1';
                         entry.target.style.transform = 'translateY(0)';
@@ -229,33 +316,41 @@ document.addEventListener('DOMContentLoaded', function() {
                     mapObserver.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.2 });
+        }, { threshold: 0.2 }); // Trigger when 20% of section is visible
 
+        // Set initial state and observe map section
         mapSection.style.opacity = '0';
         mapSection.style.transform = 'translateY(30px)';
         mapObserver.observe(mapSection);
     }
 
-    // Animate contact items
+    /**
+     * Animate contact items on scroll
+     * Contact items slide in from the left with stagger effect
+     */
     const contactItems = document.querySelectorAll('.contact-item');
     const itemObserver = new IntersectionObserver(function(entries) {
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
+                // Stagger animation with delay based on item index
                 setTimeout(() => {
+                    // Set initial state (hidden and translated left)
                     entry.target.style.opacity = '0';
                     entry.target.style.transform = 'translateX(-20px)';
                     entry.target.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                     
+                    // Trigger fade-in and slide-right animation
                     setTimeout(() => {
                         entry.target.style.opacity = '1';
                         entry.target.style.transform = 'translateX(0)';
                     }, 50);
-                }, index * 100);
+                }, index * 100); // 100ms delay between each item
                 itemObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.2 }); // Trigger when 20% of item is visible
 
+    // Set initial state and observe all contact items
     contactItems.forEach(item => {
         item.style.opacity = '0';
         item.style.transform = 'translateX(-20px)';
