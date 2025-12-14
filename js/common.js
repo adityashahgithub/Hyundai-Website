@@ -16,6 +16,31 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelector('.nav-links');
     const header = document.querySelector('header');
 
+    // Set active navigation link based on current page
+    const setActiveNavLink = () => {
+        const pathname = window.location.pathname;
+        const currentPage = pathname.split('/').pop() || 'index.html';
+        
+        const navItems = document.querySelectorAll('.nav-links a');
+        
+        navItems.forEach(link => {
+            const href = link.getAttribute('href');
+            
+            // Check if the current page matches the href
+            // Handle both direct matches and index.html cases
+            if (href === currentPage || 
+                (currentPage === 'index.html' && href === 'index.html') ||
+                (!currentPage && href === 'index.html')) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    };
+
+    // Set active link on page load
+    setActiveNavLink();
+
     // Mobile menu toggle functionality
     if (mobileMenuBtn && navLinks) {
         // Toggle menu when hamburger button is clicked
