@@ -1,333 +1,331 @@
 {
-    "cars": [
-      {
-        "id": "creta",
-        "name": "Creta",
-        "category": "SUV",
-        "price": "₹10.99 – 20.15 Lakh",
-        "image": "images/creta.avif",
-        "heroImage": "images/creta.avif",
-        "description": "The 2024 Hyundai Creta pairs bold styling with Level 2 ADAS, twin 10.25-inch displays, and new turbo powertrains.",
-        "specs": {
-          "engine": "1.5L NA Petrol / 1.5L Turbo Petrol / 1.5L Diesel",
-          "power": "115 PS / 160 PS / 116 PS",
-          "torque": "144 Nm / 253 Nm / 250 Nm",
-          "transmission": "6MT / IVT / 7DCT / 6AT",
-          "mileage": "17.4 kmpl (Petrol) / 21.8 kmpl (Diesel)",
-          "seating": "5",
-          "fuel": "Petrol / Diesel"
-        },
-        "features": [
-          "ADAS Level 2",
-          "Panoramic Sunroof",
-          "10.25-inch Dual Screens",
-          "Ventilated Front Seats",
-          "Bose Premium Audio"
-        ]
+  "cars": [
+    {
+      "id": "venue",
+      "name": "VENUE",
+      "category": "SUV",
+      "price": "₹7.89 – 13.48 Lakh",
+      "image": "images/venue.avif",
+      "heroImage": "images/venue.avif",
+      "description": "The all-new Hyundai VENUE redefines the compact SUV experience with bold design, advanced innovation, and tech-inspired cabin. Driven by the spirit of Tech Up. Go Beyond.",
+      "specs": {
+        "engine": "1.2 l Kappa petrol / 1.0 l Kappa turbo GDi petrol / 1.5 l U2 CRDi diesel",
+        "power": "83 PS / 120 PS / 116 PS",
+        "torque": "114 Nm / 172 Nm / 250 Nm",
+        "transmission": "MT | AT | DCT",
+        "mileage": "18.6 kmpl (Petrol) / 24.2 kmpl (Diesel)",
+        "seating": "5",
+        "fuel": "Petrol / Diesel"
       },
-      {
-        "id": "creta_ev",
-        "name": "Creta EV",
-        "category": "EV",
-        "price": "₹22.00 – 28.00 Lakh (Expected)",
-        "image": "images/creta_ev.avif",
-        "heroImage": "images/creta_ev.avif",
-        "description": "The upcoming Creta EV debuts a 45 kWh battery, 420 km certified range, and 150 kW fast-charging capability.",
-        "specs": {
-          "engine": "Single Permanent Magnet Motor",
-          "power": "138 PS",
-          "torque": "255 Nm",
-          "transmission": "Single Speed Reduction Gear",
-          "range": "420 km (MIDC, expected)",
-          "charging": "10-80% in 45 min (150 kW DC)",
-          "seating": "5",
-          "fuel": "Electric"
-        },
-        "features": [
-          "Vehicle-to-Load (V2L)",
-          "ADAS Suite",
-          "12.3-inch Curved Displays",
-          "Connected LED Lighting",
-          "Wireless OTA Updates"
-        ]
+      "features": [
+        "Bluelink Connected Car Technology",
+        "Air Purifier with AQI Display",
+        "Wireless Phone Charger",
+        "6 Airbags",
+        "Dual Camera Dashcam"
+      ]
+    },
+    {
+      "id": "venue_n_line",
+      "name": "VENUE N LINE",
+      "category": "SUV",
+      "price": "₹10.55 – 13.90 Lakh",
+      "image": "images/venue_n_line.avif",
+      "heroImage": "images/venue_n_line.avif",
+      "description": "2025 VENUE N LINE brings motorsport-inspired design with turbocharged performance, sport-tuned suspension, and N-specific styling elements.",
+      "specs": {
+        "engine": "Kappa 1.0 l Turbo GDi petrol",
+        "power": "120 PS",
+        "torque": "172 Nm",
+        "transmission": "MT | DCT",
+        "mileage": "18.3 kmpl (ARAI)",
+        "seating": "5",
+        "fuel": "Petrol"
       },
-      {
-        "id": "creta_n_line",
-        "name": "Creta N Line",
-        "category": "SUV",
-        "price": "₹16.82 – 20.30 Lakh",
-        "image": "images/creta_n_line.avif",
-        "heroImage": "images/creta_n_line.avif",
-        "description": "Creta N Line adds motorsport-inspired bumpers, twin-tip exhaust, and sport-tuned steering to the turbo Creta.",
-        "specs": {
-          "engine": "1.5L Turbo GDi Petrol",
-          "power": "160 PS",
-          "torque": "253 Nm",
-          "transmission": "6MT / 7DCT",
-          "mileage": "18.0 kmpl (ARAI)",
-          "seating": "5",
-          "fuel": "Petrol"
-        },
-        "features": [
-          "All-Black Cabin with Red Accents",
-          "Paddle Shifters",
-          "Sport Pedals",
-          "ADAS Level 2",
-          "Advanced Digital Cluster"
-        ]
+      "features": [
+        "Twin Tip Exhaust",
+        "All Disc Brakes",
+        "Paddle Shifters",
+        "N Line Exterior Package",
+        "Red Ambient Lighting"
+      ]
+    },
+    {
+      "id": "exter",
+      "name": "EXTER",
+      "category": "SUV",
+      "price": "₹5.68 – 10.28 Lakh",
+      "image": "images/exter.avif",
+      "heroImage": "images/exter.avif",
+      "description": "Hyundai EXTER is the micro-SUV with 6 airbags, dual-camera dashcam, voice-enabled smart sunroof, and factory-fitted CNG option.",
+      "specs": {
+        "engine": "1.2 l Kappa petrol / 1.2 l Bi-fuel Kappa petrol with CNG",
+        "power": "83 PS / 69 PS (CNG)",
+        "torque": "114 Nm / 95 Nm",
+        "transmission": "5-Speed Manual / Smart Auto AMT",
+        "mileage": "19.4 kmpl (Petrol) / 27.1 km/kg (CNG)",
+        "seating": "5",
+        "fuel": "Petrol / CNG"
       },
-      {
-        "id": "venue",
-        "name": "Venue",
-        "category": "SUV",
-        "price": "₹7.94 – 13.48 Lakh",
-        "image": "images/venue.avif",
-        "heroImage": "images/venue.avif",
-        "description": "Venue is Hyundai's connected sub-4m SUV with 60+ Bluelink features, air purifier, and efficient drivetrains.",
-        "specs": {
-          "engine": "1.2L Petrol / 1.0L Turbo Petrol / 1.5L Diesel",
-          "power": "83 PS / 120 PS / 116 PS",
-          "torque": "114 Nm / 172 Nm / 250 Nm",
-          "transmission": "5MT / 6MT / 7DCT / 6iMT",
-          "mileage": "18.6 kmpl (Petrol) / 24.2 kmpl (Diesel)",
-          "seating": "5",
-          "fuel": "Petrol / Diesel"
-        },
-        "features": [
-          "Bluelink with Alexa & Google",
-          "Air Purifier with AQI Display",
-          "Powered Driver Seat",
-          "6 Airbags",
-          "Dashcam with Dual Camera"
-        ]
+      "features": [
+        "Dual Camera Dashcam",
+        "Voice Enabled Sunroof",
+        "Parametric LED DRLs",
+        "Bluelink Connected Car",
+        "Rear AC Vents"
+      ]
+    },
+    {
+      "id": "creta",
+      "name": "The new Hyundai CRETA",
+      "category": "SUV",
+      "price": "₹10.72 – 20.15 Lakh",
+      "image": "images/creta.avif",
+      "heroImage": "images/creta.avif",
+      "description": "The all-new Hyundai CRETA pairs bold styling with Level 2 ADAS, twin 10.25-inch displays, panoramic sunroof, and powerful turbo powertrains.",
+      "specs": {
+        "engine": "1.5 l Turbo GDi petrol / 1.5 l MPi petrol / 1.5 l U2 CRDi diesel",
+        "power": "160 PS / 115 PS / 116 PS",
+        "torque": "253 Nm / 144 Nm / 250 Nm",
+        "transmission": "6-Speed manual & 7-Speed DCT / 6-Speed manual & IVT",
+        "mileage": "17.4 kmpl (Petrol) / 21.8 kmpl (Diesel)",
+        "seating": "5",
+        "fuel": "Petrol / Diesel"
       },
-      {
-        "id": "venue_n_line",
-        "name": "Venue N Line",
-        "category": "SUV",
-        "price": "₹12.08 – 13.90 Lakh",
-        "image": "images/venue_n_line.avif",
-        "heroImage": "images/venue_n_line.avif",
-        "description": "Venue N Line brings a 1.0L turbo petrol with paddle shifters, retuned suspension, and N-specific interiors.",
-        "specs": {
-          "engine": "1.0L Turbo GDi Petrol",
-          "power": "120 PS",
-          "torque": "172 Nm",
-          "transmission": "7DCT with Paddle Shifters",
-          "mileage": "18.3 kmpl (ARAI)",
-          "seating": "5",
-          "fuel": "Petrol"
-        },
-        "features": [
-          "All Disc Brakes",
-          "Twin Tip Exhaust",
-          "Red Ambient Lighting",
-          "Wireless Charger",
-          "N Line Exterior Pack"
-        ]
+      "features": [
+        "ADAS Level 2",
+        "Panoramic Sunroof",
+        "10.25-inch Dual Screens",
+        "Ventilated Front Seats",
+        "Bose Premium Audio"
+      ]
+    },
+    {
+      "id": "alcazar",
+      "name": "ALCAZAR",
+      "category": "SUV",
+      "price": "₹14.47 – 21.28 Lakh",
+      "image": "images/alcazar.avif",
+      "heroImage": "images/alcazar.avif",
+      "description": "Hyundai ALCAZAR is the premium 6/7-seater SUV with captain seats, voice-enabled sunroof, 360-degree camera, and advanced safety features.",
+      "specs": {
+        "engine": "1.5l Turbo GDi petrol / 1.5l U2 CRDi diesel",
+        "power": "160 PS / 116 PS",
+        "torque": "253 Nm / 250 Nm",
+        "transmission": "6 MT, 7 DCT, 6AT",
+        "mileage": "18.0 kmpl (Petrol) / 20.4 kmpl (Diesel)",
+        "seating": "6/7",
+        "fuel": "Petrol / Diesel"
       },
-      {
-        "id": "grandi10",
-        "name": "Grand i10 Nios",
-        "category": "Hatchback",
-        "price": "₹5.92 – 8.56 Lakh",
-        "image": "images/i10.avif",
-        "heroImage": "images/i10.avif",
-        "description": "Grand i10 Nios is the urban hatch with projector headlamps, connected car tech, and factory CNG option.",
-        "specs": {
-          "engine": "1.2L Petrol / 1.2L Bi-Fuel CNG",
-          "power": "83 PS / 69 PS (CNG)",
-          "torque": "114 Nm / 95 Nm",
-          "transmission": "5MT / 5AMT",
-          "mileage": "20.7 kmpl (Petrol) / 27.0 km/kg (CNG)",
-          "seating": "5",
-          "fuel": "Petrol / CNG"
-        },
-        "features": [
-          "8-inch Touchscreen",
-          "Rear AC Vents",
-          "Wireless Charger",
-          "Projector Fog Lamps",
-          "Connected Car Tech"
-        ]
+      "features": [
+        "Rear Window Sunshades",
+        "Bose Premium Audio",
+        "Ventilated Front Seats",
+        "Blind View Monitor",
+        "Dual-Zone Climate Control"
+      ]
+    },
+    {
+      "id": "creta_n_line",
+      "name": "CRETA N LINE",
+      "category": "SUV",
+      "price": "₹17.82 – 20.30 Lakh",
+      "image": "images/creta_n_line.avif",
+      "heroImage": "images/creta_n_line.avif",
+      "description": "CRETA N LINE adds motorsport-inspired bumpers, twin-tip exhaust, sport-tuned steering, and N-specific styling to the turbo CRETA.",
+      "specs": {
+        "engine": "1.5 l Turbo GDi Petrol",
+        "power": "160 PS",
+        "torque": "253 Nm",
+        "transmission": "6 Speed Manual / 7-speed DCT",
+        "mileage": "18.0 kmpl (ARAI)",
+        "seating": "5",
+        "fuel": "Petrol"
       },
-      {
-        "id": "i20",
-        "name": "i20",
-        "category": "Hatchback",
-        "price": "₹7.04 – 11.21 Lakh",
-        "image": "images/i20.avif",
-        "heroImage": "images/i20.avif",
-        "description": "i20 offers 6 airbags, Bose audio, and a 10.25-inch infotainment with OTA navigation updates.",
-        "specs": {
-          "engine": "1.2L Kappa Petrol",
-          "power": "83 PS (MT) / 88 PS (IVT)",
-          "torque": "115 Nm",
-          "transmission": "5MT / IVT",
-          "mileage": "20.0 kmpl (MT) / 19.6 kmpl (IVT)",
-          "seating": "5",
-          "fuel": "Petrol"
-        },
-        "features": [
-          "Bose 7-Speaker Audio",
-          "Ambient Lighting",
-          "Wireless Charger",
-          "Rear AC Vents",
-          "OTA Map Updates"
-        ]
+      "features": [
+        "All-Black Cabin with Red Accents",
+        "Paddle Shifters",
+        "Sport Pedals",
+        "ADAS Level 2",
+        "Advanced Digital Cluster"
+      ]
+    },
+    {
+      "id": "grandi10",
+      "name": "Grand i10 NIOS",
+      "category": "Hatchback",
+      "price": "₹5.47 – 8.56 Lakh",
+      "image": "images/i10.avif",
+      "heroImage": "images/i10.avif",
+      "description": "Grand i10 NIOS is the urban hatchback with projector headlamps, connected car tech, factory CNG option, and modern features.",
+      "specs": {
+        "engine": "1.2l Kappa Petrol / 1.2l Bi-Fuel (Petrol with CNG)",
+        "power": "83 PS / 69 PS (CNG)",
+        "torque": "114 Nm / 95 Nm",
+        "transmission": "5 Speed Manual / Smart Auto AMT",
+        "mileage": "20.7 kmpl (Petrol) / 27.0 km/kg (CNG)",
+        "seating": "5",
+        "fuel": "Petrol / CNG"
       },
-      {
-        "id": "i20_n_line",
-        "name": "i20 N Line",
-        "category": "Hatchback",
-        "price": "₹10.19 – 12.52 Lakh",
-        "image": "images/i20_n_line.avif",
-        "heroImage": "images/i20_n_line.avif",
-        "description": "i20 N Line deploys a 1.0L turbo petrol, twin-tip exhaust, and paddle shifters for enthusiast-friendly driving.",
-        "specs": {
-          "engine": "1.0L Turbo GDi Petrol",
-          "power": "120 PS",
-          "torque": "172 Nm",
-          "transmission": "6iMT / 7DCT",
-          "mileage": "20.0 kmpl (iMT) / 19.0 kmpl (DCT)",
-          "seating": "5",
-          "fuel": "Petrol"
-        },
-        "features": [
-          "Twin Tip Exhaust",
-          "All Disc Brakes",
-          "Paddle Shifters",
-          "Digital Cluster with Lap Timer",
-          "Black Cabin with Red Stitching"
-        ]
+      "features": [
+        "8-inch Touchscreen",
+        "Rear AC Vents",
+        "Wireless Charger",
+        "Projector Fog Lamps",
+        "Connected Car Tech"
+      ]
+    },
+    {
+      "id": "i20",
+      "name": "i20",
+      "category": "Hatchback",
+      "price": "₹6.86 – 11.21 Lakh",
+      "image": "images/i20.avif",
+      "heroImage": "images/i20.avif",
+      "description": "Hyundai i20 offers 6 airbags, Bose premium audio, 10.25-inch infotainment with OTA navigation updates, and advanced safety.",
+      "specs": {
+        "engine": "1.2 l Kappa petrol",
+        "power": "83 PS (MT) / 88 PS (IVT)",
+        "torque": "115 Nm",
+        "transmission": "5 MT, IVT",
+        "mileage": "20.0 kmpl (MT) / 19.6 kmpl (IVT)",
+        "seating": "5",
+        "fuel": "Petrol"
       },
-      {
-        "id": "verna",
-        "name": "Verna",
-        "category": "Sedan",
-        "price": "₹11.00 – 17.42 Lakh",
-        "image": "images/verna.avif",
-        "heroImage": "images/verna.avif",
-        "description": "The sixth-gen Verna features segment-leading wheelbase, dual 10.25-inch screens, and Level 2 ADAS.",
-        "specs": {
-          "engine": "1.5L NA Petrol / 1.5L Turbo GDi",
-          "power": "115 PS / 160 PS",
-          "torque": "144 Nm / 253 Nm",
-          "transmission": "6MT / IVT / 7DCT",
-          "mileage": "19.6 kmpl (NA) / 20.6 kmpl (Turbo)",
-          "seating": "5",
-          "fuel": "Petrol"
-        },
-        "features": [
-          "ADAS Level 2",
-          "Heated & Ventilated Seats",
-          "Acoustic Front Glass",
-          "Ambient Sound Lighting",
-          "Smart Trunk Release"
-        ]
+      "features": [
+        "Bose 7-Speaker Audio",
+        "Ambient Lighting",
+        "Wireless Charger",
+        "Rear AC Vents",
+        "OTA Map Updates"
+      ]
+    },
+    {
+      "id": "i20_n_line",
+      "name": "i20 N Line",
+      "category": "Hatchback",
+      "price": "₹9.14 – 12.52 Lakh",
+      "image": "images/i20_n_line.avif",
+      "heroImage": "images/i20_n_line.avif",
+      "description": "i20 N Line deploys a 1.0L turbo petrol engine, twin-tip exhaust, paddle shifters, and sport-tuned suspension for enthusiast-friendly driving.",
+      "specs": {
+        "engine": "1.0 l Turbo GDi Petrol",
+        "power": "120 PS",
+        "torque": "172 Nm",
+        "transmission": "7DCT, 6MT",
+        "mileage": "20.0 kmpl (iMT) / 19.0 kmpl (DCT)",
+        "seating": "5",
+        "fuel": "Petrol"
       },
-      {
-        "id": "alcazar",
-        "name": "Alcazar",
-        "category": "SUV",
-        "price": "₹16.77 – 21.28 Lakh",
-        "image": "images/alcazar.avif",
-        "heroImage": "images/alcazar.avif",
-        "description": "Alcazar is Hyundai's 6/7-seater SUV with captain seats, voice-enabled sunroof, and 360-degree camera.",
-        "specs": {
-          "engine": "1.5L Turbo Petrol / 1.5L Diesel",
-          "power": "160 PS / 116 PS",
-          "torque": "253 Nm / 250 Nm",
-          "transmission": "6MT / 7DCT / 6AT",
-          "mileage": "18.0 kmpl (Petrol) / 20.4 kmpl (Diesel)",
-          "seating": "6/7",
-          "fuel": "Petrol / Diesel"
-        },
-        "features": [
-          "Rear Window Sunshades",
-          "Bose Audio",
-          "Ventilated Front Seats",
-          "Blind View Monitor",
-          "Dual-Zone Climate Control"
-        ]
+      "features": [
+        "Twin Tip Exhaust",
+        "All Disc Brakes",
+        "Paddle Shifters",
+        "Digital Cluster with Lap Timer",
+        "Black Cabin with Red Stitching"
+      ]
+    },
+    {
+      "id": "aura",
+      "name": "AURA",
+      "category": "Sedan",
+      "price": "₹5.98 – 9.05 Lakh",
+      "image": "images/aura.avif",
+      "heroImage": "images/aura.avif",
+      "description": "Hyundai AURA offers petrol and factory CNG options, TPMS, 8-inch infotainment with telematics connectivity, and modern features.",
+      "specs": {
+        "engine": "1.2l Kappa Petrol / 1.2l Bi-Fuel (Petrol with CNG)",
+        "power": "83 PS / 69 PS (CNG)",
+        "torque": "114 Nm / 95 Nm",
+        "transmission": "5 Speed Manual / Smart Auto AMT",
+        "mileage": "20.5 kmpl (Petrol) / 28 km/kg (CNG)",
+        "seating": "5",
+        "fuel": "Petrol / CNG"
       },
-      {
-        "id": "aura",
-        "name": "Aura",
-        "category": "Sedan",
-        "price": "₹6.49 – 9.05 Lakh",
-        "image": "images/aura.avif",
-        "heroImage": "images/aura.avif",
-        "description": "Aura offers petrol and factory CNG options, TPMS, and an 8-inch infotainment with telematics connectivity.",
-        "specs": {
-          "engine": "1.2L Petrol / 1.2L Bi-Fuel CNG",
-          "power": "83 PS / 69 PS (CNG)",
-          "torque": "114 Nm / 95 Nm",
-          "transmission": "5MT / 5AMT",
-          "mileage": "20.5 kmpl (Petrol) / 28 km/kg (CNG)",
-          "seating": "5",
-          "fuel": "Petrol / CNG"
-        },
-        "features": [
-          "4-Airbag Standard",
-          "Cruise Control",
-          "Type-C Fast Chargers",
-          "Wireless Phone Charger",
-          "Projector Fog Lamps"
-        ]
+      "features": [
+        "4-Airbag Standard",
+        "Cruise Control",
+        "Type-C Fast Chargers",
+        "Wireless Phone Charger",
+        "Projector Fog Lamps"
+      ]
+    },
+    {
+      "id": "verna",
+      "name": "Hyundai VERNA",
+      "category": "Sedan",
+      "price": "₹10.69 – 17.42 Lakh",
+      "image": "images/verna.avif",
+      "heroImage": "images/verna.avif",
+      "description": "The sixth-gen Hyundai VERNA features segment-leading wheelbase, dual 10.25-inch screens, Level 2 ADAS, and powerful turbo engine.",
+      "specs": {
+        "engine": "1.5 l Turbo GDi petrol / 1.5 l MPi petrol",
+        "power": "160 PS / 115 PS",
+        "torque": "253 Nm / 144 Nm",
+        "transmission": "6-Speed manual & 7-Speed DCT / 6-Speed manual & IVT",
+        "mileage": "19.6 kmpl (NA) / 20.6 kmpl (Turbo)",
+        "seating": "5",
+        "fuel": "Petrol"
       },
-      {
-        "id": "exter",
-        "name": "Exter",
-        "category": "SUV",
-        "price": "₹6.13 – 10.28 Lakh",
-        "image": "images/exter.avif",
-        "heroImage": "images/exter.avif",
-        "description": "Hyundai Exter is the micro-SUV with 6 airbags, dual-camera dashcam, and voice-enabled smart sunroof.",
-        "specs": {
-          "engine": "1.2L Petrol / 1.2L Bi-Fuel CNG",
-          "power": "83 PS / 69 PS (CNG)",
-          "torque": "114 Nm / 95 Nm",
-          "transmission": "5MT / 5AMT",
-          "mileage": "19.4 kmpl (Petrol) / 27.1 km/kg (CNG)",
-          "seating": "5",
-          "fuel": "Petrol / CNG"
-        },
-        "features": [
-          "Dual Camera Dashcam",
-          "Voice Enabled Sunroof",
-          "Parametric LED DRLs",
-          "Bluelink with OTA",
-          "Rear AC Vents"
-        ]
+      "features": [
+        "ADAS Level 2",
+        "Heated & Ventilated Seats",
+        "Acoustic Front Glass",
+        "Ambient Sound Lighting",
+        "Smart Trunk Release"
+      ]
+    },
+    {
+      "id": "ioniq5",
+      "name": "IONIQ 5",
+      "category": "EV",
+      "price": "₹46.30 Lakh",
+      "image": "images/ioniq5_ev.avif",
+      "heroImage": "images/ioniq5_ev.avif",
+      "description": "Built on E-GMP platform, Hyundai IONIQ 5 brings 631 km ARAI range, 800V ultra-fast charging, and Vehicle-to-Load functionality.",
+      "specs": {
+        "engine": "Permanent magnet synchronous motor (PMSM)",
+        "power": "217 PS",
+        "torque": "350 Nm",
+        "transmission": "Single speed reduction gear",
+        "range": "631 km (ARAI)",
+        "charging": "10-80% in 18 min (350 kW DC)",
+        "seating": "5",
+        "fuel": "Electric"
       },
-      {
-        "id": "ioniq5",
-        "name": "IONIQ 5",
-        "category": "EV",
-        "price": "₹45.95 Lakh",
-        "image": "images/ioniq5_ev.avif",
-        "heroImage": "images/ioniq5_ev.avif",
-        "description": "Built on E-GMP, IONIQ 5 brings 631 km ARAI range, 800V charging, and Vehicle-to-Load functionality.",
-        "specs": {
-          "engine": "Electric Motor (72.6 kWh Battery)",
-          "power": "217 PS",
-          "torque": "350 Nm",
-          "transmission": "Single Speed",
-          "range": "631 km (ARAI)",
-          "charging": "10-80% in 18 min (350 kW DC)",
-          "seating": "5",
-          "fuel": "Electric"
-        },
-        "features": [
-          "Vehicle-to-Load (V2L)",
-          "Relaxation Seats",
-          "12.3-inch Dual Displays",
-          "AR Head-Up Display",
-          "Solar Roof Panel"
-        ]
-      }
-    ]
-  }
-  
-  
+      "features": [
+        "Vehicle-to-Load (V2L)",
+        "Relaxation Seats",
+        "12.3-inch Dual Displays",
+        "AR Head-Up Display",
+        "Solar Roof Panel"
+      ]
+    },
+    {
+      "id": "creta_ev",
+      "name": "Creta Electric",
+      "category": "EV",
+      "price": "₹18.02 – 22.00 Lakh",
+      "image": "images/creta_ev.avif",
+      "heroImage": "images/creta_ev.avif",
+      "description": "Hyundai Creta Electric debuts with 45 kWh battery, 420 km certified range, 150 kW fast-charging capability, and advanced EV technology.",
+      "specs": {
+        "engine": "Interior Permanent magnet synchronous motor (IPMSM)",
+        "power": "138 PS",
+        "torque": "255 Nm",
+        "transmission": "Single speed reduction gear",
+        "range": "420 km (MIDC)",
+        "charging": "10-80% in 45 min (150 kW DC)",
+        "seating": "5",
+        "fuel": "Electric"
+      },
+      "features": [
+        "Vehicle-to-Load (V2L)",
+        "ADAS Suite",
+        "12.3-inch Curved Displays",
+        "Connected LED Lighting",
+        "Wireless OTA Updates"
+      ]
+    }
+  ]
+}

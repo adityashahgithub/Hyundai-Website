@@ -1,27 +1,37 @@
+/* ============================================
+   MODELS PAGE SPECIFIC STYLES
+   ============================================ */
+
+/* Filter Buttons Container
+   Centered flex container for category filter buttons */
 .filter-buttons {
     display: flex;
     justify-content: center;
     gap: 1rem;
     margin-bottom: 3rem;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
 }
 
+/* Individual Filter Button
+   Pill-shaped button for filtering models by category */
 .filter-btn {
     padding: 0.75rem 1.5rem;
     background: var(--white);
     border: 2px solid rgba(0, 44, 95, 0.2);
     color: var(--primary-color);
-    border-radius: 999px;
+    border-radius: 999px; /* Fully rounded pill shape */
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: 600;
 }
 
+/* Filter Button Hover & Active States
+   Active button and hover state have primary color background */
 .filter-btn:hover,
 .filter-btn.active {
     background: var(--primary-color);
     color: var(--white);
-    transform: translateY(-2px);
+    transform: translateY(-2px); /* Slight lift effect on hover */
     border-color: var(--primary-color);
 }
 
