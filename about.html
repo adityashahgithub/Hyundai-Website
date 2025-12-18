@@ -23,9 +23,29 @@
                 <li><a href="test-drive.html">Test Drive</a></li>
                 <li><a href="offers.html">Offers</a></li>
                 <li><a href="dealers.html">Dealers</a></li>
-                <li><a href="testimonials.html">Testimonials</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <div class="nav-user-menu">
+                        <a href="login.html" class="nav-login" aria-label="Login or Sign Up">
+                            <span class="nav-login-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="8" r="4"></circle>
+                                    <path d="M5 19c0-3.5 3-6 7-6s7 2.5 7 6"></path>
+                                </svg>
+                            </span>
+                        </a>
+                        <div class="user-dropdown" id="userDropdown">
+                            <div class="dropdown-header">
+                                <div class="user-info">
+                                    <p class="user-name" id="userNameDisplay">User</p>
+                                    <p class="user-email" id="userEmailDisplay">user@example.com</p>
+                                </div>
+                            </div>
+                            <button class="logout-btn" id="logoutBtn">Logout</button>
+                        </div>
+                    </div>
+                </li>
             </ul>
             <!-- Mobile Menu Toggle Button -->
             <button class="mobile-menu-btn">☰</button>
@@ -52,14 +72,16 @@
         <!-- Story Content - Paragraphs animated on scroll -->
         <div class="about-story">
             <p>
-                Hyundai Motor Company was founded in 1967 and has since grown to become one of the world's largest 
-                automobile manufacturers. With a commitment to quality, innovation, and customer satisfaction, Hyundai 
-                has established itself as a global leader in the automotive industry.
+                Founded in 1967 in Seoul, South Korea, Hyundai Motor Company is now among the world’s five largest
+                automakers. Hyundai operates the world’s largest integrated auto plant in Ulsan, produces vehicles in
+                10+ countries, and sells in over 200 markets. In 2023, Hyundai Motor Company sold over 4 million
+                vehicles globally, driven by strong demand for SUVs and the IONIQ electric lineup.
             </p>
             <p>
-                In India, Hyundai Motor India Limited (HMIL) has been a trusted name since 1996, offering a wide range 
-                of vehicles that combine style, performance, and advanced technology. We are committed to providing 
-                exceptional value to our customers while contributing to a sustainable future.
+                In India, Hyundai Motor India Limited (HMIL) was established in 1996 with its manufacturing hub near
+                Chennai. The plant’s annual capacity exceeds 800,000 units, serving domestic customers and exporting to
+                150+ countries. Hyundai crossed 10 million cumulative domestic sales in India and remains a leader in
+                safety, connected tech, and feature-rich SUVs.
             </p>
         </div>
 
@@ -70,33 +92,63 @@
                 <!-- Timeline Item 1 - Company Foundation -->
                 <div class="timeline-item">
                     <h3>1967</h3>
-                    <p>Hyundai Motor Company was founded in South Korea, marking the beginning of an automotive revolution.</p>
+                    <p>Hyundai Motor Company is founded in Seoul, South Korea.</p>
                 </div>
-                <!-- Timeline Item 2 - India Entry -->
+                <div class="timeline-item">
+                    <h3>1975</h3>
+                    <p>Pony, Korea’s first mass-produced car, debuts and begins exports.</p>
+                </div>
                 <div class="timeline-item">
                     <h3>1996</h3>
-                    <p>Hyundai Motor India Limited (HMIL) was established, bringing world-class vehicles to Indian roads.</p>
+                    <p>Hyundai Motor India Limited is established; Sriperumbudur plant construction begins.</p>
                 </div>
-                <!-- Timeline Item 3 - Santro Launch -->
                 <div class="timeline-item">
-                    <h3>2000</h3>
-                    <p>Launched the iconic Santro, which became one of India's most loved hatchbacks.</p>
+                    <h3>1998</h3>
+                    <p>Santro launches in India, redefining the compact hatchback segment.</p>
                 </div>
-                <!-- Timeline Item 4 - Creta Launch -->
                 <div class="timeline-item">
                     <h3>2015</h3>
-                    <p>Introduced the Creta, setting new benchmarks in the compact SUV segment.</p>
+                    <p>Creta launches and becomes a benchmark for compact SUVs in India.</p>
                 </div>
-                <!-- Timeline Item 5 - Electric Revolution -->
                 <div class="timeline-item">
-                    <h3>2020</h3>
-                    <p>Launched the revolutionary IONIQ 5, showcasing Hyundai's commitment to electric mobility.</p>
+                    <h3>2021</h3>
+                    <p>IONIQ 5 debuts on the dedicated E-GMP EV platform, earning global awards.</p>
                 </div>
-                <!-- Timeline Item 6 - Current Era -->
                 <div class="timeline-item">
                     <h3>2024</h3>
-                    <p>Continuing to lead with innovation, sustainability, and customer-centric solutions.</p>
+                    <p>Hyundai advances its 2045 carbon-neutral roadmap and expands EV and hydrogen programs.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- By the Numbers Section -->
+    <section class="section" style="background: var(--white);">
+        <h2 class="section-title">Hyundai at a Glance</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <h3>4M+ Vehicles (2023)</h3>
+                <p>Global Hyundai Motor Company sales driven by SUVs and EVs.</p>
+            </div>
+            <div class="value-card">
+                <h3>800K+ / Year</h3>
+                <p>Annual plant capacity at Sriperumbudur, near Chennai.</p>
+            </div>
+            <div class="value-card">
+                <h3>150+ Export Markets</h3>
+                <p>India-built Hyundai cars shipped across Asia, Middle East, Africa, and LATAM.</p>
+            </div>
+            <div class="value-card">
+                <h3>2045 Net-Zero Goal</h3>
+                <p>Carbon neutrality roadmap spanning EVs, hydrogen, and green logistics.</p>
+            </div>
+            <div class="value-card">
+                <h3>Safety & ADAS</h3>
+                <p>Expanding six-airbag standardization, ESC, and Level-2 ADAS in core models.</p>
+            </div>
+            <div class="value-card">
+                <h3>Connected Tech</h3>
+                <p>Bluelink services with remote controls, OTA updates, and voice assistance.</p>
             </div>
         </div>
     </section>
@@ -158,7 +210,6 @@
             <div class="footer-section">
                 <h3>Support</h3>
                 <a href="contact.html">Contact Us</a>
-                <a href="testimonials.html">Testimonials</a>
                 <a href="about.html">Our Story</a>
             </div>
             <div class="footer-section">
@@ -175,7 +226,9 @@
     </footer>
 
     <!-- JavaScript Files -->
+    <script src="js/storage.js"></script>
     <script src="js/common.js"></script>
+    <script src="js/user-menu.js"></script>
     <script src="js/about.js"></script>
 </body>
 </html>

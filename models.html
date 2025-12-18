@@ -23,9 +23,29 @@
                 <li><a href="test-drive.html">Test Drive</a></li>
                 <li><a href="offers.html">Offers</a></li>
                 <li><a href="dealers.html">Dealers</a></li>
-                <li><a href="testimonials.html">Testimonials</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <div class="nav-user-menu">
+                        <a href="login.html" class="nav-login" aria-label="Login or Sign Up">
+                            <span class="nav-login-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="8" r="4"></circle>
+                                    <path d="M5 19c0-3.5 3-6 7-6s7 2.5 7 6"></path>
+                                </svg>
+                            </span>
+                        </a>
+                        <div class="user-dropdown" id="userDropdown">
+                            <div class="dropdown-header">
+                                <div class="user-info">
+                                    <p class="user-name" id="userNameDisplay">User</p>
+                                    <p class="user-email" id="userEmailDisplay">user@example.com</p>
+                                </div>
+                            </div>
+                            <button class="logout-btn" id="logoutBtn">Logout</button>
+                        </div>
+                    </div>
+                </li>
             </ul>
             <!-- Mobile Menu Toggle Button -->
             <button class="mobile-menu-btn">☰</button>
@@ -72,7 +92,6 @@
             <div class="footer-section">
                 <h3>Support</h3>
                 <a href="contact.html">Contact Us</a>
-                <a href="testimonials.html">Testimonials</a>
                 <a href="about.html">Our Story</a>
             </div>
             <div class="footer-section">
@@ -89,7 +108,9 @@
     </footer>
 
     <!-- JavaScript Files -->
+    <script src="js/storage.js"></script>
     <script src="js/common.js"></script>
+    <script src="js/user-menu.js"></script>
     <script src="js/models.js"></script>
 </body>
 </html>

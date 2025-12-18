@@ -203,14 +203,25 @@ function animateDealerCards() {
 // Initialize when DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Render all dealers initially
-    renderDealers(dealers);
-    updateDealerCount(dealers.length);
+    // Restore last search term if available
+    const input = searchField();
+    if (window.StorageUtil && input) {
+        const currentUser = StorageUtil.get('hyundai:currentUser') || 'guest';
+        const searchKey = `dealerSearchTerm:${currentUser}`;
+        const saved = StorageUtil.get(searchKey, '');
+        if (saved) input.value = saved;
+    }
+
+    const initialList = input && input.value ? filterDealers(input.value) : dealers;
+    renderDealers(initialList);
+    updateDealerCount(initialList.length);
     
     // Animate cards after a short delay to ensure DOM is ready
     setTimeout(animateDealerCards, 100);
 
     // Get search input and button elements
-    const input = searchField();
+    // Re-reference input after potential restore
+    const input2 = searchField();
     const button = document.getElementById('dealerSearchBtn');
 
     /* ============================================
@@ -224,19 +235,29 @@ document.addEventListener('DOMContentLoaded', () => {
     if (button) {
         button.addEventListener('click', () => {
             handleDealerSearch();
+            if (window.StorageUtil && input2) {
+                const currentUser = StorageUtil.get('hyundai:currentUser') || 'guest';
+                const searchKey = `dealerSearchTerm:${currentUser}`;
+                StorageUtil.set(searchKey, input2.value);
+            }
             // Re-animate cards after search
             setTimeout(animateDealerCards, 100);
         });
     }
 
-    if (input) {
+    if (input2) {
         /**
          * Enter key handler for search
          * Allows searching by pressing Enter key
          */
-        input.addEventListener('keypress', (event) => {
+        input2.addEventListener('keypress', (event) => {
             if (event.key === 'Enter') {
                 handleDealerSearch();
+                if (window.StorageUtil) {
+                    const currentUser = StorageUtil.get('hyundai:currentUser') || 'guest';
+                    const searchKey = `dealerSearchTerm:${currentUser}`;
+                    StorageUtil.set(searchKey, input2.value);
+                }
                 // Re-animate cards after search
                 setTimeout(animateDealerCards, 100);
             }
@@ -246,10 +267,15 @@ document.addEventListener('DOMContentLoaded', () => {
          * Real-time search on input
          * Filters dealers as user types
          */
-        input.addEventListener('input', () => {
-            const filtered = filterDealers(input.value);
+        input2.addEventListener('input', () => {
+            const filtered = filterDealers(input2.value);
             renderDealers(filtered);
             updateDealerCount(filtered.length);
+            if (window.StorageUtil) {
+                const currentUser = StorageUtil.get('hyundai:currentUser') || 'guest';
+                const searchKey = `dealerSearchTerm:${currentUser}`;
+                StorageUtil.set(searchKey, input2.value);
+            }
             // Re-animate cards after filtering
             setTimeout(animateDealerCards, 100);
         });

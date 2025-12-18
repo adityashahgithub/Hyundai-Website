@@ -34,6 +34,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     /* ============================================
+       LOCAL STORAGE: AUTOSAVE
+       ============================================ */
+
+    // Restore saved form values if available
+    if (window.StorageUtil && form) {
+        const currentUser = StorageUtil.get('hyundai:currentUser') || 'guest';
+        const formStorageKey = `contactForm:${currentUser}`;
+        StorageUtil.loadForm('contactForm', formStorageKey);
+
+        // Autosave on input/change
+        const saveHandler = () => StorageUtil.saveForm('contactForm', formStorageKey);
+        form.addEventListener('input', saveHandler);
+        form.addEventListener('change', saveHandler);
+    }
+
+    /* ============================================
        SUCCESS MESSAGE
        ============================================ */
     
@@ -289,6 +305,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     successMessage.classList.remove('show');
                     submitButton.disabled = false;
                     submitButton.textContent = 'Send Message';
+                    // Clear saved draft after successful submission
+                    if (window.StorageUtil) {
+                        const currentUser = StorageUtil.get('hyundai:currentUser') || 'guest';
+                        StorageUtil.remove(`contactForm:${currentUser}`);
+                    }
                 }, 3000);
             }, 1000);
         });

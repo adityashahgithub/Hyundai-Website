@@ -86,6 +86,30 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get all filter buttons
     const filterButtons = document.querySelectorAll('.filter-btn');
     
+    // Apply saved filter if exists
+    if (window.StorageUtil) {
+        const currentUser = StorageUtil.get('hyundai:currentUser') || 'guest';
+        const filterKey = `modelsFilter:${currentUser}`;
+        const savedFilter = StorageUtil.get(filterKey);
+        if (savedFilter) {
+            // Set active class and trigger filtering
+            const targetBtn = Array.from(filterButtons).find(btn => btn.getAttribute('data-filter') === savedFilter);
+            if (targetBtn) {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                targetBtn.classList.add('active');
+                // Wait a tick to ensure data has loaded
+                setTimeout(() => {
+                    if (savedFilter === 'all') {
+                        displayModels(allCars);
+                    } else {
+                        const filtered = allCars.filter(car => car.category === savedFilter);
+                        displayModels(filtered);
+                    }
+                }, 100);
+            }
+        }
+    }
+    
     // Add click event listener to each filter button
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -97,6 +121,12 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Get the filter category from data attribute
             const filter = this.getAttribute('data-filter');
+            // Persist selected filter
+            if (window.StorageUtil) {
+                const currentUser = StorageUtil.get('hyundai:currentUser') || 'guest';
+                const filterKey = `modelsFilter:${currentUser}`;
+                StorageUtil.set(filterKey, filter);
+            }
             
             // Filter and display cars based on selected category
             if (filter === 'all') {

@@ -53,6 +53,16 @@ async function loadCarDetails() {
         
         // Display the car details
         displayCarDetails(currentCar);
+
+        // Track recently viewed models (store IDs, max 6) per user session
+        if (window.StorageUtil && currentCar && currentCar.id) {
+            const currentUser = StorageUtil.get('hyundai:currentUser') || 'guest';
+            const recentKey = `recentModels:${currentUser}`;
+            const list = StorageUtil.get(recentKey, []);
+            const filtered = list.filter(id => id !== currentCar.id);
+            filtered.unshift(currentCar.id);
+            StorageUtil.set(recentKey, filtered.slice(0, 6));
+        }
     } catch (error) {
         console.error('Error loading car details:', error);
     }

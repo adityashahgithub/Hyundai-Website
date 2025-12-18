@@ -39,6 +39,11 @@ const serviceCenters = {
  * Load car models from JSON and display in selection grid
  * Fetches all car models and renders them as selectable cards
  */
+const getTestDriveFormKey = () => {
+        const currentUser = (window.StorageUtil && StorageUtil.get('hyundai:currentUser')) || 'guest';
+        return `testDriveForm:${currentUser}`;
+};
+
 async function loadModels() {
     try {
         // Fetch car data from JSON file
@@ -72,8 +77,29 @@ async function loadModels() {
                     
                     // Update summary with selected model name
                     updateSummary('model', this.dataset.modelName);
+
+                    // Persist selection (per user)
+                    if (window.StorageUtil) {
+                        StorageUtil.saveForm('testDriveForm', getTestDriveFormKey());
+                    }
                 });
             });
+
+            // Restore previously selected model from storage
+            if (window.StorageUtil) {
+                const saved = StorageUtil.get(getTestDriveFormKey());
+                const savedModelId = saved && (saved.model || saved.selectedModel);
+                if (savedModelId) {
+                    const savedCard = container.querySelector(`.model-card-select[data-model-id="${savedModelId}"]`);
+                    if (savedCard) {
+                        modelCards.forEach(c => c.classList.remove('selected'));
+                        savedCard.classList.add('selected');
+                        const hidden = document.getElementById('selectedModel');
+                        if (hidden) hidden.value = savedModelId;
+                        updateSummary('model', savedCard.dataset.modelName);
+                    }
+                }
+            }
         }
     } catch (error) {
         console.error('Error loading models:', error);
@@ -188,6 +214,9 @@ function initializeFormListeners() {
     if (timeSelect) {
         timeSelect.addEventListener('change', function() {
             updateSummary('time', formatTime(this.value));
+            if (window.StorageUtil) {
+                StorageUtil.saveForm('testDriveForm', getTestDriveFormKey());
+            }
         });
     }
     
@@ -215,6 +244,9 @@ function initializeFormListeners() {
                 }
                 updateSummary('location', 'Not selected');
             }
+            if (window.StorageUtil) {
+                StorageUtil.saveForm('testDriveForm', getTestDriveFormKey());
+            }
         });
     }
     
@@ -225,6 +257,13 @@ function initializeFormListeners() {
             e.preventDefault(); // Prevent default form submission
             handleFormSubmission();
         });
+
+        // Autosave on input/change
+        if (window.StorageUtil) {
+            const saveHandler = () => StorageUtil.saveForm('testDriveForm', getTestDriveFormKey());
+            form.addEventListener('input', saveHandler);
+            form.addEventListener('change', saveHandler);
+        }
     }
 }
 
@@ -300,6 +339,11 @@ function handleFormSubmission() {
     updateSummary('date', 'Not selected');
     updateSummary('time', 'Not selected');
     updateSummary('location', 'Not selected');
+
+    // Clear saved draft after successful submission
+    if (window.StorageUtil) {
+        StorageUtil.remove('testDriveForm');
+    }
 }
 
 /* ============================================
@@ -391,6 +435,30 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize form event listeners
     initializeFormListeners();
+
+    // Restore saved form values and apply to summary/location UI
+    if (window.StorageUtil) {
+        const formStorageKey = getTestDriveFormKey();
+        StorageUtil.loadForm('testDriveForm', formStorageKey);
+        const saved = StorageUtil.get(formStorageKey);
+        if (saved) {
+            if (saved.testDriveDate) updateSummary('date', formatDate(saved.testDriveDate));
+            if (saved.testDriveTime) updateSummary('time', formatTime(saved.testDriveTime));
+            if (saved.serviceCenter) {
+                const sc = serviceCenters[saved.serviceCenter];
+                if (sc) {
+                    const locationDetails = document.getElementById('locationDetails');
+                    if (locationDetails) {
+                        locationDetails.style.display = 'block';
+                        document.getElementById('locationAddress').textContent = sc.address;
+                        document.getElementById('locationPhone').textContent = sc.phone;
+                        document.getElementById('locationHours').textContent = sc.hours;
+                    }
+                    updateSummary('location', sc.name);
+                }
+            }
+        }
+    }
     
     /* ============================================
        SCROLL ANIMATIONS

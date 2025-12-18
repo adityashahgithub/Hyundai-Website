@@ -1,3 +1,39 @@
+/* User Login Navigation Button */
+.nav-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg-light);
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+    padding: 0 !important;
+}
+
+/* User Icon SVG - Sized to fit container */
+.nav-login-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.nav-login-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+}
+
+/* Hover Effect - Enhanced background and color */
+.nav-login:hover {
+    background: var(--secondary-color);
+    color: var(--white);
+    transform: scale(1.1);
+}
+
 .error-page {
     min-height: 80vh;
     display: flex;

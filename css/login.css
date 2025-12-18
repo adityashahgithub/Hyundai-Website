@@ -1,0 +1,305 @@
+:root {
+    --auth-bg: linear-gradient(135deg, #0f172a 0%, #111827 35%, #0b4eb3 100%);
+    --auth-card-bg: #ffffff;
+    --auth-border: rgba(255, 255, 255, 0.08);
+    --auth-shadow: 0 20px 60px rgba(15, 23, 42, 0.35);
+    --primary: var(--primary-color, #0b4eb3);
+    --primary-dark: #0a3f92;
+    --text-main: #0f172a;
+    --text-muted: #4b5563;
+    --surface: #f8fafc;
+    --primary-color: #002C5F;
+    --secondary-color: #00A5E5;
+    --accent-color: #FF6B35;
+    --text-dark: #1a1a1a;
+    --text-light: #666;
+    --bg-light: #f8f9fa;
+    --white: #ffffff;
+}
+
+/* User Login Navigation Button */
+.nav-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg-light);
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+    padding: 0 !important;
+}
+
+/* User Icon SVG - Sized to fit container */
+.nav-login-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.nav-login-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+}
+
+/* Hover Effect - Enhanced background and color */
+.nav-login:hover {
+    background: var(--secondary-color);
+    color: var(--white);
+    transform: scale(1.1);
+}
+
+body {
+    background: var(--auth-bg);
+    min-height: 100vh;
+}
+
+.auth-hero {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 24px 60px;
+}
+
+.auth-card {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    background: var(--auth-card-bg);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--auth-shadow);
+}
+
+.auth-visual {
+    position: relative;
+    min-height: 640px;
+    background: url('../images/main.avif') center/cover no-repeat;
+}
+
+.auth-visual::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(11, 78, 179, 0.78), rgba(11, 78, 179, 0.92));
+}
+
+.visual-overlay {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.visual-overlay h1 {
+    font-size: 34px;
+    line-height: 1.2;
+}
+
+.visual-overlay .subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+}
+
+.highlights {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0;
+    display: grid;
+    gap: 8px;
+}
+
+.highlights li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.highlights li::before {
+    content: "✓";
+    font-weight: 700;
+}
+
+.eyebrow {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.auth-form {
+    padding: 42px 36px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.tab-header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    background: var(--surface);
+    padding: 6px;
+    border-radius: 12px;
+}
+
+.tab-btn {
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    background: transparent;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tab-btn.active {
+    background: #fff;
+    color: var(--text-main);
+    box-shadow: inset 0 0 0 1px rgba(11, 78, 179, 0.15);
+}
+
+.form {
+    display: none;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.form.active {
+    display: flex;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.field label {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.field input {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 15px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+}
+
+.field input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(11, 78, 179, 0.15);
+}
+
+.field.row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.btn-primary {
+    width: 100%;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 13px 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-primary:active { transform: translateY(1px); }
+
+.hint {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.link:hover { text-decoration: underline; }
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #e5e7eb;
+}
+
+.alt-actions {
+    display: grid;
+    gap: 10px;
+}
+
+.alt-btn {
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    border-radius: 10px;
+    padding: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    color: var(--text-main);
+}
+
+.alt-btn:hover {
+    border-color: var(--primary);
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+    background: rgba(11, 78, 179, 0.02);
+}
+
+.alt-btn:active {
+    transform: translateY(1px);
+}
+
+@media (max-width: 960px) {
+    .auth-card { grid-template-columns: 1fr; }
+    .auth-visual { min-height: 240px; }
+    .auth-form { padding: 28px 20px; }
+}
+
+@media (max-width: 640px) {
+    .auth-hero { margin: 40px auto; }
+    .field.row { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .tab-header { grid-template-columns: 1fr 1fr; }
+}

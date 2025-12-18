@@ -23,9 +23,29 @@
                 <li><a href="test-drive.html">Test Drive</a></li>
                 <li><a href="offers.html">Offers</a></li>
                 <li><a href="dealers.html">Dealers</a></li>
-                <li><a href="testimonials.html">Testimonials</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <div class="nav-user-menu">
+                        <a href="login.html" class="nav-login" aria-label="Login or Sign Up">
+                            <span class="nav-login-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="8" r="4"></circle>
+                                    <path d="M5 19c0-3.5 3-6 7-6s7 2.5 7 6"></path>
+                                </svg>
+                            </span>
+                        </a>
+                        <div class="user-dropdown" id="userDropdown">
+                            <div class="dropdown-header">
+                                <div class="user-info">
+                                    <p class="user-name" id="userNameDisplay">User</p>
+                                    <p class="user-email" id="userEmailDisplay">user@example.com</p>
+                                </div>
+                            </div>
+                            <button class="logout-btn" id="logoutBtn">Logout</button>
+                        </div>
+                    </div>
+                </li>
             </ul>
             <!-- Mobile Menu Toggle Button -->
             <button class="mobile-menu-btn">☰</button>
@@ -104,7 +124,7 @@
                 <form id="contactForm">
                     <div class="form-group">
                         <label for="contactName">Full Name</label>
-                        <input type="text" id="contactName" name="name" placeholder="Enter your full name" required>
+                        <input type="text" id="contactName" name="name" placeholder="Enter your full name" required minlength="2" maxlength="100" pattern="[A-Za-z\s]+" title="Please enter a valid name (letters and spaces only, at least 2 characters)">
                         <span class="error-message"></span>
                     </div>
                     <div class="form-group">
@@ -114,7 +134,7 @@
                     </div>
                     <div class="form-group">
                         <label for="contactPhone">Phone Number</label>
-                        <input type="tel" id="contactPhone" name="phone" placeholder="Enter your phone number" required>
+                        <input type="tel" id="contactPhone" name="phone" placeholder="Enter your phone number" required pattern="[+]?[0-9\s\-().]{10,15}" title="Please enter a valid phone number (10-15 digits, optional country code)">
                         <span class="error-message"></span>
                     </div>
                     <div class="form-group">
@@ -131,7 +151,7 @@
                     </div>
                     <div class="form-group">
                         <label for="contactMessage">Message</label>
-                        <textarea id="contactMessage" name="message" rows="5" placeholder="Enter your message here..." required></textarea>
+                        <textarea id="contactMessage" name="message" rows="5" placeholder="Enter your message here..." required minlength="10" maxlength="1000" title="Please enter a message between 10 and 1000 characters"></textarea>
                         <span class="error-message"></span>
                     </div>
                     <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.05rem; font-weight: 600;">Send Message</button>
@@ -246,7 +266,6 @@
             <div class="footer-section">
                 <h3>Support</h3>
                 <a href="contact.html">Contact Us</a>
-                <a href="testimonials.html">Testimonials</a>
                 <a href="about.html">Our Story</a>
             </div>
             <div class="footer-section">
@@ -263,7 +282,9 @@
     </footer>
 
     <!-- JavaScript Files -->
+    <script src="js/storage.js"></script>
     <script src="js/common.js"></script>
+    <script src="js/user-menu.js"></script>
     <script src="js/contact.js"></script>
 </body>
 </html>

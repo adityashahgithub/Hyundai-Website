@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hyundai - Home</title>
+    <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
@@ -21,9 +22,29 @@
                 <li><a href="test-drive.html">Test Drive</a></li>
                 <li><a href="offers.html">Offers</a></li>
                 <li><a href="dealers.html">Dealers</a></li>
-                <li><a href="testimonials.html">Testimonials</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <div class="nav-user-menu">
+                        <a href="login.html" class="nav-login" aria-label="Login or Sign Up">
+                            <span class="nav-login-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="8" r="4"></circle>
+                                    <path d="M5 19c0-3.5 3-6 7-6s7 2.5 7 6"></path>
+                                </svg>
+                            </span>
+                        </a>
+                        <div class="user-dropdown" id="userDropdown">
+                            <div class="dropdown-header">
+                                <div class="user-info">
+                                    <p class="user-name" id="userNameDisplay">User</p>
+                                    <p class="user-email" id="userEmailDisplay">user@example.com</p>
+                                </div>
+                            </div>
+                            <button class="logout-btn" id="logoutBtn">Logout</button>
+                        </div>
+                    </div>
+                </li>
             </ul>
             <!-- Mobile Menu Toggle Button -->
             <button class="mobile-menu-btn">☰</button>
@@ -98,6 +119,16 @@
         </div>
     </section>
 
+    <!-- Recently Viewed Section (populated via JS if available) -->
+    <section class="section" id="recentSection">
+        <h2 class="section-title">Recently Viewed</h2>
+        <p class="section-subtitle">Pick up where you left off</p>
+        <div style="text-align:center; margin-bottom:2rem;">
+            <button class="btn btn-primary" id="clearRecentlyViewed" style="padding:0.6rem 1.5rem; background-color: #dc2626; border-color: #dc2626;">Clear History</button>
+        </div>
+        <div class="models-grid" id="recentlyViewedGrid" style="justify-content:center;"></div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="footer-content">
@@ -118,7 +149,6 @@
             <div class="footer-section">
                 <h3>Support</h3>
                 <a href="contact.html">Contact Us</a>
-                <a href="testimonials.html">Testimonials</a>
                 <a href="about.html">Our Story</a>
             </div>
             <div class="footer-section">
@@ -135,7 +165,9 @@
     </footer>
 
     <!-- JavaScript Files -->
+    <script src="js/storage.js"></script>
     <script src="js/common.js"></script>
+    <script src="js/user-menu.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>
