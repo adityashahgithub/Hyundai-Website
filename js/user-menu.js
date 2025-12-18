@@ -73,11 +73,33 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle logout
     if (logoutBtn) {
         logoutBtn.addEventListener('click', () => {
-            // Clear current user session
+            // Capture current user before clearing
+            const userId = (typeof StorageUtil !== 'undefined') ? StorageUtil.get('hyundai:currentUser') : localStorage.getItem('hyundai:currentUser');
+
+            // Clear per-user ephemeral data (drafts)
+            if (userId) {
+                const draftKeys = [
+                    `contactForm:${userId}`,
+                    `testDriveForm:${userId}`
+                ];
+                draftKeys.forEach(k => {
+                    if (typeof StorageUtil !== 'undefined') {
+                        StorageUtil.remove(k);
+                    } else {
+                        localStorage.removeItem(`hyundai:${k}`);
+                    }
+                });
+            }
+
+            // Clear user identity data
             if (typeof StorageUtil !== 'undefined') {
                 StorageUtil.remove('hyundai:currentUser');
+                StorageUtil.remove('hyundai:userEmail');
+                StorageUtil.remove('hyundai:userName');
             } else {
                 localStorage.removeItem('hyundai:currentUser');
+                localStorage.removeItem('hyundai:userEmail');
+                localStorage.removeItem('hyundai:userName');
             }
             
             // Show logout confirmation

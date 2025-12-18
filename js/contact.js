@@ -34,6 +34,33 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     /* ============================================
+       AUTH GATE (Login Required)
+       ============================================ */
+    try {
+        const currentUser = (window.StorageUtil && StorageUtil.get('hyundai:currentUser')) || null;
+        const notLoggedIn = !currentUser || currentUser === 'guest';
+        if (notLoggedIn && form) {
+            // Disable all inputs and buttons
+            form.querySelectorAll('input, select, textarea, button').forEach(el => {
+                el.disabled = true;
+            });
+            // Insert login-required notice above the form
+            const notice = document.createElement('div');
+            notice.className = 'login-required';
+            notice.innerHTML = `
+                <h3>Login Required</h3>
+                <p>Please log in to send us a message.</p>
+                <a class="btn btn-primary" href="login.html">Log In</a>
+            `;
+            form.parentElement.insertBefore(notice, form);
+            // Stop further setup for unauthenticated users
+            return;
+        }
+    } catch (e) {
+        console.warn('Contact auth gate setup failed:', e);
+    }
+
+    /* ============================================
        LOCAL STORAGE: AUTOSAVE
        ============================================ */
 

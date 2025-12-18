@@ -362,6 +362,30 @@ nav {
     color: var(--primary-color);
 }
 
+/* ============================================
+   AUTH GATE: LOGIN REQUIRED BANNER
+   ============================================ */
+.login-required {
+    margin: 1.5rem 0 0;
+    padding: 1.25rem 1.5rem;
+    background: var(--bg-light);
+    border: 2px solid #e8eef5;
+    border-radius: 10px;
+    text-align: center;
+}
+.login-required h3 {
+    margin: 0 0 0.25rem;
+    color: var(--primary-color);
+}
+.login-required p {
+    margin: 0 0 0.75rem;
+    color: var(--text-color);
+}
+.auth-disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
 /* Back to Top Button */
 .back-to-top {
     position: fixed;
