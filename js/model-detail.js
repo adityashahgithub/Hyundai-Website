@@ -160,52 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    /* ============================================
-       MODAL FUNCTIONALITY
-       ============================================ */
-    
-    // Get modal and related elements
-    const modal = document.getElementById('testDriveModal');
-    const openModalBtn = document.getElementById('bookTestDriveBtn');
-    const closeModalBtn = document.getElementById('closeModal');
-    const form = document.getElementById('testDriveForm');
-    
-    // Open modal when "Book Test Drive" button is clicked
-    if (openModalBtn) {
-        openModalBtn.addEventListener('click', () => {
-            modal.classList.add('active');
-        });
-    }
-    
-    // Close modal when close button is clicked
-    if (closeModalBtn) {
-        closeModalBtn.addEventListener('click', () => {
-            modal.classList.remove('active');
-        });
-    }
-    
-    // Close modal when clicking outside the modal content
-    if (modal) {
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-            }
-        });
-    }
-    
-    // Handle form submission
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevent default form submission
-            
-            // Show success message
-            alert('Thank you! Your test drive request has been submitted. We will contact you soon.');
-            
-            // Reset form and close modal
-            form.reset();
-            modal.classList.remove('active');
-        });
-    }
+    // Modal/form removed: navigation handled via anchor link
 });
 
 // Tab functionality
@@ -233,41 +188,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Modal functionality
-    const modal = document.getElementById('testDriveModal');
-    const openModalBtn = document.getElementById('bookTestDriveBtn');
-    const closeModalBtn = document.getElementById('closeModal');
-    const form = document.getElementById('testDriveForm');
-    
-    if (openModalBtn) {
-        openModalBtn.addEventListener('click', () => {
-            modal.classList.add('active');
-        });
-    }
-    
-    if (closeModalBtn) {
-        closeModalBtn.addEventListener('click', () => {
-            modal.classList.remove('active');
-        });
-    }
-    
-    // Close modal on outside click
-    if (modal) {
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-            }
-        });
-    }
-    
-    // Form submission
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you! Your test drive request has been submitted. We will contact you soon.');
-            form.reset();
-            modal.classList.remove('active');
-        });
-    }
+    // Modal/form removed: navigation handled via anchor link
 });
 

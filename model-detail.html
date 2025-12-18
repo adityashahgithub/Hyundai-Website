@@ -88,58 +88,7 @@
 
     <!-- Call-to-Action Section -->
     <div style="text-align: center; padding: 2rem;">
-        <button class="btn btn-primary" id="bookTestDriveBtn">Book Test Drive</button>
-    </div>
-
-    <!-- Test Drive Booking Modal -->
-    <div class="modal" id="testDriveModal">
-        <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h2>Book Test Drive</h2>
-                <!-- Close Modal Button -->
-                <button class="close-modal" id="closeModal">&times;</button>
-            </div>
-            <!-- Test Drive Booking Form -->
-            <form id="testDriveForm">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required minlength="2" maxlength="100" pattern="[A-Za-z\s]+" title="Please enter a valid name (letters and spaces only, at least 2 characters)">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" required pattern="[+]?[0-9\s\-().]{10,15}" title="Please enter a valid phone number (10-15 digits, optional country code)">
-                </div>
-                <div class="form-group">
-                    <label for="preferredDate">Preferred Date</label>
-                    <input type="date" id="preferredDate" name="preferredDate" required title="Please select your preferred date">
-                </div>
-                <div class="form-group">
-                    <label for="preferredTime">Preferred Time</label>
-                    <select id="preferredTime" name="preferredTime" required>
-                        <option value="">Select Time</option>
-                        <option value="09:00">9:00 AM</option>
-                        <option value="10:00">10:00 AM</option>
-                        <option value="11:00">11:00 AM</option>
-                        <option value="12:00">12:00 PM</option>
-                        <option value="13:00">1:00 PM</option>
-                        <option value="14:00">2:00 PM</option>
-                        <option value="15:00">3:00 PM</option>
-                        <option value="16:00">4:00 PM</option>
-                        <option value="17:00">5:00 PM</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Additional Notes</label>
-                    <textarea id="message" name="message" rows="4"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Request</button>
-            </form>
-        </div>
+        <a class="btn btn-primary" id="bookTestDriveBtn" href="test-drive.html">Book Test Drive</a>
     </div>
 
     <!-- Footer -->
