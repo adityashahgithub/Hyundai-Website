@@ -140,44 +140,6 @@
     line-height: 1.6;
 }
 
-/* ============================================
-   RESPONSIVE DESIGN
-   ============================================ */
-
-/* Mobile Breakpoint (768px and below) */
-@media (max-width: 768px) {
-    .ev-progress {
-        padding: 2rem 1.5rem;
-    }
-    
-    .ev-progress-header h3 {
-        font-size: 1.75rem;
-    }
-    
-    /* Single column layout on mobile */
-    .ev-progress-grid {
-        grid-template-columns: 1fr;
-        gap: 1.25rem;
-    }
-    
-    .ev-progress-card {
-        padding: 2rem 1.5rem;
-    }
-    
-    .metric-value {
-        font-size: 2.5rem;
-    }
-    
-    .progress-icon {
-        width: 48px;
-        height: 48px;
-    }
-    
-    .progress-icon svg {
-        width: 24px;
-        height: 24px;
-    }
-}
 
 /* ============================================
    EV COMPARISON SECTION

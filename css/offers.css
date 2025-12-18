@@ -134,35 +134,4 @@
     }
 }
 
-/* ============================================
-   RESPONSIVE DESIGN
-   ============================================ */
-
-/* Tablet Breakpoint (768px and below) */
-@media (max-width: 768px) {
-    /* Slightly smaller card height on tablets */
-    .flip-card {
-        height: 280px;
-    }
-
-    /* Reduced padding for smaller screens */
-    .flip-card-front,
-    .flip-card-back {
-        padding: 1.5rem;
-    }
-}
-
-/* Mobile Breakpoint (480px and below) */
-@media (max-width: 480px) {
-    /* Smaller card height on mobile */
-    .flip-card {
-        height: 260px;
-    }
-
-    /* Smaller font sizes for mobile */
-    .flip-card-front h2,
-    .flip-card-back h3 {
-        font-size: 1.2rem;
-    }
-}
 

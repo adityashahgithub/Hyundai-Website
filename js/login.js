@@ -382,12 +382,4 @@ document.addEventListener('DOMContentLoaded', () => {
             alert(`Redirecting to ${provider} sign in...\n\n(This is a demo. Real integration requires OAuth setup.)`);
         });
     });
-
-    // ==================== RESPONSIVE ADJUSTMENTS ====================
-    if (window.innerWidth <= 640) {
-        const authCard = document.querySelector('.auth-card');
-        if (authCard) {
-            authCard.style.borderRadius = '16px';
-        }
-    }
 });

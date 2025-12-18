@@ -2,17 +2,10 @@
    COMMON JAVASCRIPT - SHARED FUNCTIONALITY
    ============================================ */
 
-/* ============================================
-   MOBILE MENU TOGGLE
-   ============================================ */
-
 /**
- * Initialize mobile menu functionality
- * Toggles navigation menu on mobile devices
- * Closes menu when clicking outside
+ * Initialize common functionality
  */
 document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
     const header = document.querySelector('header');
 
@@ -59,21 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Set active link on page load
     setActiveNavLink();
-
-    // Mobile menu toggle functionality
-    if (mobileMenuBtn && navLinks) {
-        // Toggle menu when hamburger button is clicked
-        mobileMenuBtn.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-        });
-
-        // Close menu when clicking outside the navigation
-        document.addEventListener('click', function(event) {
-            if (!event.target.closest('nav') && navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-            }
-        });
-    }
 
     /**
      * Toggle header scrolled state based on scroll position

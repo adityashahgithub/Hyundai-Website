@@ -249,20 +249,4 @@
    RESPONSIVE DESIGN
    ============================================ */
 
-/* Mobile Breakpoint (768px and below) */
-@media (max-width: 768px) {
-    .modal {
-        padding: 1rem 0.5rem;
-    }
-
-    .modal-content {
-        width: 95%;
-        max-height: 95vh;
-        padding: 1.5rem;
-    }
-
-    .modal-header {
-        margin-bottom: 1rem;
-    }
-}
 

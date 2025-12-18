@@ -291,15 +291,3 @@ body {
 .alt-btn:active {
     transform: translateY(1px);
 }
-
-@media (max-width: 960px) {
-    .auth-card { grid-template-columns: 1fr; }
-    .auth-visual { min-height: 240px; }
-    .auth-form { padding: 28px 20px; }
-}
-
-@media (max-width: 640px) {
-    .auth-hero { margin: 40px auto; }
-    .field.row { flex-direction: column; align-items: flex-start; gap: 10px; }
-    .tab-header { grid-template-columns: 1fr 1fr; }
-}

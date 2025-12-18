@@ -234,20 +234,6 @@ nav {
     background: var(--secondary-color);
 }
 
-.mobile-menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.8rem;
-    cursor: pointer;
-    color: var(--primary-color);
-    transition: transform 0.3s ease;
-}
-
-.mobile-menu-btn:active {
-    transform: scale(0.9);
-}
-
 /* Hero Section */
 .hero {
     position: relative;
@@ -620,126 +606,6 @@ footer {
     }
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-    nav {
-        padding: 1rem;
-    }
-
-    .hero {
-        min-height: 70vh;
-    }
-
-    .models-grid,
-    .service-cards,
-    .offers-grid,
-    .dealers-list,
-    .gallery-grid,
-    .values-grid {
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    }
-}
-
-@media (max-width: 768px) {
-    .nav-links {
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 70px);
-        background: var(--white);
-        flex-direction: column;
-        padding: 2.5rem 1.5rem;
-        transition: left 0.3s ease;
-        box-shadow: var(--shadow);
-        gap: 1.5rem;
-    }
-
-    .nav-links.active {
-        left: 0;
-    }
-
-    .mobile-menu-btn {
-        display: block;
-    }
-
-    .hero {
-        padding: 4rem 1.5rem;
-    }
-
-    .hero-content h1 {
-        font-size: 2.2rem;
-    }
-
-    .hero-content p {
-        font-size: 1rem;
-    }
-
-    .section-title {
-        font-size: 2.1rem;
-    }
-
-    .modal {
-        padding: 1rem 0.5rem;
-    }
-
-    .modal-content {
-        width: 95%;
-        max-height: 95vh;
-        padding: 1.5rem;
-    }
-
-    .modal-header {
-        margin-bottom: 1rem;
-    }
-
-    .form-group {
-        margin-bottom: 1rem;
-    }
-
-    .timeline::before {
-        left: 20px;
-    }
-
-    .timeline-item {
-        width: 100%;
-        margin-left: 40px !important;
-    }
-
-    .timeline-item::before {
-        left: -30px !important;
-    }
-}
-
-@media (max-width: 576px) {
-    nav {
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
-
-    .hero-content h1 {
-        font-size: 1.9rem;
-    }
-
-    .hero-content p {
-        font-size: 0.95rem;
-    }
-
-    .btn {
-        width: 100%;
-        text-align: center;
-    }
-
-    .models-grid,
-    .service-cards,
-    .offers-grid,
-    .dealers-list,
-    .gallery-grid,
-    .values-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
 /* ============================================
    HERO SLIDER SPECIFIC STYLES
    ============================================ */
@@ -828,60 +694,6 @@ footer {
     background: var(--white);
     width: 26px;
     border-radius: 999px;
-}
-
-/* Responsive: Hero Navigation - Medium screens */
-@media (max-width: 968px) {
-    .hero-nav {
-        width: 45px;
-        height: 45px;
-    }
-
-    .hero-nav svg {
-        width: 20px;
-        height: 20px;
-    }
-
-    .hero-nav-prev {
-        left: 1rem;
-    }
-
-    .hero-nav-next {
-        right: 1rem;
-    }
-}
-
-/* Responsive: Hero Navigation - Tablets */
-@media (max-width: 768px) {
-    .hero-nav {
-        width: 40px;
-        height: 40px;
-    }
-
-    .hero-nav svg {
-        width: 18px;
-        height: 18px;
-    }
-}
-
-/* Responsive: Hero Navigation - Mobile */
-@media (max-width: 576px) {
-    .hero-controls {
-        bottom: 20px;
-    }
-
-    .hero-nav {
-        width: 36px;
-        height: 36px;
-    }
-
-    .hero-nav-prev {
-        left: 0.5rem;
-    }
-
-    .hero-nav-next {
-        right: 0.5rem;
-    }
 }
 
 
